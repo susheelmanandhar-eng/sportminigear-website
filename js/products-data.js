@@ -93,16 +93,29 @@ const PRODUCTS = [
 
 
   {
-    id: "fb-002",
-    name: "Training Cone Set (10 pcs)",
-    category: "Football",
-    price: 900,
-    image: "images/products/fb-002.jpg",
+    id: "fb-003",
+    name: "New Style Water Purifier Hiking Camping Survival Water Filter Straw Popular Camping Water purifier",
+    category: "Travel Gear",
+    price: 1500,
+    old price: 1750
+    images: [
+      "images/products/fb-003-1.jpg",
+      "images/products/fb-003-2.jpg",
+      "images/products/fb-003-3.jpg"
     badge: "",
-    stock: 25,
+    stock: 3,
     description:
-      "Set of 10 lightweight training cones, ideal for drills, agility practice, and marking out a pitch.",
+      "It is a new outdoor portable water filter for travel, hiking, and camping.
+Product Name - Camping Water Purifier
+Compatibility - Easy to carry
+Type - Survival Multifunctional Tool
+Style - Modern
+Capacity - 1500 L
+Purpose - Outdoor Emergency Use Feature - Light Weight
+Function - Portable Survival Tool
+Usage - Outdoor Camping Hiking Travelling Beach",
   },
+
   {
     id: "fb-003",
     name: "Goalkeeper Gloves",
