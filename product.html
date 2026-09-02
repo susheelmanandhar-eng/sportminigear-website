@@ -59,10 +59,16 @@
     }
     document.getElementById("page-title").textContent = product.name + " — Sport Mini Gear";
 
+    const maxQty = getStock(product);
     const oldPrice = product.oldPrice ? `<span class="price-old">${formatRs(product.oldPrice)}</span>` : "";
-    const stockLabel = product.inStock
-      ? `<span class="stock-tag">In stock</span>`
-      : `<span class="stock-tag out">Out of stock</span>`;
+    let stockLabel;
+    if (maxQty <= 0) {
+      stockLabel = `<span class="stock-tag out">Out of stock</span>`;
+    } else if (maxQty !== Infinity && maxQty <= 5) {
+      stockLabel = `<span class="stock-tag" style="color:var(--danger);">Only ${maxQty} left in stock</span>`;
+    } else {
+      stockLabel = `<span class="stock-tag">In stock</span>`;
+    }
 
     contentEl.innerHTML = `
       <div class="product-detail">
@@ -87,8 +93,8 @@
             </div>
           </div>
           <div class="detail-actions">
-            <button class="btn btn-primary" id="add-btn" ${product.inStock ? "" : "disabled"}>
-              ${product.inStock ? "Add to cart" : "Out of stock"}
+            <button class="btn btn-primary" id="add-btn" ${maxQty > 0 ? "" : "disabled"}>
+              ${maxQty > 0 ? "Add to cart" : "Out of stock"}
             </button>
             <a href="cart.html" class="btn btn-outline">View cart</a>
           </div>
@@ -101,14 +107,14 @@
       document.getElementById("qty-value").textContent = qty;
     });
     document.getElementById("qty-plus").addEventListener("click", () => {
-      qty += 1;
+      qty = Math.min(maxQty, qty + 1);
       document.getElementById("qty-value").textContent = qty;
     });
     const addBtn = document.getElementById("add-btn");
     if (addBtn) {
       addBtn.addEventListener("click", () => {
-        addToCart(product.id, qty);
-        addBtn.textContent = "Added ✓";
+        const added = addToCart(product.id, qty);
+        addBtn.textContent = added > 0 ? "Added ✓" : "Limit reached";
         setTimeout(() => (addBtn.textContent = "Add to cart"), 1200);
       });
     }
