@@ -31,7 +31,7 @@ const SITE_CONFIG = {
 
 // Category list used for filters/nav. Keep names consistent with product "category" fields below.
 const CATEGORIES = [
-  "Football",
+  "Travel Gear",
   "Cricket",
   "Running",
   "Gym & Fitness",
@@ -56,15 +56,34 @@ const CATEGORIES = [
 const PRODUCTS = [
   {
     id: "fb-001",
-    name: "Match Pro Football",
-    category: "Football",
-    price: 2200,
-    oldPrice: 2600,
+    name: "Deluxe 18-in-1 Outdoor Multifunctional Survival Gear Kit for Adventure Disaster Preparedness and Emergency Aid ",
+    category: "Travel Gear",
+    price: 3000,
+    oldPrice: 3500,
     image: "images/products/fb-001.jpg",
     badge: "Bestseller",
     inStock: true,
     description:
-      "Size 5 match-quality football with a durable stitched outer shell, built for grip and control on grass or turf.",
+      "Accessory Part
+
+Butterfly handle large flint 
+Multifunctional Scraper - Including Scraper, Bottle Opener, Hexagon Wrench, Scale
+High Frequency Double Hole Whistle
+Strong Flashlight
+Multifunctional Knife
+Multifunctional Saber Card - Including Bottle Opener, Can Opener, Box Opener, Box Opener, Flat Screwdriver, Adjustable Wrench, Positioning Wrench, Scale, Protractor, Sawtooth, Keyhole
+Compass
+Portable Key Lamp
+Tungsten Steel Broken Window Defense Pen - 
+Waterproof and Shockproof Storage Box
+Kettle Buckle
+Survival Bracelet
+Screwdriver (one type)
+Screwdrive (other type)
+Wire Saw
+Emergency Blanket
+Kettle Buckle
+Absorbent, Alcohol Pad, Styptic Bandage",
   },
   {
     id: "fb-002",
