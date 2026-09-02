@@ -1,10 +1,23 @@
 /* =========================================================================
-   SPORT MINI GEAR — main.js
+ SPORT MINI GEAR — main.js
    Shared logic used across all pages: rendering products, cart (localStorage),
    filtering/search, and checkout order building.
    ========================================================================= */
 
 const CART_KEY = "smg_cart";
+
+/* ---------------------------- Stock helpers ---------------------------- */
+
+// Returns the number of units available for a product.
+// Supports two styles in products-data.js:
+//   stock: 12        -> exact quantity tracking (recommended)
+//   inStock: true     -> unlimited (no quantity limit)
+//   inStock: false    -> treated as 0 (out of stock)
+function getStock(product) {
+  if (!product) return 0;
+  if (typeof product.stock === "number") return product.stock;
+  return product.inStock ? Infinity : 0;
+}
 
 /* ---------------------------- Cart helpers ---------------------------- */
 
@@ -21,24 +34,39 @@ function saveCart(cart) {
   updateCartBadge();
 }
 
+// Adds qty of a product to the cart, but never lets the total exceed
+// available stock. Returns the quantity actually added (useful for messages).
 function addToCart(id, qty = 1) {
+  const product = PRODUCTS.find((p) => p.id === id);
+  const max = getStock(product);
   const cart = getCart();
   const existing = cart.find((item) => item.id === id);
+  const currentQty = existing ? existing.qty : 0;
+  const newQty = Math.min(currentQty + qty, max);
+
+  if (newQty <= 0) return 0;
+
   if (existing) {
-    existing.qty += qty;
+    existing.qty = newQty;
   } else {
-    cart.push({ id, qty });
+    cart.push({ id, qty: newQty });
   }
   saveCart(cart);
+  return newQty - currentQty;
 }
 
+// Sets a cart line to an exact quantity, clamped between 0 and available stock.
 function updateCartQty(id, qty) {
+  const product = PRODUCTS.find((p) => p.id === id);
+  const max = getStock(product);
+  const clamped = Math.min(qty, max);
+
   let cart = getCart();
-  if (qty <= 0) {
+  if (clamped <= 0) {
     cart = cart.filter((item) => item.id !== id);
   } else {
     const existing = cart.find((item) => item.id === id);
-    if (existing) existing.qty = qty;
+    if (existing) existing.qty = clamped;
   }
   saveCart(cart);
 }
@@ -90,14 +118,22 @@ function getInitials(name) {
 /* ---------------------------- Rendering: product card ---------------------------- */
 
 function productCardHTML(product) {
-  const badge = product.badge
-    ? `<span class="badge">${product.badge}</span>`
-    : "";
+  const stock = getStock(product);
+  const inStock = stock > 0;
+  const lowStock = inStock && stock !== Infinity && stock <= 5;
+
+  let badge = "";
+  if (product.badge) {
+    badge = `<span class="badge">${product.badge}</span>`;
+  } else if (lowStock) {
+    badge = `<span class="badge" style="background:var(--danger);color:#fff;">Only ${stock} left</span>`;
+  }
+
   const oldPrice = product.oldPrice
     ? `<span class="price-old">${formatRs(product.oldPrice)}</span>`
     : "";
-  const stockDisabled = product.inStock ? "" : "disabled";
-  const btnLabel = product.inStock ? "Add to cart" : "Out of stock";
+  const stockDisabled = inStock ? "" : "disabled";
+  const btnLabel = inStock ? "Add to cart" : "Out of stock";
 
   return `
     <div class="product-card">
@@ -119,7 +155,7 @@ function productCardHTML(product) {
           ${oldPrice}
         </div>
         <button class="btn btn-primary btn-block" ${stockDisabled}
-          onclick="addToCart('${product.id}', 1); this.textContent='Added ✓'; setTimeout(() => this.textContent='${btnLabel}', 1200);">
+          onclick="const added = addToCart('${product.id}', 1); this.textContent = added > 0 ? 'Added ✓' : 'Limit reached'; setTimeout(() => this.textContent='${btnLabel}', 1200);">
           ${btnLabel}
         </button>
       </div>
