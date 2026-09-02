@@ -60,6 +60,8 @@
     document.getElementById("page-title").textContent = product.name + " — Sport Mini Gear";
 
     const maxQty = getStock(product);
+    const images = getProductImages(product);
+    const mainImage = images[0] || "";
     const oldPrice = product.oldPrice ? `<span class="price-old">${formatRs(product.oldPrice)}</span>` : "";
     let stockLabel;
     if (maxQty <= 0) {
@@ -70,11 +72,25 @@
       stockLabel = `<span class="stock-tag">In stock</span>`;
     }
 
+    const thumbsHTML = images.length > 1
+      ? `<div class="detail-gallery-thumbs">
+          ${images.map((src, i) => `
+            <div class="gallery-thumb ${i === 0 ? "active" : ""}" data-src="${src}">
+              <img src="${src}" alt="${product.name} photo ${i + 1}"
+                   onerror="this.closest('.gallery-thumb').style.display='none'" />
+            </div>
+          `).join("")}
+        </div>`
+      : "";
+
     contentEl.innerHTML = `
       <div class="product-detail">
-        <div class="detail-thumb product-thumb">
-          <img src="${product.image}" alt="${product.name}" onerror="this.closest('.product-thumb').classList.add('img-fallback')" />
-          <span class="thumb-fallback" style="font-size:3rem;">${getInitials(product.name)}</span>
+        <div>
+          <div class="detail-thumb product-thumb" id="main-photo">
+            <img src="${mainImage}" alt="${product.name}" onerror="this.closest('.product-thumb').classList.add('img-fallback')" />
+            <span class="thumb-fallback" style="font-size:3rem;">${getInitials(product.name)}</span>
+          </div>
+          ${thumbsHTML}
         </div>
         <div class="detail-info">
           <span class="product-cat">${product.category}</span>
@@ -105,6 +121,16 @@
     document.getElementById("qty-minus").addEventListener("click", () => {
       qty = Math.max(1, qty - 1);
       document.getElementById("qty-value").textContent = qty;
+    });
+    document.querySelectorAll(".gallery-thumb").forEach((thumb) => {
+      thumb.addEventListener("click", () => {
+        const src = thumb.dataset.src;
+        const mainPhoto = document.getElementById("main-photo");
+        mainPhoto.classList.remove("img-fallback");
+        mainPhoto.querySelector("img").src = src;
+        document.querySelectorAll(".gallery-thumb").forEach((t) => t.classList.remove("active"));
+        thumb.classList.add("active");
+      });
     });
     document.getElementById("qty-plus").addEventListener("click", () => {
       qty = Math.min(maxQty, qty + 1);
