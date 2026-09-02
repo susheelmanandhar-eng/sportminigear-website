@@ -6,6 +6,19 @@
 
 const CART_KEY = "smg_cart";
 
+/* ---------------------------- Image helpers ---------------------------- */
+
+// Returns an array of image paths for a product.
+// Supports two styles in products-data.js:
+//   images: ["images/products/fb-001-1.jpg", "images/products/fb-001-2.jpg"]  -> gallery (recommended)
+//   image: "images/products/fb-001.jpg"                                       -> single photo (still works)
+function getProductImages(product) {
+  if (!product) return [];
+  if (Array.isArray(product.images) && product.images.length > 0) return product.images;
+  if (product.image) return [product.image];
+  return [];
+}
+
 /* ---------------------------- Stock helpers ---------------------------- */
 
 // Returns the number of units available for a product.
@@ -118,6 +131,8 @@ function getInitials(name) {
 /* ---------------------------- Rendering: product card ---------------------------- */
 
 function productCardHTML(product) {
+  const images = getProductImages(product);
+  const thumbSrc = images[0] || "";
   const stock = getStock(product);
   const inStock = stock > 0;
   const lowStock = inStock && stock !== Infinity && stock <= 5;
@@ -140,7 +155,7 @@ function productCardHTML(product) {
       <a href="product.html?id=${product.id}">
         <div class="product-thumb">
           ${badge}
-          <img src="${product.image}" alt="${product.name}"
+          <img src="${thumbSrc}" alt="${product.name}"
                onerror="this.closest('.product-thumb').classList.add('img-fallback')" />
           <span class="thumb-fallback">${getInitials(product.name)}</span>
         </div>
