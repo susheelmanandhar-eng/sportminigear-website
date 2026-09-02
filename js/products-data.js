@@ -13,15 +13,15 @@
 
 const SITE_CONFIG = {
   // Shown in the footer and used to build order links
-  whatsappNumber: "9779800000000",   // <-- REPLACE with your WhatsApp number (country code, no + or spaces)
-  email: "info@sportminigear.com",   // <-- REPLACE with your real email
+  whatsappNumber: "9779861549926",   // <-- REPLACE with your WhatsApp number (country code, no + or spaces)
+  email: "sportminigear@gmail.com",   // <-- REPLACE with your real email
   address: "Kathmandu, Nepal",
   pan: "118788144",
 
   // Payment QR — put your bank/eSewa/Fonepay QR image at this path
   bankQrImage: "images/payment-qr.png",   // <-- REPLACE this file with your real QR image
   bankDetails:
-    "Bank: [Your Bank Name]\nAccount Name: Sport Mini Gear\nAccount No: [XXXXXXXXXXXX]\nBranch: [Branch Name]",
+    "Bank: [NIMB Bank]\nAccount Name: Sport Mini Gear\nAccount No: [13201040252317]\nBranch: [Thamel]",
 
   // Social links (leave blank "" to hide)
   facebook: "",
