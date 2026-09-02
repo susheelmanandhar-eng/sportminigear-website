@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="page-title">Product — Sport Mini Gear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">SPORT MINI <span>GEAR</span></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="cart.html" class="cart-link">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="product-section">
+  <div class="wrap">
+    <a href="products.html" class="back-link">← Back to all products</a>
+    <div id="product-content"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> Sport Mini Gear. All rights reserved.</span>
+      <span>www.sportminigear.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+  const product = PRODUCTS.find((p) => p.id === id);
+  const contentEl = document.getElementById("product-content");
+
+  let qty = 1;
+
+  function render() {
+    if (!product) {
+      contentEl.innerHTML = `<div class="empty-state">We couldn't find that product. <a href="products.html">Browse the catalog</a> instead.</div>`;
+      return;
+    }
+    document.getElementById("page-title").textContent = product.name + " — Sport Mini Gear";
+
+    const oldPrice = product.oldPrice ? `<span class="price-old">${formatRs(product.oldPrice)}</span>` : "";
+    const stockLabel = product.inStock
+      ? `<span class="stock-tag">In stock</span>`
+      : `<span class="stock-tag out">Out of stock</span>`;
+
+    contentEl.innerHTML = `
+      <div class="product-detail">
+        <div class="detail-thumb product-thumb">
+          <img src="${product.image}" alt="${product.name}" onerror="this.closest('.product-thumb').classList.add('img-fallback')" />
+          <span class="thumb-fallback" style="font-size:3rem;">${getInitials(product.name)}</span>
+        </div>
+        <div class="detail-info">
+          <span class="product-cat">${product.category}</span>
+          <h1>${product.name}</h1>
+          <div class="detail-price">
+            <span class="price">${formatRs(product.price)}</span>
+            ${oldPrice}
+          </div>
+          <p>${product.description}</p>
+          ${stockLabel}
+          <div class="qty-row">
+            <div class="qty-control">
+              <button id="qty-minus">−</button>
+              <span id="qty-value">1</span>
+              <button id="qty-plus">+</button>
+            </div>
+          </div>
+          <div class="detail-actions">
+            <button class="btn btn-primary" id="add-btn" ${product.inStock ? "" : "disabled"}>
+              ${product.inStock ? "Add to cart" : "Out of stock"}
+            </button>
+            <a href="cart.html" class="btn btn-outline">View cart</a>
+          </div>
+        </div>
+      </div>
+    `;
+
+    document.getElementById("qty-minus").addEventListener("click", () => {
+      qty = Math.max(1, qty - 1);
+      document.getElementById("qty-value").textContent = qty;
+    });
+    document.getElementById("qty-plus").addEventListener("click", () => {
+      qty += 1;
+      document.getElementById("qty-value").textContent = qty;
+    });
+    const addBtn = document.getElementById("add-btn");
+    if (addBtn) {
+      addBtn.addEventListener("click", () => {
+        addToCart(product.id, qty);
+        addBtn.textContent = "Added ✓";
+        setTimeout(() => (addBtn.textContent = "Add to cart"), 1200);
+      });
+    }
+  }
+
+  render();
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

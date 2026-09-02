@@ -1,0 +1,224 @@
+/* =========================================================================
+   SPORT MINI GEAR — SITE CONFIG & PRODUCT DATA
+   -------------------------------------------------------------------------
+   This is the ONLY file you need to edit to run your shop:
+     1. Update SITE_CONFIG below with your real WhatsApp number, email,
+        bank details, and QR code image.
+     2. Add/edit products in the PRODUCTS array further down.
+     3. Product images go in the /images/products/ folder. If an image
+        is missing or the filename is wrong, the site automatically shows
+        a neat placeholder instead of a broken image icon — so it's safe
+        to add products before you have final photos.
+   ========================================================================= */
+
+const SITE_CONFIG = {
+  // Shown in the footer and used to build order links
+  whatsappNumber: "9779800000000",   // <-- REPLACE with your WhatsApp number (country code, no + or spaces)
+  email: "info@sportminigear.com",   // <-- REPLACE with your real email
+  address: "Kathmandu, Nepal",
+  pan: "118788144",
+
+  // Payment QR — put your bank/eSewa/Fonepay QR image at this path
+  bankQrImage: "images/payment-qr.png",   // <-- REPLACE this file with your real QR image
+  bankDetails:
+    "Bank: [Your Bank Name]\nAccount Name: Sport Mini Gear\nAccount No: [XXXXXXXXXXXX]\nBranch: [Branch Name]",
+
+  // Social links (leave blank "" to hide)
+  facebook: "",
+  instagram: "",
+  tiktok: "",
+};
+
+// Category list used for filters/nav. Keep names consistent with product "category" fields below.
+const CATEGORIES = [
+  "Football",
+  "Cricket",
+  "Running",
+  "Gym & Fitness",
+  "Cycling",
+  "Accessories",
+];
+
+/* -------------------------------------------------------------------------
+   PRODUCTS
+   Add as many as you like — the catalog page auto-updates.
+   Fields:
+     id          unique short code, no spaces (e.g. "fb-001")
+     name        product name
+     category    must match one of CATEGORIES above
+     price       number, in Rs. (no commas)
+     oldPrice    optional — set to a number to show a strikethrough price
+     image       path under images/products/ (fine to leave as-is for now)
+     badge       optional small tag e.g. "New", "Bestseller" (or "" for none)
+     inStock     true / false
+     description short paragraph shown on the product detail page
+   ------------------------------------------------------------------------- */
+const PRODUCTS = [
+  {
+    id: "fb-001",
+    name: "Match Pro Football",
+    category: "Football",
+    price: 2200,
+    oldPrice: 2600,
+    image: "images/products/fb-001.jpg",
+    badge: "Bestseller",
+    inStock: true,
+    description:
+      "Size 5 match-quality football with a durable stitched outer shell, built for grip and control on grass or turf.",
+  },
+  {
+    id: "fb-002",
+    name: "Training Cone Set (10 pcs)",
+    category: "Football",
+    price: 900,
+    image: "images/products/fb-002.jpg",
+    badge: "",
+    inStock: true,
+    description:
+      "Set of 10 lightweight training cones, ideal for drills, agility practice, and marking out a pitch.",
+  },
+  {
+    id: "fb-003",
+    name: "Goalkeeper Gloves",
+    category: "Football",
+    price: 1450,
+    image: "images/products/fb-003.jpg",
+    badge: "New",
+    inStock: true,
+    description:
+      "Padded palm goalkeeper gloves with adjustable wrist strap for a secure, confident grip.",
+  },
+  {
+    id: "ck-001",
+    name: "Cricket Bat (Kashmir Willow)",
+    category: "Cricket",
+    price: 3500,
+    image: "images/products/ck-001.jpg",
+    badge: "",
+    inStock: true,
+    description:
+      "Full-size Kashmir willow bat with a balanced pick-up, suited for club and street cricket.",
+  },
+  {
+    id: "ck-002",
+    name: "Cricket Ball (Leather, Red)",
+    category: "Cricket",
+    price: 650,
+    image: "images/products/ck-002.jpg",
+    badge: "",
+    inStock: true,
+    description: "Traditional leather cricket ball, hand-stitched seam for consistent swing and bounce.",
+  },
+  {
+    id: "ck-003",
+    name: "Batting Gloves",
+    category: "Cricket",
+    price: 1200,
+    image: "images/products/ck-003.jpg",
+    badge: "",
+    inStock: false,
+    description: "Protective batting gloves with foam padding across the fingers and thumb.",
+  },
+  {
+    id: "rn-001",
+    name: "Runner Pro Shoes",
+    category: "Running",
+    price: 4200,
+    oldPrice: 4900,
+    image: "images/products/rn-001.jpg",
+    badge: "Bestseller",
+    inStock: true,
+    description:
+      "Lightweight running shoes with breathable mesh upper and cushioned sole for daily training runs.",
+  },
+  {
+    id: "rn-002",
+    name: "Reflective Running Vest",
+    category: "Running",
+    price: 850,
+    image: "images/products/rn-002.jpg",
+    badge: "",
+    inStock: true,
+    description: "High-visibility vest with reflective strips, built for early morning or evening runs.",
+  },
+  {
+    id: "gy-001",
+    name: "Adjustable Dumbbell Set",
+    category: "Gym & Fitness",
+    price: 5200,
+    image: "images/products/gy-001.jpg",
+    badge: "",
+    inStock: true,
+    description: "Pair of adjustable dumbbells, 2–10kg per hand, for home strength training.",
+  },
+  {
+    id: "gy-002",
+    name: "Yoga Mat (6mm)",
+    category: "Gym & Fitness",
+    price: 1100,
+    image: "images/products/gy-002.jpg",
+    badge: "New",
+    inStock: true,
+    description: "Non-slip 6mm yoga mat with carry strap, suitable for yoga, stretching, and floor workouts.",
+  },
+  {
+    id: "gy-003",
+    name: "Resistance Bands (Set of 5)",
+    category: "Gym & Fitness",
+    price: 750,
+    image: "images/products/gy-003.jpg",
+    badge: "",
+    inStock: true,
+    description: "Five resistance levels for mobility work, warm-ups, and strength training on the go.",
+  },
+  {
+    id: "cy-001",
+    name: "Cycling Helmet",
+    category: "Cycling",
+    price: 1800,
+    image: "images/products/cy-001.jpg",
+    badge: "",
+    inStock: true,
+    description: "Ventilated cycling helmet with adjustable fit dial and rear safety light mount.",
+  },
+  {
+    id: "cy-002",
+    name: "Cycling Gloves",
+    category: "Cycling",
+    price: 650,
+    image: "images/products/cy-002.jpg",
+    badge: "",
+    inStock: true,
+    description: "Padded half-finger cycling gloves for grip and comfort on longer rides.",
+  },
+  {
+    id: "ac-001",
+    name: "Sports Duffel Bag",
+    category: "Accessories",
+    price: 1650,
+    image: "images/products/ac-001.jpg",
+    badge: "",
+    inStock: true,
+    description: "Spacious duffel bag with separate shoe compartment, built for daily training kit.",
+  },
+  {
+    id: "ac-002",
+    name: "Insulated Water Bottle (750ml)",
+    category: "Accessories",
+    price: 550,
+    image: "images/products/ac-002.jpg",
+    badge: "",
+    inStock: true,
+    description: "Double-wall insulated bottle that keeps drinks cold through a full training session.",
+  },
+  {
+    id: "ac-003",
+    name: "Sports Socks (3 Pairs)",
+    category: "Accessories",
+    price: 450,
+    image: "images/products/ac-003.jpg",
+    badge: "",
+    inStock: true,
+    description: "Cushioned, breathable sports socks — pack of 3 pairs.",
+  },
+];

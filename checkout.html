@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Checkout — Sport Mini Gear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">SPORT MINI <span>GEAR</span></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="cart.html" class="cart-link">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <h1 style="font-size:2.2rem;">Checkout</h1>
+
+    <div class="order-success" id="order-success">
+      <h3>Order sent!</h3>
+      <p class="mt-0">Your order details have opened in WhatsApp — send the message to confirm. Please also complete payment using the QR code or bank details on this page, then send us a screenshot of the payment.</p>
+    </div>
+
+    <div id="checkout-empty" class="empty-state" style="display:none;">
+      Your cart is empty. <a href="products.html">Browse the catalog</a> to add some gear before checking out.
+    </div>
+
+    <div class="checkout-layout" id="checkout-layout">
+      <div>
+        <h3 class="mt-0">Delivery details</h3>
+        <form id="checkout-form">
+          <div class="form-grid">
+            <div class="full">
+              <label for="cust-name">Full name</label>
+              <input type="text" id="cust-name" required />
+            </div>
+            <div>
+              <label for="cust-phone">Phone number</label>
+              <input type="tel" id="cust-phone" required />
+            </div>
+            <div>
+              <label for="cust-email">Email (optional)</label>
+              <input type="email" id="cust-email" />
+            </div>
+            <div class="full">
+              <label for="cust-address">Delivery address</label>
+              <textarea id="cust-address" rows="3" required></textarea>
+            </div>
+            <div class="full">
+              <label for="cust-note">Order note (optional)</label>
+              <textarea id="cust-note" rows="2" placeholder="e.g. preferred size, delivery time"></textarea>
+            </div>
+          </div>
+
+          <h3 style="margin-top:32px;">Order items</h3>
+          <div id="checkout-items"></div>
+
+          <div class="summary-card" style="margin-top:20px;">
+            <div class="summary-row total"><span>Total</span><span id="checkout-total"></span></div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block" style="margin-top:22px;">
+            Send order on WhatsApp
+          </button>
+          <a href="#" class="btn btn-outline btn-block" id="email-order-link" style="margin-top:12px;">
+            Or send order by email
+          </a>
+        </form>
+      </div>
+
+      <div class="payment-card">
+        <h3 class="mt-0">Pay by QR</h3>
+        <p>Scan this code with your banking or mobile wallet app to pay, then send a screenshot of the payment along with your order.</p>
+        <div class="qr-box">
+          <img src="images/payment-qr.png" alt="Payment QR code"
+               onerror="this.parentElement.innerHTML='<span style=\'color:#555;font-size:0.85rem;text-align:center;\'>Add your QR code image at<br/><code>images/payment-qr.png</code></span>'" />
+        </div>
+        <div class="bank-details" id="bank-details"></div>
+        <p class="payment-note">Orders are confirmed once payment is received. If you have questions before paying, message us on WhatsApp first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> Sport Mini Gear. All rights reserved.</span>
+      <span>www.sportminigear.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const items = cartItemsWithProducts();
+
+  if (items.length === 0) {
+    document.getElementById("checkout-layout").style.display = "none";
+    document.getElementById("checkout-empty").style.display = "block";
+  } else {
+    document.getElementById("checkout-items").innerHTML = items
+      .map(
+        (item) => `
+        <div class="summary-row">
+          <span>${item.name} × ${item.qty}</span>
+          <span>${formatRs(item.price * item.qty)}</span>
+        </div>`
+      )
+      .join("");
+    document.getElementById("checkout-total").textContent = formatRs(cartTotal());
+  }
+
+  document.getElementById("bank-details").textContent = SITE_CONFIG.bankDetails;
+
+  const form = document.getElementById("checkout-form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const customer = {
+      name: document.getElementById("cust-name").value.trim(),
+      phone: document.getElementById("cust-phone").value.trim(),
+      address: document.getElementById("cust-address").value.trim(),
+      note: document.getElementById("cust-note").value.trim(),
+    };
+    window.open(whatsappOrderLink(customer), "_blank");
+    document.getElementById("order-success").classList.add("visible");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  document.getElementById("email-order-link").addEventListener("click", (e) => {
+    e.preventDefault();
+    const customer = {
+      name: document.getElementById("cust-name").value.trim() || "Customer",
+      phone: document.getElementById("cust-phone").value.trim() || "N/A",
+      address: document.getElementById("cust-address").value.trim() || "N/A",
+      note: document.getElementById("cust-note").value.trim(),
+    };
+    window.location.href = mailtoOrderLink(customer);
+  });
+
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

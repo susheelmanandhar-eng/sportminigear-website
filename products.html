@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop All Gear — Sport Mini Gear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">SPORT MINI <span>GEAR</span></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="cart.html" class="cart-link">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="padding-bottom:20px;">
+  <div class="wrap">
+    <h1 style="font-size:2.2rem;">Shop all gear</h1>
+    <p>Browse the full catalog, or filter by category and search by name.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="catalog-toolbar">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search products..." />
+      </div>
+      <select class="filter-select" id="category-select">
+        <option value="">All categories</option>
+      </select>
+      <span class="result-count" id="result-count"></span>
+    </div>
+    <div class="product-grid" id="catalog-grid"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> Sport Mini Gear. All rights reserved.</span>
+      <span>www.sportminigear.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const categorySelect = document.getElementById("category-select");
+  categorySelect.innerHTML += CATEGORIES.map((c) => `<option value="${c}">${c}</option>`).join("");
+
+  const params = new URLSearchParams(window.location.search);
+  const initialCategory = params.get("category") || "";
+  categorySelect.value = initialCategory;
+
+  const searchInput = document.getElementById("search-input");
+  const resultCount = document.getElementById("result-count");
+
+  function applyFilters() {
+    const term = searchInput.value.trim().toLowerCase();
+    const category = categorySelect.value;
+    const filtered = PRODUCTS.filter((p) => {
+      const matchesTerm = !term || p.name.toLowerCase().includes(term);
+      const matchesCategory = !category || p.category === category;
+      return matchesTerm && matchesCategory;
+    });
+    renderProductGrid("catalog-grid", filtered);
+    resultCount.textContent = `${filtered.length} product${filtered.length === 1 ? "" : "s"}`;
+  }
+
+  searchInput.addEventListener("input", applyFilters);
+  categorySelect.addEventListener("change", applyFilters);
+  applyFilters();
+
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

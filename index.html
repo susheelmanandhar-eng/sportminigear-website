@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sport Mini Gear — Sports Equipment in Kathmandu</title>
+<meta name="description" content="Sport Mini Gear — football, cricket, running, gym and cycling gear in Kathmandu, Nepal." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">SPORT MINI <span>GEAR</span></a>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="cart.html" class="cart-link">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="hero-eyebrow">Kathmandu, Nepal</div>
+      <h1>Train like it matters.</h1>
+      <p>Football, cricket, running, gym and cycling gear for players who show up every day. Quality equipment, fair prices, straight to your door in Kathmandu.</p>
+      <div class="hero-cta">
+        <a href="products.html" class="btn btn-primary">Shop all gear</a>
+        <a href="#categories" class="btn btn-outline">Browse categories</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <span class="hero-mark">SMG</span>
+    </div>
+  </div>
+</section>
+
+<section class="category-strip" id="categories">
+  <div class="wrap">
+    <h2>Shop by category</h2>
+    <div class="chip-row" id="category-chip-row"></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="mt-0">Featured gear</h2>
+      <a href="products.html" class="btn btn-outline">View full catalog</a>
+    </div>
+    <div class="product-grid" id="featured-grid"></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="value-props">
+      <div class="value-card">
+        <h3>Genuine gear</h3>
+        <p>Every product is checked for quality before it reaches you — no compromises on materials or stitching.</p>
+      </div>
+      <div class="value-card">
+        <h3>Kathmandu delivery</h3>
+        <p>Order online and pick up or get it delivered locally. Pay easily by scanning our QR code at checkout.</p>
+      </div>
+      <div class="value-card">
+        <h3>Support that answers</h3>
+        <p>Message us directly on WhatsApp for sizing help, bulk orders, or anything else you need.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Sport Mini Gear</h4>
+        <p>Kathmandu, Nepal</p>
+        <p id="footer-pan"></p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="products.html">All products</a>
+        <a href="cart.html">Cart</a>
+        <a href="checkout.html">Checkout</a>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <a id="footer-whatsapp" href="#">WhatsApp</a>
+        <a id="footer-email" href="#">Email</a>
+        <a href="contact.html">Contact page</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> Sport Mini Gear. All rights reserved.</span>
+      <span>www.sportminigear.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Category chips
+  const chipRow = document.getElementById("category-chip-row");
+  chipRow.innerHTML = CATEGORIES.map(
+    (c) => `<a class="chip" href="products.html?category=${encodeURIComponent(c)}">${c}</a>`
+  ).join("");
+
+  // Featured = first 8 in-stock products
+  const featured = PRODUCTS.filter((p) => p.inStock).slice(0, 8);
+  renderProductGrid("featured-grid", featured);
+
+  // Footer dynamic bits
+  document.getElementById("footer-pan").textContent = "PAN No: " + SITE_CONFIG.pan;
+  document.getElementById("footer-whatsapp").href = "https://wa.me/" + SITE_CONFIG.whatsappNumber;
+  document.getElementById("footer-whatsapp").textContent = "WhatsApp: +" + SITE_CONFIG.whatsappNumber;
+  document.getElementById("footer-email").href = "mailto:" + SITE_CONFIG.email;
+  document.getElementById("footer-email").textContent = SITE_CONFIG.email;
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

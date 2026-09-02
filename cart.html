@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Your Cart — Sport Mini Gear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">SPORT MINI <span>GEAR</span></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="cart.html" class="active">Cart</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="cart.html" class="cart-link">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <h1 style="font-size:2.2rem;">Your cart</h1>
+    <div id="cart-content"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> Sport Mini Gear. All rights reserved.</span>
+      <span>www.sportminigear.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  const contentEl = document.getElementById("cart-content");
+
+  function renderCart() {
+    const items = cartItemsWithProducts();
+
+    if (items.length === 0) {
+      contentEl.innerHTML = `
+        <div class="empty-state">
+          Your cart is empty. <a href="products.html">Browse the catalog</a> to add some gear.
+        </div>`;
+      return;
+    }
+
+    const rows = items
+      .map(
+        (item) => `
+      <div class="cart-row">
+        <div class="cart-thumb product-thumb">
+          <img src="${item.image}" alt="${item.name}" onerror="this.closest('.product-thumb').classList.add('img-fallback')" />
+          <span class="thumb-fallback" style="font-size:1.2rem;">${getInitials(item.name)}</span>
+        </div>
+        <div>
+          <div class="product-name">${item.name}</div>
+          <span class="product-cat">${item.category}</span><br/>
+          <a href="#" class="remove-link" data-remove="${item.id}">Remove</a>
+        </div>
+        <div class="qty-control">
+          <button data-decrease="${item.id}">−</button>
+          <span>${item.qty}</span>
+          <button data-increase="${item.id}">+</button>
+        </div>
+        <div class="price">${formatRs(item.price * item.qty)}</div>
+      </div>
+    `
+      )
+      .join("");
+
+    contentEl.innerHTML = `
+      <div class="cart-layout">
+        <div>${rows}</div>
+        <div class="summary-card">
+          <h3 class="mt-0">Order summary</h3>
+          <div class="summary-row"><span>Subtotal</span><span>${formatRs(cartTotal())}</span></div>
+          <div class="summary-row"><span>Delivery</span><span>Arranged after order</span></div>
+          <div class="summary-row total"><span>Total</span><span>${formatRs(cartTotal())}</span></div>
+          <a href="checkout.html" class="btn btn-primary btn-block" style="margin-top:18px;">Proceed to checkout</a>
+        </div>
+      </div>
+    `;
+
+    contentEl.querySelectorAll("[data-remove]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        removeFromCart(el.dataset.remove);
+        renderCart();
+      });
+    });
+    contentEl.querySelectorAll("[data-increase]").forEach((el) => {
+      el.addEventListener("click", () => {
+        const item = getCart().find((i) => i.id === el.dataset.increase);
+        updateCartQty(el.dataset.increase, (item ? item.qty : 0) + 1);
+        renderCart();
+      });
+    });
+    contentEl.querySelectorAll("[data-decrease]").forEach((el) => {
+      el.addEventListener("click", () => {
+        const item = getCart().find((i) => i.id === el.dataset.decrease);
+        updateCartQty(el.dataset.decrease, (item ? item.qty : 0) - 1);
+        renderCart();
+      });
+    });
+  }
+
+  renderCart();
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

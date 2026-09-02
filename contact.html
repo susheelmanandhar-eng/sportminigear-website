@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact — Sport Mini Gear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="logo">SPORT MINI <span>GEAR</span></a>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="cart.html" class="cart-link">Cart <span class="cart-count" data-cart-count>0</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <h1 style="font-size:2.2rem;">Get in touch</h1>
+    <p style="margin-bottom:36px;">Questions about sizing, bulk orders, or delivery? Reach us directly — we usually reply the same day.</p>
+
+    <div class="value-props">
+      <div class="value-card">
+        <h3>WhatsApp</h3>
+        <p><a id="contact-whatsapp" href="#" style="color:var(--accent);">Message us</a></p>
+      </div>
+      <div class="value-card">
+        <h3>Email</h3>
+        <p><a id="contact-email" href="#" style="color:var(--accent);"></a></p>
+      </div>
+      <div class="value-card">
+        <h3>Location</h3>
+        <p id="contact-address"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>© <span id="footer-year"></span> Sport Mini Gear. All rights reserved.</span>
+      <span>www.sportminigear.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/products-data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById("contact-whatsapp").href = "https://wa.me/" + SITE_CONFIG.whatsappNumber;
+  document.getElementById("contact-whatsapp").textContent = "+" + SITE_CONFIG.whatsappNumber;
+  document.getElementById("contact-email").href = "mailto:" + SITE_CONFIG.email;
+  document.getElementById("contact-email").textContent = SITE_CONFIG.email;
+  document.getElementById("contact-address").textContent = SITE_CONFIG.address;
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
