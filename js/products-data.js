@@ -63,7 +63,11 @@ const PRODUCTS = [
     category: "Travel Gear",
     price: 3000,
     oldPrice: 3500,
-    image: "images/products/fb-001.jpg",
+     images: [
+      "images/products/fb-001-1.jpg",
+      "images/products/fb-001-2.jpg",
+      "images/products/fb-001-3.jpg"
+    ],
     badge: "Bestseller",
     stock: 5,
     description:
