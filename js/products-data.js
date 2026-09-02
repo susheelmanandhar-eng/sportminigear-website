@@ -13,13 +13,13 @@
 
 const SITE_CONFIG = {
   // Shown in the footer and used to build order links
-  whatsappNumber: "9779861549926",   // <-- REPLACE with your WhatsApp number (country code, no + or spaces)
-  email: "sportminigear@gmail.com",   // <-- REPLACE with your real email
+  whatsappNumber: "9779861549926",
+  email: "sportminigear@gmail.com",
   address: "Kathmandu, Nepal",
   pan: "118788144",
 
   // Payment QR — put your bank/eSewa/Fonepay QR image at this path
-  bankQrImage: "images/payment-qr.png",   // <-- REPLACE this file with your real QR image
+  bankQrImage: "images/payment-qr.png",
   bankDetails:
     "Bank: [NIMB Bank]\nAccount Name: Sport Mini Gear\nAccount No: [13201040252317]\nBranch: [Thamel]",
 
@@ -31,6 +31,7 @@ const SITE_CONFIG = {
 
 // Category list used for filters/nav. Keep names consistent with product "category" fields below.
 const CATEGORIES = [
+  "Football",
   "Travel Gear",
   "Cricket",
   "Running",
@@ -50,8 +51,10 @@ const CATEGORIES = [
      oldPrice    optional — set to a number to show a strikethrough price
      image       path under images/products/ (fine to leave as-is for now)
      badge       optional small tag e.g. "New", "Bestseller" (or "" for none)
-     inStock     true / false
-     description short paragraph shown on the product detail page
+     stock       NUMBER of units available (e.g. 12). Set to 0 for out of stock.
+                 The site automatically shows "In stock", "Only X left"
+                 (when 5 or fewer remain), or "Out of stock" based on this number.
+     description short paragraph shown on the product detail page.
    ------------------------------------------------------------------------- */
 const PRODUCTS = [
   {
@@ -62,7 +65,7 @@ const PRODUCTS = [
     oldPrice: 3500,
     image: "images/products/fb-001.jpg",
     badge: "Bestseller",
-    inStock: true,
+    stock: 25,
     description:
       "Accessory Part - Butterfly handle large flint Multifunctional Scraper - Including Scraper, Bottle Opener, Hexagon Wrench, Scale High Frequency Double Hole Whistle Strong Flashlight Multifunctional Knife Multifunctional Saber Card - Including Bottle Opener, Can Opener, Box Opener, Box Opener, Flat Screwdriver, Adjustable Wrench, Positioning Wrench, Scale, Protractor, Sawtooth Keyhole Compass Portable Key Lamp Tungsten Steel Broken Window Defense Pen Waterproof and Shockproof Storage Box Kettle Buckle Survival Bracelet Screwdriver (one type) Screwdrive (other type) Wire Saw Emergency Blanket Kettle Buckle Absorbent, Alcohol Pad, Styptic Bandage",
   },
@@ -73,7 +76,7 @@ const PRODUCTS = [
     price: 900,
     image: "images/products/fb-002.jpg",
     badge: "",
-    inStock: true,
+    stock: 25,
     description:
       "Set of 10 lightweight training cones, ideal for drills, agility practice, and marking out a pitch.",
   },
@@ -84,7 +87,7 @@ const PRODUCTS = [
     price: 1450,
     image: "images/products/fb-003.jpg",
     badge: "New",
-    inStock: true,
+    stock: 25,
     description:
       "Padded palm goalkeeper gloves with adjustable wrist strap for a secure, confident grip.",
   },
@@ -95,7 +98,7 @@ const PRODUCTS = [
     price: 3500,
     image: "images/products/ck-001.jpg",
     badge: "",
-    inStock: true,
+    stock: 25,
     description:
       "Full-size Kashmir willow bat with a balanced pick-up, suited for club and street cricket.",
   },
@@ -106,7 +109,7 @@ const PRODUCTS = [
     price: 650,
     image: "images/products/ck-002.jpg",
     badge: "",
-    inStock: true,
+    stock: 25,
     description: "Traditional leather cricket ball, hand-stitched seam for consistent swing and bounce.",
   },
   {
@@ -116,7 +119,7 @@ const PRODUCTS = [
     price: 1200,
     image: "images/products/ck-003.jpg",
     badge: "",
-    inStock: false,
+    stock: 0,
     description: "Protective batting gloves with foam padding across the fingers and thumb.",
   },
   {
@@ -127,7 +130,7 @@ const PRODUCTS = [
     oldPrice: 4900,
     image: "images/products/rn-001.jpg",
     badge: "Bestseller",
-    inStock: true,
+    stock: 25,
     description:
       "Lightweight running shoes with breathable mesh upper and cushioned sole for daily training runs.",
   },
@@ -138,7 +141,7 @@ const PRODUCTS = [
     price: 850,
     image: "images/products/rn-002.jpg",
     badge: "",
-    inStock: true,
+    stock: 25,
     description: "High-visibility vest with reflective strips, built for early morning or evening runs.",
   },
   {
@@ -148,7 +151,7 @@ const PRODUCTS = [
     price: 5200,
     image: "images/products/gy-001.jpg",
     badge: "",
-    inStock: true,
+    stock: 25,
     description: "Pair of adjustable dumbbells, 2–10kg per hand, for home strength training.",
   },
   {
@@ -158,7 +161,7 @@ const PRODUCTS = [
     price: 1100,
     image: "images/products/gy-002.jpg",
     badge: "New",
-    inStock: true,
+    stock: 25,
     description: "Non-slip 6mm yoga mat with carry strap, suitable for yoga, stretching, and floor workouts.",
   },
   {
@@ -168,7 +171,7 @@ const PRODUCTS = [
     price: 750,
     image: "images/products/gy-003.jpg",
     badge: "",
-    inStock: true,
+    stock: 25,
     description: "Five resistance levels for mobility work, warm-ups, and strength training on the go.",
   },
   {
@@ -178,7 +181,7 @@ const PRODUCTS = [
     price: 1800,
     image: "images/products/cy-001.jpg",
     badge: "",
-    inStock: true,
+    stock: 25,
     description: "Ventilated cycling helmet with adjustable fit dial and rear safety light mount.",
   },
   {
@@ -188,7 +191,7 @@ const PRODUCTS = [
     price: 650,
     image: "images/products/cy-002.jpg",
     badge: "",
-    inStock: true,
+    stock: 25,
     description: "Padded half-finger cycling gloves for grip and comfort on longer rides.",
   },
   {
@@ -198,7 +201,7 @@ const PRODUCTS = [
     price: 1650,
     image: "images/products/ac-001.jpg",
     badge: "",
-    inStock: true,
+    stock: 25,
     description: "Spacious duffel bag with separate shoe compartment, built for daily training kit.",
   },
   {
@@ -208,7 +211,7 @@ const PRODUCTS = [
     price: 550,
     image: "images/products/ac-002.jpg",
     badge: "",
-    inStock: true,
+    stock: 25,
     description: "Double-wall insulated bottle that keeps drinks cold through a full training session.",
   },
   {
@@ -218,7 +221,7 @@ const PRODUCTS = [
     price: 450,
     image: "images/products/ac-003.jpg",
     badge: "",
-    inStock: true,
+    stock: 25,
     description: "Cushioned, breathable sports socks — pack of 3 pairs.",
   },
 ];
