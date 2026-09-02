@@ -108,18 +108,7 @@ const PRODUCTS = [
       "It is a new outdoor portable water filter for travel, hiking, and camping.Product Name - Camping Water Purifier Compatibility - Easy to carry Type - Survival Multifunctional Tool Style - Modern Capacity - 1500 L Purpose - Outdoor Emergency Use Feature - Light Weight Function - Portable Survival ToolUsage - Outdoor Camping Hiking Travelling Beach",
   },
 
-  {
-    id: "fb-003",
-    name: "Goalkeeper Gloves",
-    category: "Football",
-    price: 1450,
-    image: "images/products/fb-003.jpg",
-    badge: "New",
-    stock: 25,
-    description:
-      "Padded palm goalkeeper gloves with adjustable wrist strap for a secure, confident grip.",
-  },
-  {
+    {
     id: "ck-001",
     name: "Cricket Bat (Kashmir Willow)",
     category: "Cricket",
