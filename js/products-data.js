@@ -73,6 +73,25 @@ const PRODUCTS = [
     description:
       "Accessory Part - Butterfly handle large flint Multifunctional Scraper - Including Scraper, Bottle Opener, Hexagon Wrench, Scale High Frequency Double Hole Whistle Strong Flashlight Multifunctional Knife Multifunctional Saber Card - Including Bottle Opener, Can Opener, Box Opener, Box Opener, Flat Screwdriver, Adjustable Wrench, Positioning Wrench, Scale, Protractor, Sawtooth Keyhole Compass Portable Key Lamp Tungsten Steel Broken Window Defense Pen Waterproof and Shockproof Storage Box Kettle Buckle Survival Bracelet Screwdriver (one type) Screwdrive (other type) Wire Saw Emergency Blanket Kettle Buckle Absorbent, Alcohol Pad, Styptic Bandage",
   },
+
+ {
+    id: "fb-002-new",
+    name: "Travel Camping Accessories Multifunctional Hiking Emergency Survival Kit SOS Outdoor Survival Kit Set ",
+    category: "Travel Gear",
+    price: 1500,
+    oldPrice: 1850,
+     images: [
+      "images/products/fb-002-new-1.jpg",
+      "images/products/fb-002-new-2.jpg",
+      "images/products/fb-002-new-3.jpg"
+    ],
+    badge: "Bestseller",
+    stock: 5,
+    description:
+      "Accessory Parts - Butterfly handle large flint; Multifunctional Scraper - Including Scraper, Bottle Opener, Hexagon Wrench, Scale; High-Frequency Double Hole Whistle; Strong Flashlight; Multifunctional Knife; Multifunctional Saber Card - Including Bottle Opener, Can Opener, Box Opener, Box Opener, Flat Screwdriver, Adjustable Wrench, Positioning Wrench, Scale, Protractor, Sawtooth, Keyhole; Compass; Portable Key Lamp; Tungsten Steel Broken Window Defense Pen; Waterproof and Shockproof Storage Box",
+  },
+
+
   {
     id: "fb-002",
     name: "Training Cone Set (10 pcs)",
