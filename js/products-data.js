@@ -123,7 +123,7 @@ const PRODUCTS = [
     badge: "",
     stock: 10,
     description:
-      "Usage - Outdoor Camping Hiking Travelling Color - Red Material - Stainless steel Packing - Opp Bag Single Gross Weight - 0.300 Kg. This compact and portable survival kit is made of durable stainless steel, designed for outdoor camping, hiking, and traveling. This is easy to carry and highly functional for outdoor activities like climbing and water sports.",
+      "Usage - Outdoor Camping Hiking Travelling Color - Red Material - Stainless steel Packing - Opp Bag Single Gross Weight - 0.300 Kg. This compact and portable survival kit is made of durable stainless steel, designed for outdoor camping, hiking, and traveling. This is easy to carry and highly functional for outdoor activities like climbing and water sports",
   },
 
     {
