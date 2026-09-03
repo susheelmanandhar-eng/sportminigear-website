@@ -133,8 +133,8 @@ const PRODUCTS = [
     oldPrice: 3500,
     images: [
       "images/products/co-001-1.jpg",
-      "images/products/co-002-2.jpg",
-      "images/products/co-003-3.jpg"
+      "images/products/co-001-2.jpg",
+      "images/products/co-001-3.jpg"
     ],
 
     badge: "",
