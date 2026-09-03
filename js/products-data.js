@@ -97,7 +97,7 @@ const PRODUCTS = [
     name: "New Style Water Purifier Hiking Camping Survival Water Filter Straw Popular Camping Water purifier",
     category: "Travel Gear",
     price: 1500,
-    oldPrice: 1750
+    oldPrice: 1750,
     images: [
       "images/products/fb-003-1.jpg",
       "images/products/fb-003-2.jpg",
@@ -106,7 +106,7 @@ const PRODUCTS = [
     badge: "",
     stock: 3,
     description:
-      "It is a new outdoor portable water filter for travel, hiking, and camping.Product Name - Camping Water Purifier Compatibility - Easy to carry Type - Survival Multifunctional Tool Style - Modern Capacity - 1500 L Purpose - Outdoor Emergency Use Feature - Light Weight Function - Portable Survival ToolUsage - Outdoor Camping Hiking Travelling Beach",
+      "It is a new outdoor portable water filter for travel, hiking, and camping. Product Name - Camping Water Purifier Compatibility - Easy to carry Type - Survival Multifunctional Tool Style - Modern Capacity - 1500 L Purpose - Outdoor Emergency Use Feature - Light Weight Function - Portable Survival Tool Usage - Outdoor Camping Hiking Travelling Beach",
   },
 
     {
