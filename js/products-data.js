@@ -140,21 +140,7 @@ const PRODUCTS = [
     badge: "",
     stock: 2,
     description:
-      "Product Name: Camping cookware set with kettle, Material: Aluminum alloy, Hard anodized Using: 2~3person outdoor camping and picnic
-Inner:
-1. Cauldron: 170 * 95MM
-2. Tea pot: 1.1L 150 * 80MM
-3. frying pan: 180 * 44MM
-4. bowl: 3pcs
-5. bamboo spoon: 1pc
-6. rice shovel: 1 pc
-7. Round Sponge: 1 pc
-8. Lid:1PC
-9. Carry bag:1pc
-10. Capacity - 3-4 L
-Package:
-1.1 Set in a Carry bag, then in a color box.
-2. Color Box: 18.5x13x18.5CM",
+      "Product Name: Camping cookware set with kettle, Material: Aluminum alloy, Hard anodized Using: 2~3person outdoor camping and picnic Inner: 1. Cauldron: 170 * 95MM 2. Tea pot: 1.1L 150 * 80MM 3. frying pan: 180 * 44MM 4. bowl: 3pcs 5. bamboo spoon: 1pc 6. rice shovel: 1 pc 7. Round Sponge: 1 pc 8. Lid:1PC 9. Carry bag:1pc 10. Capacity - 3-4 L Package: 1.1 Set in a Carry bag, then in a color box. 2. Color Box: 18.5x13x18.5CM",
   },
   {
     id: "ck-002",
