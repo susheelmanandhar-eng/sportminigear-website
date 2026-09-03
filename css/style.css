@@ -236,20 +236,12 @@ label {
   position: relative;
   overflow: hidden;
 }
-.hero-visual::before {
-  content: "";
-  position: absolute;
-  width: 220%;
-  height: 220%;
-  background: repeating-linear-gradient(45deg, rgba(244,201,93,0.05) 0 2px, transparent 2px 26px);
-}
-.hero-visual .hero-mark {
-  font-family: var(--font-display);
-  font-size: 5rem;
-  color: var(--accent);
-  opacity: 0.85;
-  z-index: 1;
-  letter-spacing: 0.05em;
+
+.hero-visual {
+  aspect-ratio: 4/3;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  overflow: hidden;
 }
 
 @media (max-width: 860px) {
