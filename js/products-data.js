@@ -109,6 +109,23 @@ const PRODUCTS = [
       "It is a new outdoor portable water filter for travel, hiking, and camping. Product Name - Camping Water Purifier Compatibility - Easy to carry Type - Survival Multifunctional Tool Style - Modern Capacity - 1500 L Purpose - Outdoor Emergency Use Feature - Light Weight Function - Portable Survival Tool Usage - Outdoor Camping Hiking Travelling Beach",
   },
 
+ {
+    id: "fb-004",
+    name: "New Product Emergency Camping Tools Camping Kits Survival Kits",
+    category: "Travel Gear",
+    price: 1350,
+    oldPrice: 2000,
+    images: [
+      "images/products/fb-004-1.jpg",
+      "images/products/fb-004-2.jpg",
+      "images/products/fb-004-3.jpg"
+    ],
+    badge: "",
+    stock: 10,
+    description:
+      "Usage - Outdoor Camping Hiking Travelling Color - Red Material - Stainless steel Packing - Opp Bag Single Gross Weight - 0.300 Kg. This compact and portable survival kit is made of durable stainless steel, designed for outdoor camping, hiking, and traveling. This is easy to carry and highly functional for outdoor activities like climbing and water sports.",
+  },
+
     {
     id: "ck-001",
     name: "Cricket Bat (Kashmir Willow)",
