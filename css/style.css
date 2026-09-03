@@ -225,17 +225,6 @@ label {
 .hero p { font-size: 1.05rem; margin-bottom: 30px; }
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
 
-.hero-visual {
-  aspect-ratio: 4/3;
-  border-radius: 10px;
-  background: linear-gradient(155deg, var(--bg-elevated-2), var(--bg-elevated) 60%, #0A0E18);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
 
 .hero-visual {
   aspect-ratio: 4/3;
