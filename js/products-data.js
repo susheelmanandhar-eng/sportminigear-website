@@ -126,15 +126,15 @@ const PRODUCTS = [
   },
 
     {
-    id: "ck-001",
+    id: "co-001",
     name: "Lightweight Camping Accessories Equipment Backpacking Supplies Survival Gear Cooking Set Outdoor Cook Gear for Family Hiking",
     category: "Camping Cookware",
     price: 3250,
     oldPrice: 3500,
     images: [
-      "images/products/ck-001-1.jpg",
-      "images/products/ck-002-2.jpg",
-      "images/products/ck-003-3.jpg"
+      "images/products/co-001-1.jpg",
+      "images/products/co-002-2.jpg",
+      "images/products/co-003-3.jpg"
     ],
 
     badge: "",
