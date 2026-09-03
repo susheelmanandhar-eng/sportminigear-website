@@ -97,11 +97,12 @@ const PRODUCTS = [
     name: "New Style Water Purifier Hiking Camping Survival Water Filter Straw Popular Camping Water purifier",
     category: "Travel Gear",
     price: 1500,
-    oldprice: 1750
+    oldPrice: 1750
     images: [
       "images/products/fb-003-1.jpg",
       "images/products/fb-003-2.jpg",
       "images/products/fb-003-3.jpg"
+    ],
     badge: "",
     stock: 3,
     description:
