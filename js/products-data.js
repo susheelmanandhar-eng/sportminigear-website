@@ -24,8 +24,8 @@ const SITE_CONFIG = {
     "Bank: [NIMB Bank]\nAccount Name: Sport Mini Gear\nAccount No: [13201040252317]\nBranch: [Thamel]",
 
   // Social links (leave blank "" to hide)
-  facebook: "",
-  instagram: "",
+  facebook: "https://www.facebook.com/profile.php?id=61565026031468",
+  instagram: "https://www.instagram.com/sport.minigear/",
   tiktok: "",
 };
 
