@@ -233,4 +233,24 @@ document.addEventListener("DOMContentLoaded", () => {
   if (toggle && nav) {
     toggle.addEventListener("click", () => nav.classList.toggle("open"));
   }
+
+  // Footer social links — show only the ones filled in SITE_CONFIG
+  const socialCol = document.getElementById("footer-social-col");
+  if (socialCol && typeof SITE_CONFIG !== "undefined") {
+    const links = [
+      { key: "facebook", id: "footer-facebook" },
+      { key: "instagram", id: "footer-instagram" },
+      { key: "tiktok", id: "footer-tiktok" },
+    ];
+    let anyVisible = false;
+    links.forEach(({ key, id }) => {
+      const el = document.getElementById(id);
+      if (el && SITE_CONFIG[key]) {
+        el.href = SITE_CONFIG[key];
+        el.style.display = "block";
+        anyVisible = true;
+      }
+    });
+    if (anyVisible) socialCol.style.display = "block";
+  }
 });
