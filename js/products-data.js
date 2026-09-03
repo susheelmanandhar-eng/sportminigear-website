@@ -33,6 +33,7 @@ const SITE_CONFIG = {
 const CATEGORIES = [
   "Travel Gear",
   "Camping Cookware",
+  "Utility Tools",
   "Running and Hike",
   "Cycling",
   "Accessories",
