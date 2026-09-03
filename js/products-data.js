@@ -127,14 +127,34 @@ const PRODUCTS = [
 
     {
     id: "ck-001",
-    name: "Cricket Bat (Kashmir Willow)",
-    category: "Cricket",
-    price: 3500,
-    image: "images/products/ck-001.jpg",
+    name: "Lightweight Camping Accessories Equipment Backpacking Supplies Survival Gear Cooking Set Outdoor Cook Gear for Family Hiking",
+    category: "Camping Cookware",
+    price: 3250,
+    oldPrice: 3500,
+    images: [
+      "images/products/ck-001-1.jpg",
+      "images/products/ck-002-2.jpg",
+      "images/products/ck-003-3.jpg"
+    ],
+
     badge: "",
-    stock: 25,
+    stock: 2,
     description:
-      "Full-size Kashmir willow bat with a balanced pick-up, suited for club and street cricket.",
+      "Product Name: Camping cookware set with kettle, Material: Aluminum alloy, Hard anodized Using: 2~3person outdoor camping and picnic
+Inner:
+1. Cauldron: 170 * 95MM
+2. Tea pot: 1.1L 150 * 80MM
+3. frying pan: 180 * 44MM
+4. bowl: 3pcs
+5. bamboo spoon: 1pc
+6. rice shovel: 1 pc
+7. Round Sponge: 1 pc
+8. Lid:1PC
+9. Carry bag:1pc
+10. Capacity - 3-4 L
+Package:
+1.1 Set in a Carry bag, then in a color box.
+2. Color Box: 18.5x13x18.5CM",
   },
   {
     id: "ck-002",
