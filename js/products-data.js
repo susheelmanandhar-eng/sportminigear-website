@@ -75,15 +75,15 @@ const PRODUCTS = [
   },
 
  {
-    id: "fb-002-new",
+    id: "fb-002",
     name: "Travel Camping Accessories Multifunctional Hiking Emergency Survival Kit SOS Outdoor Survival Kit Set ",
     category: "Travel Gear",
     price: 1500,
     oldPrice: 1850,
      images: [
-      "images/products/fb-002-new-1.jpg",
-      "images/products/fb-002-new-2.jpg",
-      "images/products/fb-002-new-3.jpg"
+      "images/products/fb-002-1.jpg",
+      "images/products/fb-002-2.jpg",
+      "images/products/fb-002-3.jpg"
     ],
     badge: "Bestseller",
     stock: 5,
@@ -93,15 +93,15 @@ const PRODUCTS = [
 
 
   {
-    id: "fb-003-new",
+    id: "fb-003",
     name: "New Style Water Purifier Hiking Camping Survival Water Filter Straw Popular Camping Water purifier",
     category: "Travel Gear",
     price: 1500,
-    old price: 1750
+    oldprice: 1750
     images: [
-      "images/products/fb-003-new-1.jpg",
-      "images/products/fb-003-new-2.jpg",
-      "images/products/fb-003-new-3.jpg"
+      "images/products/fb-003-1.jpg",
+      "images/products/fb-003-2.jpg",
+      "images/products/fb-003-3.jpg"
     badge: "",
     stock: 3,
     description:
