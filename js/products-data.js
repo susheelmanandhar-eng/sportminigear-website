@@ -143,14 +143,21 @@ const PRODUCTS = [
       "Product Name: Camping cookware set with kettle, Material: Aluminum alloy, Hard anodized Using: 2~3person outdoor camping and picnic Inner: 1. Cauldron: 170 * 95MM 2. Tea pot: 1.1L 150 * 80MM 3. frying pan: 180 * 44MM 4. bowl: 3pcs 5. bamboo spoon: 1pc 6. rice shovel: 1 pc 7. Round Sponge: 1 pc 8. Lid:1PC 9. Carry bag:1pc 10. Capacity - 3-4 L Package: 1.1 Set in a Carry bag, then in a color box. 2. Color Box: 18.5x13x18.5CM",
   },
   {
-    id: "ck-002",
-    name: "Cricket Ball (Leather, Red)",
-    category: "Cricket",
-    price: 650,
-    image: "images/products/ck-002.jpg",
-    badge: "",
-    stock: 25,
-    description: "Traditional leather cricket ball, hand-stitched seam for consistent swing and bounce.",
+    id: "co-002",
+    name: "Ultralight Camping Cookware Set Pots and Pans Set with Mini Stove Non-Stick Cooking Backpacking with Folding Knife and Fork Set",
+    category: "Camping Cookware",
+    price: 3450,
+    oldPrice: 3700,
+    images: [
+      "images/products/co-002-1.jpg",
+      "images/products/co-002-2.jpg",
+      "images/products/co-002-3.jpg"
+
+    badge: "Bestseller",
+    stock: 5,
+    description: "Pans Type - Frying Pans & Skillets Material - Aluminium Alloy, Hard Anodized Size - 1. big pot:12*10.50(h)cm 2. small pot:11*6.0(h)cm Usage - 1~2person Outdoor Camping Function - Portable Survival Tool Single Gross Weight - 1kg Applicable Stove - General Use for Gas and Induction Cooker Capacity - 1-2L
+Parts 1. Big pot:12*10.50(h)cm 2. Small pot:11*6.0(h)cm 3. Climbing hook:1PC 4. Folding Stove:1PC 5. Bowl: 3pcs 6. Bamboo spoon: 1pc 7. Folk spoon knife: 1 set 8. Wool ball:1 pc 9. Spoon:1pc 10. Carry bag:1PC Package - 1 set in a mesh bag and in a color box
+",
   },
   {
     id: "ck-003",
