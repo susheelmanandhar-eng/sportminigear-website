@@ -152,11 +152,12 @@ const PRODUCTS = [
       "images/products/co-002-1.jpg",
       "images/products/co-002-2.jpg",
       "images/products/co-002-3.jpg"
- ],
+    ],
+
     badge: "Bestseller",
     stock: 5,
     description: 
-"Pans Type - Frying Pans & Skillets Material - Aluminium Alloy, Hard Anodized Size - 1. big pot:12*10.50(h)cm 2. small pot:11*6.0(h)cm Usage - 1~2person Outdoor Camping Function - Portable Survival Tool Single Gross Weight - 1kg Applicable Stove - General Use for Gas and Induction Cooker Capacity - 1-2L Parts 1. Big pot:12*10.50(h)cm 2. Small pot:11*6.0(h)cm 3. Climbing hook:1PC 4. Folding Stove:1PC 5. Bowl: 3pcs 6. Bamboo spoon: 1pc 7. Folk spoon knife: 1 set 8. Wool ball:1 pc 9. Spoon:1pc 10. Carry bag:1PC Package - 1 set in a mesh bag and in a color box",
+      "Pans Type - Frying Pans & Skillets Material - Aluminium Alloy, Hard Anodized Size - 1. big pot:12*10.50(h)cm 2. small pot:11*6.0(h)cm Usage - 1~2person Outdoor Camping Function - Portable Survival Tool Single Gross Weight - 1kg Applicable Stove - General Use for Gas and Induction Cooker Capacity - 1-2L Parts 1. Big pot:12*10.50(h)cm 2. Small pot:11*6.0(h)cm 3. Climbing hook:1PC 4. Folding Stove:1PC 5. Bowl: 3pcs 6. Bamboo spoon: 1pc 7. Folk spoon knife: 1 set 8. Wool ball:1 pc 9. Spoon:1pc 10. Carry bag:1PC Package - 1 set in a mesh bag and in a color box",
   },
   {
     id: "ck-003",
