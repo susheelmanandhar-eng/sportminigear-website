@@ -49,8 +49,14 @@
               <input type="text" id="cust-name" required />
             </div>
             <div>
-              <label for="cust-phone">Phone number</label>
-              <input type="tel" id="cust-phone" required />
+             <label for="cust-phone">Phone number</label>
+<input type="tel" id="cust-phone" required
+       pattern="[9][0-9]{9}" maxlength="10" inputmode="numeric"
+       placeholder="98XXXXXXXX"
+       title="Enter a valid 10-digit Nepali mobile number starting with 9" />
+<p id="phone-error" style="color:var(--danger); font-size:0.8rem; margin-top:4px; display:none;">
+  Please enter a valid 10-digit number starting with 9 (e.g. 98XXXXXXXX).
+</p>
             </div>
             <div>
               <label for="cust-email">Email (optional)</label>
@@ -165,23 +171,36 @@
   }
 
   document.getElementById("bank-details").textContent = SITE_CONFIG.bankDetails;
-
+// Phone number: digits only, max 10 characters, live validation feedback
+const phoneInput = document.getElementById("cust-phone");
+const phoneError = document.getElementById("phone-error");
+phoneInput.addEventListener("input", () => {
+  phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 10);
+  phoneError.style.display = "none";
+});
   const paidCheckbox = document.getElementById("paid-confirm");
 const paymentRefRow = document.getElementById("payment-ref-row");
 const paymentRefInput = document.getElementById("payment-ref");
-const paidConfirmError = document.getElementById("paid-confirm-error");
-
 paidCheckbox.addEventListener("change", () => {
   paymentRefRow.style.display = paidCheckbox.checked ? "block" : "none";
   paidConfirmError.style.display = "none";
+
+const paidConfirmError = document.getElementById("paid-confirm-error");
+
 });
 
 const form = document.getElementById("checkout-form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  if (!paidCheckbox.checked || !paymentRefInput.value.trim()) {
-    paidConfirmError.style.display = "block";
+  if (!/^9[0-9]{9}$/.test(phoneInput.value.trim())) {
+    phoneError.style.display = "block";
+    phoneInput.scrollIntoView({ behavior: "smooth", block: "center" });
+    phoneInput.focus();
+    return;
+  }
+
+  if (!paidCheckbox.checked || !paymentRefInput.value.trim()) {    paidConfirmError.style.display = "block";
     paidConfirmError.scrollIntoView({ behavior: "smooth", block: "center" });
     return;
   }
