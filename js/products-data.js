@@ -152,7 +152,7 @@ const PRODUCTS = [
       "images/products/co-002-1.jpg",
       "images/products/co-002-2.jpg",
       "images/products/co-002-3.jpg"
-
+ ],
     badge: "Bestseller",
     stock: 5,
     description: 
