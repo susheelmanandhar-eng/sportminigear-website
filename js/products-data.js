@@ -177,16 +177,24 @@ const PRODUCTS = [
       "Product Name - Camping Picnic Cookware Set Material - Metal Metal Type - Aluminum Applicable Stove - General Use for Gas and Induction Cooker Pot Cover Type -Stainless Steel Cover Pot Cover - With Pot Cover Capacity - 1-2L Size - 1. big pot:12*10.50(h)cm 2. small pot:11*6.0(h)cm Use - 1~2person Outdoor Camping Function - Portable Survival Tools",
   },
   
-  {
-    id: "ck-003",
-    name: "Batting Gloves",
-    category: "Cricket",
-    price: 1200,
-    image: "images/products/ck-003.jpg",
-    badge: "",
-    stock: 0,
-    description: "Protective batting gloves with foam padding across the fingers and thumb.",
+ {
+    id: "co-004",
+    name: "Portable 5800W Camping Stove Windproof Backpacking Stove with Piezo Ignition Folding Lightweight Stove for Outdoor",
+    category: "Camping Cookware",
+    price: 3200,
+    oldPrice: 4200,
+    images: [
+      "images/products/co-004-1.jpg",
+      "images/products/co-004-2.jpg",
+      "images/products/co-004-3.jpg"
+    ],
+
+    badge: "Free Delivery",
+    stock: 3,
+    description: 
+      "Product - Camping Gas Stove Material - Stainless Steel Type - Stove Burner Structure - Foldable With Ignition Device - Yes Feature - Lightweight Stove Fuel - Butane, Propane, Isobutane Gas Mixture, Gas Net Weight - 380 g Feature - Portable, Foldable, Lightweight Unfold Size - 9.5*16CM Package Size - 9*9*10CM Packing - 1PC/Plastic Box Application - Outdoor Equipment Hiking Camping",
   },
+
   {
     id: "rn-001",
     name: "Runner Pro Shoes",
