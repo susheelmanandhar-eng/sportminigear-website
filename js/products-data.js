@@ -195,6 +195,24 @@ const PRODUCTS = [
       "Product - Camping Gas Stove Material - Stainless Steel Type - Stove Burner Structure - Foldable With Ignition Device - Yes Feature - Lightweight Stove Fuel - Butane, Propane, Isobutane Gas Mixture, Gas Net Weight - 380 g Feature - Portable, Foldable, Lightweight Unfold Size - 9.5*16CM Package Size - 9*9*10CM Packing - 1PC/Plastic Box Application - Outdoor Equipment Hiking Camping",
   },
 
+ {
+    id: "co-005",
+    name: "Portable Camping Stoves Ultralight Backpacking Stove Fuel Burner with Piezo Ignition Stable Support Wind-Resistance for Outdoor",
+    category: "Camping Cookware",
+    price: 1000,
+    oldPrice: 1250,
+    images: [
+      "images/products/co-005-1.jpg",
+      "images/products/co-005-2.jpg",
+      "images/products/co-005-3.jpg"
+    ],
+
+    badge: "Bestseller",
+    stock: 7,
+    description: 
+      "Product - Camping Gas Stove Material - Stainless Steel Type - Stove Burner Structure - Foldable With Ignition Device - Yes Feature - Lightweight Stove Fuel - Butane, Propane, Isobutane Gas Mixture, Gas Net Weight - 380 g Feature - Portable, Foldable, Lightweight Unfold Size - 9.5*16CM Package Size - 9*9*10CM Packing - 1PC/Plastic Box Application - Outdoor Equipment Hiking Camping",
+  },
+
   {
     id: "rn-001",
     name: "Runner Pro Shoes",
