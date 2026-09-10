@@ -49,7 +49,7 @@ const CATEGORIES = [
      price       number, in Rs. (no commas)
      oldPrice    optional — set to a number to show a strikethrough price
      image       path under images/products/ (fine to leave as-is for now)
-     badge       optional small tag e.g. "New", "Bestseller" (or "" for none)
+     badge       optional small tag e.g. "New", "Bestseller", "Free Delivery" (or "" for none)
      stock       NUMBER of units available (e.g. 12). Set to 0 for out of stock.
                  The site automatically shows "In stock", "Only X left"
                  (when 5 or fewer remain), or "Out of stock" based on this number.
@@ -159,6 +159,24 @@ const PRODUCTS = [
     description: 
       "Pans Type - Frying Pans & Skillets Material - Aluminium Alloy, Hard Anodized Size - 1. big pot:12*10.50(h)cm 2. small pot:11*6.0(h)cm Usage - 1~2person Outdoor Camping Function - Portable Survival Tool Single Gross Weight - 1kg Applicable Stove - General Use for Gas and Induction Cooker Capacity - 1-2L Parts 1. Big pot:12*10.50(h)cm 2. Small pot:11*6.0(h)cm 3. Climbing hook:1PC 4. Folding Stove:1PC 5. Bowl: 3pcs 6. Bamboo spoon: 1pc 7. Folk spoon knife: 1 set 8. Wool ball:1 pc 9. Spoon:1pc 10. Carry bag:1PC Package - 1 set in a mesh bag and in a color box",
   },
+ {
+   id: "co-003",
+    name: "Outdoor hiking Camping Cookware Set 1-2 Person Outdoor Lightweight Cooking Pots",
+    category: "Camping Cookware",
+    price: 1950,
+    oldPrice: 2450,
+    images: [
+      "images/products/co-003-1.jpg",
+      "images/products/co-003-2.jpg",
+      "images/products/co-003-3.jpg"
+    ],
+
+    badge: "Free Delivery",
+    stock: 5,
+    description: 
+      "Product Name - Camping Picnic Cookware Set Material - Metal Metal Type - Aluminum Applicable Stove - General Use for Gas and Induction Cooker Pot Cover Type -Stainless Steel Cover Pot Cover - With Pot Cover Capacity - 1-2L Size - 1. big pot:12*10.50(h)cm 2. small pot:11*6.0(h)cm Use - 1~2person Outdoor Camping Function - Portable Survival Tools",
+  },
+  
   {
     id: "ck-003",
     name: "Batting Gloves",
