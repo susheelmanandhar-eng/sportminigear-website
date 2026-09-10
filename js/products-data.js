@@ -293,14 +293,23 @@ const PRODUCTS = [
   },
   {
     id: "ac-001",
-    name: "Sports Duffel Bag",
+    name: "Silicone Reusable Collapsible Foldable 1 liter Travel Sports Water Bottle",
     category: "Accessories",
-    price: 1650,
-    image: "images/products/ac-001.jpg",
-    badge: "",
-    stock: 25,
-    description: "Spacious duffel bag with separate shoe compartment, built for daily training kit.",
+    price: 850,
+    oldPrice: 975,
+    images: [
+      "images/products/ac-001-1.jpg",
+      "images/products/ac-001-2.jpg",
+      "images/products/ac-001-3.jpg"
+  ],
+
+    badge: "New",
+    stock: 5,
+    description: 
+"Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 1000 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Available colors - Football",
   },
+
+
   {
     id: "ac-002",
     name: "Insulated Water Bottle (750ml)",
