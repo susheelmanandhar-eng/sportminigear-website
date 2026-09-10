@@ -224,7 +224,7 @@ const PRODUCTS = [
       "images/products/ut-001-2.jpg",
       "images/products/ut-001-3.jpg"
   ],
-    badge: "Bestseller",
+    badge: "New",
     stock: 5,
     description:
       "Product Name - 20 in 1 Multifunction Hammer Pliers Multi Tool Material - Stainless Steel Color - Black/Blue Advantage - Quality + Competitive Type - Survival Multifunctional Tool Material -Stainless Steel + ABS Application -- Travel and Trek Feature 1. Premium steel 2. long lifetime Size 17.5*8CM Weight 425g Packing Color box",
@@ -248,26 +248,22 @@ const PRODUCTS = [
   },
 
   {
-    id: "gy-001",
-    name: "Adjustable Dumbbell Set",
-    category: "Gym & Fitness",
-    price: 5200,
-    image: "images/products/gy-001.jpg",
-    badge: "",
-    stock: 25,
-    description: "Pair of adjustable dumbbells, 2–10kg per hand, for home strength training.",
+    id: "ut-003",
+    name: "13-in-1 Portable Stainless Steel Hammer Multi-Function Survival Gear Pliers Multi-Tool Hammer",
+    category: "Utility Tools",
+    price: 1450,
+    oldPrice: 1600,
+   images: [
+      "images/products/ut-003-1.jpg",
+      "images/products/ut-003-2.jpg",
+      "images/products/ut-003-3.jpg"
+  ],
+    badge: "Free Delivery",
+    stock: 5,
+    description:
+      "Handle Material - Aluminum Bronze Application - Claw Hammer Size - 14*75*2.5cm Packing - Pouch and Box Application - Claw Hammer Color - Black Weight - 260 grams Usage - Promotion/Business gift, daily usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench.",
   },
-  {
-    id: "gy-002",
-    name: "Yoga Mat (6mm)",
-    category: "Gym & Fitness",
-    price: 1100,
-    image: "images/products/gy-002.jpg",
-    badge: "New",
-    stock: 25,
-    description: "Non-slip 6mm yoga mat with carry strap, suitable for yoga, stretching, and floor workouts.",
-  },
-  {
+     {
     id: "gy-003",
     name: "Resistance Bands (Set of 5)",
     category: "Gym & Fitness",
