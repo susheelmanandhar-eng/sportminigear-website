@@ -221,25 +221,32 @@ const PRODUCTS = [
     oldPrice: 3200,
    images: [
       "images/products/ut-001-1.jpg",
-      "images/products/ut-002-2.jpg",
-      "images/products/ut-003-3.jpg"
+      "images/products/ut-001-2.jpg",
+      "images/products/ut-001-3.jpg"
   ],
     badge: "Bestseller",
     stock: 5,
     description:
-      "Lightweight running shoes with breathable mesh upper and cushioned sole for daily training runs.",
+      "Product Name - 20 in 1 Multifunction Hammer Pliers Multi Tool Material - Stainless Steel Color - Black/Blue Advantage - Quality + Competitive Type - Survival Multifunctional Tool Material -Stainless Steel + ABS Application -- Travel and Trek Feature 1. Premium steel 2. long lifetime Size 17.5*8CM Weight 425g Packing Color box",
   },
 
   {
-    id: "rn-002",
-    name: "Reflective Running Vest",
-    category: "Running",
-    price: 850,
-    image: "images/products/rn-002.jpg",
-    badge: "",
-    stock: 25,
-    description: "High-visibility vest with reflective strips, built for early morning or evening runs.",
+    id: "ut-002",
+    name: "EDC Stainless Steel Multifunction Hammer Pliers DIY Hand Tools for Camping Pocket Knife for Outdoor Use",
+    category: "Utility Tools",
+    price: 1650,
+    oldPrice: 1850,
+   images: [
+      "images/products/ut-002-1.jpg",
+      "images/products/ut-002-2.jpg",
+      "images/products/ut-002-3.jpg"
+  ],
+    badge: "Bestseller",
+    stock: 5,
+    description:
+      "Product Name - Multifunctional Hammer Color - Blue/Black/Red/Grey Packing - Pouch and Box Material - Stainless Steel Usage - Promotion/Business gift, daily usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench. Handle Material - Aluminum Bronze Application - Claw Hammer",
   },
+
   {
     id: "gy-001",
     name: "Adjustable Dumbbell Set",
