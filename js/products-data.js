@@ -264,26 +264,24 @@ const PRODUCTS = [
       "Handle Material - Aluminum Bronze Application - Claw Hammer Size - 14*75*2.5cm Packing - Pouch and Box Application - Claw Hammer Color - Black Weight - 260 grams Usage - Promotion/Business gift, daily usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench.",
   },
      {
-    id: "gy-003",
-    name: "Resistance Bands (Set of 5)",
-    category: "Gym & Fitness",
-    price: 750,
-    image: "images/products/gy-003.jpg",
-    badge: "",
-    stock: 25,
-    description: "Five resistance levels for mobility work, warm-ups, and strength training on the go.",
-  },
-  {
     id: "cy-001",
-    name: "Cycling Helmet",
+    name: "Ultra Bright 350lm USB Rechargeable Waterproof Motion Sensor Bicycle Lights",
     category: "Cycling",
-    price: 1800,
-    image: "images/products/cy-001.jpg",
-    badge: "",
-    stock: 25,
-    description: "Ventilated cycling helmet with adjustable fit dial and rear safety light mount.",
+    price: 2150,
+    oldPrice: 2450,
+    images: [
+      "images/products/cy-001-1.jpg",
+      "images/products/cy-001-2.jpg",
+      "images/products/cy-001-3.jpg"
+  ],
+
+    badge: "Bestseller",
+    stock: 7,
+    description: 
+"Product Name - Bicycle Front Light Power Supply - Battery Battery - 2000mAh Color - Black Feature - Waterproof Brand Name - Quanxin Type - LEDs Single Gross Weight - 0.150 KG Single Package Size - 15X12X10 cm",
   },
-  {
+
+    {
     id: "cy-002",
     name: "Cycling Gloves",
     category: "Cycling",
