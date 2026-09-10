@@ -214,17 +214,22 @@ const PRODUCTS = [
   },
 
   {
-    id: "rn-001",
-    name: "Runner Pro Shoes",
-    category: "Running",
-    price: 4200,
-    oldPrice: 4900,
-    image: "images/products/rn-001.jpg",
+    id: "ut-001",
+    name: "Emergency Multi Tools 20 in 1 Multifunction Hammer Pliers Multi Tool",
+    category: "Utility Tools",
+    price: 2850,
+    oldPrice: 3200,
+   images: [
+      "images/products/ut-001-1.jpg",
+      "images/products/ut-002-2.jpg",
+      "images/products/ut-003-3.jpg"
+  ],
     badge: "Bestseller",
-    stock: 25,
+    stock: 5,
     description:
       "Lightweight running shoes with breathable mesh upper and cushioned sole for daily training runs.",
   },
+
   {
     id: "rn-002",
     name: "Reflective Running Vest",
