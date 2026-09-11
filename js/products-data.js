@@ -169,10 +169,28 @@ const PRODUCTS = [
       "images/products/fb-007-3.jpg"
     ],
     badge: "New",
-    stock: 10,
+    stock: 5,
     description:
       "This USB rechargeable LED mini COB headlamp features a built-in lithium-ion battery, offering 3W power and up to 4 hours of runtime. It offers three lighting modes—white high, red high, and alternating flash—and is IP65 waterproof, making it ideal for outdoor activities such as camping, hiking, and nighttime running. Compact and portable at 4.5 × 4 × 3 cm and weighing just 47g, it includes a button switch and micro-USB charging for convenience. Feature - Portable, Super Bright ; Battery Type - Lithium-Ion ; Color - Black, Yellow ; 3 Modes - White high/red high/white and red flash alternately ; Battery - Built-in battery ; Light Source - LED ; Battery - 2000mAh ; Size - 4.5*4*3CM ; Charging - micro usb ; charging Material - Aluminum ; Switch Mode - Button switch",
   },
+
+{
+    id: "fb-008",
+    name: "LED Motion Sensor Rechargeable Headlamp Lightweight Waterproof Silicone USB Hands-Free Headband 5 Modes for Camping",
+    category: "Travel Gear",
+    price: 999,
+    oldPrice: 1250,
+    images: [
+      "images/products/fb-008-1.jpg",
+      "images/products/fb-008-2.jpg",
+      "images/products/fb-008-3.jpg"
+    ],
+    badge: "New",
+    stock: 10,
+    description:
+      "Lighting Period (h)-6 ; Color Temperature(CCT) - 4100K (Neutral White) ; IP Rating - IXP45 ; Power Source - Rechargeable Battery ; Color - black ; LED lamp beads - 3W led COB ; Working voltage - 3.0V-4.5V ; Charging time - 4 Hours ; lighting time - 2-3Hour ; Size - 32x3.1x3.1cm ; Battery capacity - 800mAH ; Weight - 120g ; Function - Camping Activity",
+  },
+
 
     {
     id: "co-001",
