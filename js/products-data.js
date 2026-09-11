@@ -320,12 +320,20 @@ const PRODUCTS = [
 
   {
     id: "ac-003",
-    name: "Sports Socks (3 Pairs)",
+    name: "Silicone Reusable Collapsible Foldable 1 liter Travel Sports Water Bottle",
     category: "Accessories",
-    price: 450,
-    image: "images/products/ac-003.jpg",
-    badge: "",
-    stock: 25,
-    description: "Cushioned, breathable sports socks — pack of 3 pairs.",
+    price: 850,
+    oldPrice: 975,
+    images: [
+      "images/products/ac-003-1.jpg",
+      "images/products/ac-003-2.jpg",
+      "images/products/ac-003-3.jpg"
+  ],
+
+    badge: "New",
+    stock: 5,
+    description: 
+"Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 1000 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Available color - Basketball",
   },
+
 ];
