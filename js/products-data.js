@@ -157,6 +157,22 @@ const PRODUCTS = [
     description:
       "Product Name - Outdoor Emergency Sleeping Bag Fabric - Polyethylene Fabric Usage - Camping, Hiking, Travel Feature - Lightweight and Portable Season - All Season Weight - 137 g Feature - Portable/Waterproof/Washable Applicable - Unisex Length - Standard (Suitable for 1.8 m Height and below) Single package size - 12X7X7 cm",
   },
+{
+    id: "fb-007",
+    name: "USB Rechargeable LED Mini COB Headlamp White & Red Outdoor Night Running Light Portable with Built-in Battery",
+    category: "Travel Gear",
+    price: 875,
+    oldPrice: 1050
+    images: [
+      "images/products/fb-007-1.jpg",
+      "images/products/fb-007-2.jpg",
+      "images/products/fb-007-3.jpg"
+    ],
+    badge: "New",
+    stock: 10,
+    description:
+      "This USB rechargeable LED mini COB headlamp features a built-in lithium-ion battery, offering 3W power and up to 4 hours of runtime. It offers three lighting modes—white high, red high, and alternating flash—and is IP65 waterproof, making it ideal for outdoor activities such as camping, hiking, and nighttime running. Compact and portable at 4.5 × 4 × 3 cm and weighing just 47g, it includes a button switch and micro-USB charging for convenience. Feature - Portable, Super Bright ; Battery Type - Lithium-Ion ; Color - Black, Yellow ; 3 Modes - White high/red high/white and red flash alternately ; Battery - Built-in battery ; Light Source - LED ; Battery - 2000mAh ; Size - 4.5*4*3CM ; Charging - micro usb ; charging Material - Aluminum ; Switch Mode - Button switch",
+  },
 
     {
     id: "co-001",
