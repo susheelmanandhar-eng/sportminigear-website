@@ -319,7 +319,6 @@ const PRODUCTS = [
     name: "Durable Metal Outdoor Hiking Bike Tools Mini Pocket Cycling Bike Repair Multi Tool",
     category: "Cycling",
     price: 705,
-    oldPrice: 1250,
     images: [
       "images/products/cy-002-1.jpg",
       "images/products/cy-002-2.jpg",
