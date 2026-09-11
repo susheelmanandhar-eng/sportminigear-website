@@ -379,9 +379,9 @@ const PRODUCTS = [
     price: 650,
     oldPrice: 790,
     images: [
-      "images/products/ac-005-1.jpg",
-      "images/products/ac-005-2.jpg",
-      "images/products/ac-005-3.jpg"
+      "images/products/ac-006-1.jpg",
+      "images/products/ac-006-2.jpg",
+      "images/products/ac-006-3.jpg"
   ],
 
     badge: "New",
