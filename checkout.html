@@ -49,14 +49,14 @@
               <input type="text" id="cust-name" required />
             </div>
             <div>
-             <label for="cust-phone">Phone number</label>
-<input type="tel" id="cust-phone" required
-       pattern="[9][0-9]{9}" maxlength="10" inputmode="numeric"
-       placeholder="98XXXXXXXX"
-       title="Enter a valid 10-digit Nepali mobile number starting with 9" />
-<p id="phone-error" style="color:var(--danger); font-size:0.8rem; margin-top:4px; display:none;">
-  Please enter a valid 10-digit number starting with 9 (e.g. 98XXXXXXXX).
-</p>
+              <label for="cust-phone">Phone number</label>
+              <input type="tel" id="cust-phone" required
+                     pattern="[9][0-9]{9}" maxlength="10" inputmode="numeric"
+                     placeholder="98XXXXXXXX"
+                     title="Enter a valid 10-digit Nepali mobile number starting with 9" />
+              <p id="phone-error" style="color:var(--danger); font-size:0.8rem; margin-top:4px; display:none;">
+                Please enter a valid 10-digit number starting with 9 (e.g. 98XXXXXXXX).
+              </p>
             </div>
             <div>
               <label for="cust-email">Email (optional)</label>
@@ -72,38 +72,45 @@
             </div>
           </div>
 
-         <h3 style="margin-top:32px;">Order items</h3>
-<div id="checkout-items"></div>
+          <h3 style="margin-top:32px;">Order items</h3>
+          <div id="checkout-items"></div>
 
-<div class="summary-card" style="margin-top:20px;">
-  <div class="summary-row total"><span>Total</span><span id="checkout-total"></span></div>
-</div>
+          <div class="summary-card" style="margin-top:20px;">
+            <div class="summary-row total"><span>Total</span><span id="checkout-total"></span></div>
+          </div>
 
-<div style="margin-top:22px; padding:18px; border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-elevated);">
-  <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; margin-bottom:0;">
-    <input type="checkbox" id="paid-confirm" required style="width:18px; height:18px; margin-top:2px; accent-color:var(--accent); flex-shrink:0;" />
-    <span style="color:var(--text); font-size:0.92rem;">I have paid the total amount shown above via the QR code / bank details on the right.</span>
-  </label>
-  <div id="payment-ref-row" style="margin-top:14px; display:none;">
-    <label for="payment-ref">Payment reference / transaction ID (or last 4 digits)</label>
-    <input type="text" id="payment-ref" placeholder="e.g. TXN12345 or last 4 digits" />
-  </div>
-  <p id="paid-confirm-error" style="color:var(--danger); font-size:0.85rem; margin-top:10px; display:none;">
-    Please confirm payment and enter a reference number before sending your order.
-  </p>
-</div>
+          <div style="margin-top:22px; padding:18px; border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-elevated);">
+            <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; margin-bottom:0;">
+              <input type="checkbox" id="paid-confirm" required style="width:18px; height:18px; margin-top:2px; accent-color:var(--accent); flex-shrink:0;" />
+              <span style="color:var(--text); font-size:0.92rem;">I have paid the total amount shown above via the QR code / bank details on the right.</span>
+            </label>
+            <div id="payment-ref-row" style="margin-top:14px; display:none;">
+              <label for="payment-ref">Payment reference / transaction ID (or last 4 digits)</label>
+              <input type="text" id="payment-ref" placeholder="e.g. TXN12345 or last 4 digits" />
+            </div>
+            <p id="paid-confirm-error" style="color:var(--danger); font-size:0.85rem; margin-top:10px; display:none;">
+              Please confirm payment and enter a reference number before sending your order.
+            </p>
+          </div>
 
-<button type="submit" class="btn btn-primary btn-block" style="margin-top:18px;">
-  Send order on WhatsApp
-</button>
-<a href="#" class="btn btn-outline btn-block" id="email-order-link" style="margin-top:12px;">
-  Or send order by email
-</a>
+          <button type="submit" class="btn btn-primary btn-block" style="margin-top:18px;">
+            Send order on WhatsApp
+          </button>
+          <a href="#" class="btn btn-outline btn-block" id="email-order-link" style="margin-top:12px;">
+            Or send order by email
+          </a>
         </form>
       </div>
 
       <div class="payment-card">
-        <h3 class="mt-0">Pay by QR</h3>
+        <h3 class="mt-0">Pay with Khalti</h3>
+        <p>Pay securely online — you'll be sent to Khalti to complete payment, then brought right back here.</p>
+        <button type="button" id="khalti-pay-btn" class="btn btn-primary btn-block" style="background:#5C2D91;color:#fff;margin-bottom:10px;">
+          Pay with Khalti
+        </button>
+        <div id="khalti-status" style="margin-top:10px;font-size:0.85rem;"></div>
+
+        <h3 style="margin-top:26px;">Or pay by QR</h3>
         <p>Scan this code with your banking or mobile wallet app to pay, then send a screenshot of the payment along with your order.</p>
         <div class="qr-box">
           <img src="images/payment-qr.png" alt="Payment QR code"
@@ -118,37 +125,13 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <h4>Sport Mini Gear</h4>
-        <p>Kathmandu, Nepal</p>
-        <p id="footer-pan"></p>
-      </div>
-      <div>
-        <h4>Shop</h4>
-        <a href="products.html">All products</a>
-        <a href="cart.html">Cart</a>
-        <a href="checkout.html">Checkout</a>
-      </div>
-      <div>
-        <h4>Get in touch</h4>
-        <a id="footer-whatsapp" href="#">WhatsApp</a>
-        <a id="footer-email" href="#">Email</a>
-        <a href="contact.html">Contact page</a>
-      </div>
-      <div id="footer-social-col" style="display:none;">
-        <h4>Follow us</h4>
-        <a id="footer-facebook" href="#" style="display:none;">Facebook</a>
-        <a id="footer-instagram" href="#" style="display:none;">Instagram</a>
-        <a id="footer-tiktok" href="#" style="display:none;">TikTok</a>
-      </div>
-    </div>
     <div class="footer-bottom">
       <span>© <span id="footer-year"></span> Sport Mini Gear. All rights reserved.</span>
       <span>www.sportminigear.com</span>
     </div>
   </div>
 </footer>
+
 <script src="js/products-data.js"></script>
 <script src="js/main.js"></script>
 <script>
@@ -171,52 +154,181 @@
   }
 
   document.getElementById("bank-details").textContent = SITE_CONFIG.bankDetails;
-// Phone number: digits only, max 10 characters, live validation feedback
-const phoneInput = document.getElementById("cust-phone");
-const phoneError = document.getElementById("phone-error");
-phoneInput.addEventListener("input", () => {
-  phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 10);
-  phoneError.style.display = "none";
-});
+
+  // ===== Khalti payment integration =====
+  const KHALTI_BACKEND_URL = "https://silly-cannoli-26436d.netlify.app";
+
+  function getCustomerFromForm() {
+    return {
+      name: document.getElementById("cust-name").value.trim(),
+      phone: document.getElementById("cust-phone").value.trim(),
+      address: document.getElementById("cust-address").value.trim(),
+      note: document.getElementById("cust-note").value.trim(),
+    };
+  }
+
+  const khaltiBtn = document.getElementById("khalti-pay-btn");
+  const khaltiStatus = document.getElementById("khalti-status");
+
+  if (khaltiBtn) {
+    khaltiBtn.addEventListener("click", async () => {
+      const customer = getCustomerFromForm();
+      if (!customer.name || !customer.phone || !customer.address) {
+        khaltiStatus.textContent = "Please fill in your name, phone, and address above first.";
+        khaltiStatus.style.color = "var(--danger)";
+        return;
+      }
+      if (items.length === 0) {
+        khaltiStatus.textContent = "Your cart is empty.";
+        khaltiStatus.style.color = "var(--danger)";
+        return;
+      }
+
+      khaltiBtn.disabled = true;
+      khaltiBtn.textContent = "Redirecting to Khalti…";
+      khaltiStatus.textContent = "";
+
+      const orderId = "SMG-" + Date.now();
+      sessionStorage.setItem(
+        "smg_pending_order",
+        JSON.stringify({ orderId, amount: cartTotal(), customer, items })
+      );
+
+      const returnUrl = window.location.origin + window.location.pathname;
+      const websiteUrl = window.location.origin;
+
+      try {
+        const res = await fetch(`${KHALTI_BACKEND_URL}/.netlify/functions/initiate-khalti`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            amount: cartTotal(),
+            orderId,
+            orderName: "Sport Mini Gear order",
+            customerName: customer.name,
+            customerPhone: customer.phone,
+            returnUrl,
+            websiteUrl,
+          }),
+        });
+        const data = await res.json();
+
+        if (!res.ok || !data.payment_url) {
+          khaltiStatus.textContent = "Could not start Khalti payment. Please try again or use the QR option below.";
+          khaltiStatus.style.color = "var(--danger)";
+          khaltiBtn.disabled = false;
+          khaltiBtn.textContent = "Pay with Khalti";
+          return;
+        }
+
+        window.location.href = data.payment_url;
+      } catch (err) {
+        khaltiStatus.textContent = "Connection error. Please try again or use the QR option below.";
+        khaltiStatus.style.color = "var(--danger)";
+        khaltiBtn.disabled = false;
+        khaltiBtn.textContent = "Pay with Khalti";
+      }
+    });
+  }
+
+  (async function checkForKhaltiReturn() {
+    const params = new URLSearchParams(window.location.search);
+    const pidx = params.get("pidx");
+    if (!pidx) return;
+
+    khaltiStatus.textContent = "Verifying your payment…";
+    khaltiStatus.style.color = "var(--text-muted)";
+
+    try {
+      const res = await fetch(`${KHALTI_BACKEND_URL}/.netlify/functions/verify-khalti`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pidx }),
+      });
+      const data = await res.json();
+      const pending = JSON.parse(sessionStorage.getItem("smg_pending_order") || "null");
+
+      if (data.status === "Completed") {
+        const paidRs = data.total_amount / 100;
+        khaltiStatus.style.color = "var(--success)";
+        khaltiStatus.textContent = `Payment verified — Rs. ${paidRs} received. Transaction ID: ${data.transaction_id}`;
+
+        document.getElementById("order-success").classList.add("visible");
+        document.getElementById("order-success").innerHTML = `
+          <h3>Payment received!</h3>
+          <p class="mt-0">Your Khalti payment of Rs. ${paidRs} is confirmed (Transaction ID: ${data.transaction_id}).
+          Please also send your order on WhatsApp so we can arrange delivery.</p>
+        `;
+
+        if (pending) {
+          const waLink = whatsappOrderLink({
+            ...pending.customer,
+            note: (pending.customer.note ? pending.customer.note + " " : "") +
+                  `[Paid via Khalti — Transaction ID: ${data.transaction_id}]`,
+          });
+          window.open(waLink, "_blank");
+          saveCart([]);
+        }
+        sessionStorage.removeItem("smg_pending_order");
+      } else {
+        khaltiStatus.style.color = "var(--danger)";
+        khaltiStatus.textContent = `Payment not completed (status: ${data.status}). Please try again.`;
+      }
+    } catch (err) {
+      khaltiStatus.style.color = "var(--danger)";
+      khaltiStatus.textContent = "Could not verify payment. Please contact us on WhatsApp with your transaction details.";
+    }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  })();
+
   const paidCheckbox = document.getElementById("paid-confirm");
-const paymentRefRow = document.getElementById("payment-ref-row");
-const paymentRefInput = document.getElementById("payment-ref");
-paidCheckbox.addEventListener("change", () => {
-  paymentRefRow.style.display = paidCheckbox.checked ? "block" : "none";
-  paidConfirmError.style.display = "none";
+  const paymentRefRow = document.getElementById("payment-ref-row");
+  const paymentRefInput = document.getElementById("payment-ref");
+  const paidConfirmError = document.getElementById("paid-confirm-error");
 
-const paidConfirmError = document.getElementById("paid-confirm-error");
+  const phoneInput = document.getElementById("cust-phone");
+  const phoneError = document.getElementById("phone-error");
+  phoneInput.addEventListener("input", () => {
+    phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 10);
+    phoneError.style.display = "none";
+  });
 
-});
+  paidCheckbox.addEventListener("change", () => {
+    paymentRefRow.style.display = paidCheckbox.checked ? "block" : "none";
+    paidConfirmError.style.display = "none";
+  });
 
-const form = document.getElementById("checkout-form");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+  const form = document.getElementById("checkout-form");
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-  if (!/^9[0-9]{9}$/.test(phoneInput.value.trim())) {
-    phoneError.style.display = "block";
-    phoneInput.scrollIntoView({ behavior: "smooth", block: "center" });
-    phoneInput.focus();
-    return;
-  }
+    if (!/^9[0-9]{9}$/.test(phoneInput.value.trim())) {
+      phoneError.style.display = "block";
+      phoneInput.scrollIntoView({ behavior: "smooth", block: "center" });
+      phoneInput.focus();
+      return;
+    }
 
-  if (!paidCheckbox.checked || !paymentRefInput.value.trim()) {    paidConfirmError.style.display = "block";
-    paidConfirmError.scrollIntoView({ behavior: "smooth", block: "center" });
-    return;
-  }
+    if (!paidCheckbox.checked || !paymentRefInput.value.trim()) {
+      paidConfirmError.style.display = "block";
+      paidConfirmError.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
 
-  const customer = {
-    name: document.getElementById("cust-name").value.trim(),
-    phone: document.getElementById("cust-phone").value.trim(),
-    address: document.getElementById("cust-address").value.trim(),
-    note:
-      document.getElementById("cust-note").value.trim() +
-      ` [Payment ref: ${paymentRefInput.value.trim()}]`,
-  };
-  window.open(whatsappOrderLink(customer), "_blank");
-  document.getElementById("order-success").classList.add("visible");
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+    const customer = {
+      name: document.getElementById("cust-name").value.trim(),
+      phone: document.getElementById("cust-phone").value.trim(),
+      address: document.getElementById("cust-address").value.trim(),
+      note:
+        document.getElementById("cust-note").value.trim() +
+        ` [Payment ref: ${paymentRefInput.value.trim()}]`,
+    };
+    window.open(whatsappOrderLink(customer), "_blank");
+    document.getElementById("order-success").classList.add("visible");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
   document.getElementById("email-order-link").addEventListener("click", (e) => {
     e.preventDefault();
     const customer = {
