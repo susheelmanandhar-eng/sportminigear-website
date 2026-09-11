@@ -314,6 +314,25 @@ const PRODUCTS = [
 "Product Name - Bicycle Front Light Power Supply - Battery Battery - 2000mAh Color - Black Feature - Waterproof Brand Name - Quanxin Type - LEDs Single Gross Weight - 0.150 KG Single Package Size - 15X12X10 cm",
   },
 
+{
+    id: "cy-002",
+    name: "Durable Metal Outdoor Hiking Bike Tools Mini Pocket Cycling Bike Repair Multi Tool",
+    category: "Cycling",
+    price: 705,
+    oldPrice: 1250,
+    oldPrice: 2450,
+    images: [
+      "images/products/cy-002-1.jpg",
+      "images/products/cy-002-2.jpg",
+      "images/products/cy-002-3.jpg"
+  ],
+
+    badge: "Bestseller",
+    stock: 7,
+    description: 
+"Product Name - This mini pocket cycling bike repair multi-tool is made of durable ABS and metal materials, featuring a compact size of 9*2.5*4.5CM. Made with high-quality stainless steel tools and a sturdy ABS body, it combines strength, portability, and convenience. The tool includes multiple hex keys, screwdrivers, spoke wrenches, and other essential functions needed for roadside fixes. Its foldable design makes it easy to carry in your pocket, saddlebag, or toolkit, ensuring you’re always prepared for unexpected repairs during rides. Perfect for cyclists, mountain bikers, and daily commuters who value reliability and efficiency.  Product Name - Bike Repair Tool Material - ABS + Metal Size - 9*2.5*4.5CM.  Weight - 300 gm Feature - High quality, heavy stainless steel,  Usage - Promotion/Business gift, dailiy usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench.",
+  },
+
    {
     id: "ac-001",
     name: "Silicone Reusable Collapsible Foldable 1 liter Travel Sports Water Bottle",
