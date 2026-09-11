@@ -372,6 +372,23 @@ const PRODUCTS = [
 "Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 550 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Single Gross Weight - 0.400 kg Color - Basketball",
   },
 
+{
+    id: "ac-006",
+    name: "Silicone Reusable Collapsible Foldable 550 ml Travel Sports Water Bottle",
+    category: "Accessories",
+    price: 650,
+    oldPrice: 790,
+    images: [
+      "images/products/ac-005-1.jpg",
+      "images/products/ac-005-2.jpg",
+      "images/products/ac-005-3.jpg"
+  ],
+
+    badge: "New",
+    stock: 5,
+    description: 
+"Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 550 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Single Gross Weight - 0.400 kg Color - Black",
+  },
 
 
 ];
