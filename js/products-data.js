@@ -281,17 +281,7 @@ const PRODUCTS = [
 "Product Name - Bicycle Front Light Power Supply - Battery Battery - 2000mAh Color - Black Feature - Waterproof Brand Name - Quanxin Type - LEDs Single Gross Weight - 0.150 KG Single Package Size - 15X12X10 cm",
   },
 
-    {
-    id: "cy-002",
-    name: "Cycling Gloves",
-    category: "Cycling",
-    price: 650,
-    image: "images/products/cy-002.jpg",
-    badge: "",
-    stock: 25,
-    description: "Padded half-finger cycling gloves for grip and comfort on longer rides.",
-  },
-  {
+   {
     id: "ac-001",
     name: "Silicone Reusable Collapsible Foldable 1 liter Travel Sports Water Bottle",
     category: "Accessories",
@@ -306,20 +296,28 @@ const PRODUCTS = [
     badge: "New",
     stock: 5,
     description: 
-"Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 1000 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Available colors - Football",
+"Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 1000 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Available color - Football",
   },
 
 
-  {
+   {
     id: "ac-002",
-    name: "Insulated Water Bottle (750ml)",
+    name: "Silicone Reusable Collapsible Foldable 1 liter Travel Sports Water Bottle",
     category: "Accessories",
-    price: 550,
-    image: "images/products/ac-002.jpg",
-    badge: "",
-    stock: 25,
-    description: "Double-wall insulated bottle that keeps drinks cold through a full training session.",
+    price: 850,
+    oldPrice: 975,
+    images: [
+      "images/products/ac-002-1.jpg",
+      "images/products/ac-002-2.jpg",
+      "images/products/ac-002-3.jpg"
+  ],
+
+    badge: "New",
+    stock: 5,
+    description: 
+"Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 1000 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Available color - Black",
   },
+
   {
     id: "ac-003",
     name: "Sports Socks (3 Pairs)",
