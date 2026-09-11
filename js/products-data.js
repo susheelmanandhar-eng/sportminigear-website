@@ -136,7 +136,7 @@ const PRODUCTS = [
       "images/products/fb-005-2.jpg",
       "images/products/fb-005-3.jpg"
     ],
-    badge: "",
+    badge: "Bestseller",
     stock: 10,
     description:
       "Function - DIY - Daily Use Blade Material - Stainless Steel Handle Material - Aluminium Application - Multifunctional Knife Usage - Blade, Bottle Opener - Multifunction Use",
