@@ -162,7 +162,7 @@ const PRODUCTS = [
     name: "USB Rechargeable LED Mini COB Headlamp White & Red Outdoor Night Running Light Portable with Built-in Battery",
     category: "Travel Gear",
     price: 875,
-    oldPrice: 1050
+    oldPrice: 1050,
     images: [
       "images/products/fb-007-1.jpg",
       "images/products/fb-007-2.jpg",
