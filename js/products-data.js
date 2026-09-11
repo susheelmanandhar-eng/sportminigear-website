@@ -125,6 +125,24 @@ const PRODUCTS = [
       "Usage - Outdoor Camping Hiking Travelling Color - Red Material - Stainless steel Packing - Opp Bag Single Gross Weight - 0.300 Kg. This compact and portable survival kit is made of durable stainless steel, designed for outdoor camping, hiking, and traveling. This is easy to carry and highly functional for outdoor activities like climbing and water sports.",
   },
 
+{
+    id: "fb-005",
+    name: "Portable Outdoor Survival Folding Knife Combo Tool with Stainless Steel",
+    category: "Travel Gear",
+    price: 975,
+    oldPrice: 1250,
+    images: [
+      "images/products/fb-005-1.jpg",
+      "images/products/fb-005-2.jpg",
+      "images/products/fb-005-3.jpg"
+    ],
+    badge: "",
+    stock: 10,
+    description:
+      "Function - DIY - Daily Use Blade Material - Stainless Steel Handle Material - Aluminium Application - Multifunctional Knife Usage - Blade, Bottle Opener - Multifunction Use",
+  },
+
+
     {
     id: "co-001",
     name: "Lightweight Camping Accessories Equipment Backpacking Supplies Survival Gear Cooking Set Outdoor Cook Gear for Family Hiking",
