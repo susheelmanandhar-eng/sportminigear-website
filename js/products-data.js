@@ -142,6 +142,21 @@ const PRODUCTS = [
       "Function - DIY - Daily Use Blade Material - Stainless Steel Handle Material - Aluminium Application - Multifunctional Knife Usage - Blade, Bottle Opener - Multifunction Use",
   },
 
+{
+    id: "fb-006",
+    name: "Lightweight Mylar Emergency Thermal Bivy Camping Outdoor Sleeping Bag with Drawstring",
+    category: "Travel Gear",
+    price: 675,
+    images: [
+      "images/products/fb-006-1.jpg",
+      "images/products/fb-006-2.jpg",
+      "images/products/fb-006-3.jpg"
+    ],
+    badge: "New",
+    stock: 10,
+    description:
+      "Product Name - Outdoor Emergency Sleeping Bag Fabric - Polyethylene Fabric Usage - Camping, Hiking, Travel Feature - Lightweight and Portable Season - All Season Weight - 137 g Feature - Portable/Waterproof/Washable Applicable - Unisex Length - Standard (Suitable for 1.8 m Height and below) Single package size - 12X7X7 cm",
+  },
 
     {
     id: "co-001",
