@@ -191,6 +191,22 @@ const PRODUCTS = [
       "Lighting Period (h)-6 ; Color Temperature(CCT) - 4100K (Neutral White) ; IP Rating - IXP45 ; Power Source - Rechargeable Battery ; Color - black ; LED lamp beads - 3W led COB ; Working voltage - 3.0V-4.5V ; Charging time - 4 Hours ; lighting time - 2-3Hour ; Size - 32x3.1x3.1cm ; Battery capacity - 800mAH ; Weight - 120g ; Function - Camping Activity",
   },
 
+{
+    id: "fb-009",
+    name: "Folding  First Aid Life Saving Survival Rescue Lander Emergency Blankets Folding Thermal Blanket Wrap",
+    category: "Travel Gear",
+    price: 450,
+    images: [
+      "images/products/fb-009-1.jpg",
+      "images/products/fb-009-2.jpg",
+      "images/products/fb-009-3.jpg"
+    ],
+    badge: "New",
+    stock: 10,
+    description:
+      "Feature - Lightweight, Portable Type - Survival Kit Printing Method - Silk Screen Print, Roller Print, Heat Transfer Print Single Gross Weight - 0.060 KG Dimensions - 210x160cm Usage - Outdoor Activity (Hike, Travel, Climb, Trek)",
+  },
+
 
     {
     id: "co-001",
