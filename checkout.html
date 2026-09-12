@@ -39,85 +39,107 @@
       Your cart is empty. <a href="products.html">Browse the catalog</a> to add some gear before checking out.
     </div>
 
-    <div class="checkout-layout" id="checkout-layout">
+    <div class="checkout-layout" id="checkout-layout" style="grid-template-columns: 1fr; max-width: 640px;">
       <div>
-        <h3 class="mt-0">Delivery details</h3>
         <form id="checkout-form">
-          <div class="form-grid">
-            <div class="full">
-              <label for="cust-name">Full name</label>
-              <input type="text" id="cust-name" required />
+
+          <div id="step-delivery">
+            <h3 class="mt-0">Delivery details</h3>
+            <div class="form-grid">
+              <div class="full">
+                <label for="cust-name">Full name</label>
+                <input type="text" id="cust-name" required />
+              </div>
+              <div>
+                <label for="cust-phone">Phone number</label>
+                <input type="tel" id="cust-phone" required
+                       pattern="[9][0-9]{9}" maxlength="10" inputmode="numeric"
+                       placeholder="98XXXXXXXX"
+                       title="Enter a valid 10-digit Nepali mobile number starting with 9" />
+                <p id="phone-error" style="color:var(--danger); font-size:0.8rem; margin-top:4px; display:none;">
+                  Please enter a valid 10-digit number starting with 9 (e.g. 98XXXXXXXX).
+                </p>
+              </div>
+              <div>
+                <label for="cust-email">Email (optional)</label>
+                <input type="email" id="cust-email" />
+              </div>
+              <div class="full">
+                <label for="cust-address">Delivery address</label>
+                <textarea id="cust-address" rows="3" required></textarea>
+              </div>
+              <div class="full">
+                <label for="cust-note">Order note (optional)</label>
+                <textarea id="cust-note" rows="2" placeholder="e.g. preferred size, delivery time"></textarea>
+              </div>
             </div>
-            <div>
-              <label for="cust-phone">Phone number</label>
-              <input type="tel" id="cust-phone" required
-                     pattern="[9][0-9]{9}" maxlength="10" inputmode="numeric"
-                     placeholder="98XXXXXXXX"
-                     title="Enter a valid 10-digit Nepali mobile number starting with 9" />
-              <p id="phone-error" style="color:var(--danger); font-size:0.8rem; margin-top:4px; display:none;">
-                Please enter a valid 10-digit number starting with 9 (e.g. 98XXXXXXXX).
-              </p>
+
+            <button type="button" id="continue-to-payment-btn" class="btn btn-primary btn-block" style="margin-top:22px;">
+              Continue to Payment →
+            </button>
+          </div>
+
+          <div id="step-payment" style="display:none;">
+            <a href="#" id="back-to-delivery" style="display:inline-block;margin-bottom:18px;color:var(--text-muted);font-size:0.9rem;">← Edit delivery details</a>
+
+            <h3 class="mt-0">Order items</h3>
+            <div id="checkout-items"></div>
+
+            <div class="summary-card" style="margin-top:20px;">
+              <div class="summary-row total"><span>Total</span><span id="checkout-total"></span></div>
             </div>
-            <div>
-              <label for="cust-email">Email (optional)</label>
-              <input type="email" id="cust-email" />
+
+            <div class="payment-card" style="margin-top:24px;">
+              <h3 class="mt-0">Pay with Khalti</h3>
+              <p>Recommended — instantly verified, no waiting for manual confirmation.</p>
+              <button type="button" id="khalti-pay-btn" class="btn btn-primary btn-block" style="background:#5C2D91;color:#fff;">
+                Pay with Khalti
+              </button>
+              <div id="khalti-status" style="margin-top:10px;font-size:0.85rem;"></div>
             </div>
-            <div class="full">
-              <label for="cust-address">Delivery address</label>
-              <textarea id="cust-address" rows="3" required></textarea>
-            </div>
-            <div class="full">
-              <label for="cust-note">Order note (optional)</label>
-              <textarea id="cust-note" rows="2" placeholder="e.g. preferred size, delivery time"></textarea>
+
+            <div style="text-align:center;margin:22px 0;color:var(--text-muted);font-size:0.85rem;">— or —</div>
+
+            <button type="button" id="toggle-manual-payment" class="btn btn-outline btn-block">
+              Pay manually via QR / Bank Transfer
+            </button>
+
+            <div id="manual-payment-section" style="display:none;margin-top:20px;">
+              <div class="payment-card">
+                <h3 class="mt-0">Pay by QR</h3>
+                <p>Scan this code with your banking or mobile wallet app to pay, then confirm below.</p>
+                <div class="qr-box">
+                  <img src="images/payment-qr.png" alt="Payment QR code"
+                       onerror="this.parentElement.innerHTML='<span style=\'color:#555;font-size:0.85rem;text-align:center;\'>Add your QR code image at<br/><code>images/payment-qr.png</code></span>'" />
+                </div>
+                <div class="bank-details" id="bank-details"></div>
+                <p class="payment-note">Orders are confirmed once payment is verified. If you have questions before paying, message us on WhatsApp first.</p>
+              </div>
+
+              <div style="margin-top:18px; padding:18px; border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-elevated);">
+                <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; margin-bottom:0;">
+                  <input type="checkbox" id="paid-confirm" style="width:18px; height:18px; margin-top:2px; accent-color:var(--accent); flex-shrink:0;" />
+                  <span style="color:var(--text); font-size:0.92rem;">I have paid the total amount shown above via the QR code / bank details above.</span>
+                </label>
+                <div id="payment-ref-row" style="margin-top:14px; display:none;">
+                  <label for="payment-ref">Payment reference / transaction ID (or last 4 digits)</label>
+                  <input type="text" id="payment-ref" placeholder="e.g. TXN12345 or last 4 digits" />
+                </div>
+                <p id="paid-confirm-error" style="color:var(--danger); font-size:0.85rem; margin-top:10px; display:none;">
+                  Please confirm payment and enter a reference number before sending your order.
+                </p>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" style="margin-top:18px;">
+                Send order on WhatsApp
+              </button>
+              <a href="#" class="btn btn-outline btn-block" id="email-order-link" style="margin-top:12px;">
+                Or send order by email
+              </a>
             </div>
           </div>
 
-          <h3 style="margin-top:32px;">Order items</h3>
-          <div id="checkout-items"></div>
-
-          <div class="summary-card" style="margin-top:20px;">
-            <div class="summary-row total"><span>Total</span><span id="checkout-total"></span></div>
-          </div>
-
-          <div style="margin-top:22px; padding:18px; border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-elevated);">
-            <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; margin-bottom:0;">
-              <input type="checkbox" id="paid-confirm" required style="width:18px; height:18px; margin-top:2px; accent-color:var(--accent); flex-shrink:0;" />
-              <span style="color:var(--text); font-size:0.92rem;">I have paid the total amount shown above via the QR code / bank details on the right.</span>
-            </label>
-            <div id="payment-ref-row" style="margin-top:14px; display:none;">
-              <label for="payment-ref">Payment reference / transaction ID (or last 4 digits)</label>
-              <input type="text" id="payment-ref" placeholder="e.g. TXN12345 or last 4 digits" />
-            </div>
-            <p id="paid-confirm-error" style="color:var(--danger); font-size:0.85rem; margin-top:10px; display:none;">
-              Please confirm payment and enter a reference number before sending your order.
-            </p>
-          </div>
-
-          <button type="submit" class="btn btn-primary btn-block" style="margin-top:18px;">
-            Send order on WhatsApp
-          </button>
-          <a href="#" class="btn btn-outline btn-block" id="email-order-link" style="margin-top:12px;">
-            Or send order by email
-          </a>
         </form>
-      </div>
-
-      <div class="payment-card">
-        <h3 class="mt-0">Pay with Khalti</h3>
-        <p>Pay securely online — you'll be sent to Khalti to complete payment, then brought right back here.</p>
-        <button type="button" id="khalti-pay-btn" class="btn btn-primary btn-block" style="background:#5C2D91;color:#fff;margin-bottom:10px;">
-          Pay with Khalti
-        </button>
-        <div id="khalti-status" style="margin-top:10px;font-size:0.85rem;"></div>
-
-        <h3 style="margin-top:26px;">Or pay by QR</h3>
-        <p>Scan this code with your banking or mobile wallet app to pay, then send a screenshot of the payment along with your order.</p>
-        <div class="qr-box">
-          <img src="images/payment-qr.png" alt="Payment QR code"
-               onerror="this.parentElement.innerHTML='<span style=\'color:#555;font-size:0.85rem;text-align:center;\'>Add your QR code image at<br/><code>images/payment-qr.png</code></span>'" />
-        </div>
-        <div class="bank-details" id="bank-details"></div>
-        <p class="payment-note">Orders are confirmed once payment is received. If you have questions before paying, message us on WhatsApp first.</p>
       </div>
     </div>
   </div>
@@ -156,6 +178,7 @@
   document.getElementById("bank-details").textContent = SITE_CONFIG.bankDetails;
 
   // ===== Khalti payment integration =====
+  // Replace this with your actual deployed backend URL once you've set it up on Netlify.
   const KHALTI_BACKEND_URL = "https://silly-cannoli-26436d.netlify.app";
 
   function getCustomerFromForm() {
@@ -189,6 +212,8 @@
       khaltiStatus.textContent = "";
 
       const orderId = "SMG-" + Date.now();
+      // Remember what this order should cost + who it's for, so we can show/send
+      // the right details when the customer comes back from Khalti.
       sessionStorage.setItem(
         "smg_pending_order",
         JSON.stringify({ orderId, amount: cartTotal(), customer, items })
@@ -231,10 +256,15 @@
     });
   }
 
+  // If we've just been sent back here by Khalti, verify the payment server-side.
   (async function checkForKhaltiReturn() {
     const params = new URLSearchParams(window.location.search);
     const pidx = params.get("pidx");
     if (!pidx) return;
+
+    // Jump straight to the payment step so the status message is visible in context.
+    document.getElementById("step-delivery").style.display = "none";
+    document.getElementById("step-payment").style.display = "block";
 
     khaltiStatus.textContent = "Verifying your payment…";
     khaltiStatus.style.color = "var(--text-muted)";
@@ -267,7 +297,7 @@
                   `[Paid via Khalti — Transaction ID: ${data.transaction_id}]`,
           });
           window.open(waLink, "_blank");
-          saveCart([]);
+          saveCart([]); // clear the cart now that payment is confirmed
         }
         sessionStorage.removeItem("smg_pending_order");
       } else {
@@ -287,6 +317,7 @@
   const paymentRefInput = document.getElementById("payment-ref");
   const paidConfirmError = document.getElementById("paid-confirm-error");
 
+  // Phone number: digits only, max 10 characters, live validation feedback
   const phoneInput = document.getElementById("cust-phone");
   const phoneError = document.getElementById("phone-error");
   phoneInput.addEventListener("input", () => {
@@ -297,6 +328,58 @@
   paidCheckbox.addEventListener("change", () => {
     paymentRefRow.style.display = paidCheckbox.checked ? "block" : "none";
     paidConfirmError.style.display = "none";
+  });
+
+  // ===== Two-step checkout: delivery details -> payment =====
+  const stepDelivery = document.getElementById("step-delivery");
+  const stepPayment = document.getElementById("step-payment");
+  const continueBtn = document.getElementById("continue-to-payment-btn");
+  const backLink = document.getElementById("back-to-delivery");
+  const toggleManualBtn = document.getElementById("toggle-manual-payment");
+  const manualSection = document.getElementById("manual-payment-section");
+
+  function goToPaymentStep() {
+    stepDelivery.style.display = "none";
+    stepPayment.style.display = "block";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  continueBtn.addEventListener("click", () => {
+    const nameInput = document.getElementById("cust-name");
+    const addressInput = document.getElementById("cust-address");
+
+    if (!nameInput.value.trim()) {
+      nameInput.reportValidity();
+      return;
+    }
+    if (!/^9[0-9]{9}$/.test(phoneInput.value.trim())) {
+      phoneError.style.display = "block";
+      phoneInput.scrollIntoView({ behavior: "smooth", block: "center" });
+      phoneInput.focus();
+      return;
+    }
+    if (!addressInput.value.trim()) {
+      addressInput.reportValidity();
+      return;
+    }
+
+    goToPaymentStep();
+  });
+
+  backLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    stepPayment.style.display = "none";
+    stepDelivery.style.display = "block";
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  toggleManualBtn.addEventListener("click", () => {
+    const isOpen = manualSection.style.display === "block";
+    manualSection.style.display = isOpen ? "none" : "block";
+    toggleManualBtn.textContent = isOpen
+      ? "Pay manually via QR / Bank Transfer"
+      : "Hide manual payment options";
+    if (!isOpen) manualSection.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   const form = document.getElementById("checkout-form");
