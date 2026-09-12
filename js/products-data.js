@@ -207,6 +207,24 @@ const PRODUCTS = [
       "Feature - Lightweight, Portable Type - Survival Kit Printing Method - Silk Screen Print, Roller Print, Heat Transfer Print Single Gross Weight - 0.060 KG Dimensions - 210x160cm Usage - Outdoor Activity (Hike, Travel, Climb, Trek)",
   },
 
+{
+    id: "fb-010",
+    name: "Butterfly-Shape Flint Steel Fire Starter Magnesium Stick with Scraper Big Size for Outdoor Survival Camping Picnic BBQ",
+    category: "Travel Gear",
+    price: 1150,
+    oldPrice: 1500
+    images: [
+      "images/products/fb-010-1.jpg",
+      "images/products/fb-010-2.jpg",
+      "images/products/fb-010-3.jpg"
+    ],
+    badge: "Bestseller",
+    stock: 4,
+    description:
+      "This tool is necessary for outdoor experts, anglers and campers Usage - Camping, Hiking, Survival, Indoor and Outdoor Use Packing Detail - OPP BagWeight - 0.1 kg
+Material - Aluminium Alloy, Magnesium. This outdoor survival camping and hiking tool is necessary to make your travel adventurous and fun loving. Product Name - Butterfly shape flint with Scraper Big Size Usage - Any climate and environmental condition Material - Waterproof Lenght of Magnesium Rod - 6.8cm Lenght - 11cm Diameter of Magnesium Rod - 8mm",
+  },
+
     {
     id: "co-001",
     name: "Lightweight Camping Accessories Equipment Backpacking Supplies Survival Gear Cooking Set Outdoor Cook Gear for Family Hiking",
