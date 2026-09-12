@@ -207,7 +207,6 @@ const PRODUCTS = [
       "Feature - Lightweight, Portable Type - Survival Kit Printing Method - Silk Screen Print, Roller Print, Heat Transfer Print Single Gross Weight - 0.060 KG Dimensions - 210x160cm Usage - Outdoor Activity (Hike, Travel, Climb, Trek)",
   },
 
-
     {
     id: "co-001",
     name: "Lightweight Camping Accessories Equipment Backpacking Supplies Survival Gear Cooking Set Outdoor Cook Gear for Family Hiking",
@@ -294,6 +293,25 @@ const PRODUCTS = [
     stock: 7,
     description: 
       "Product - Camping Gas Stove Material - Stainless Steel Type - Stove Burner Structure - Foldable With Ignition Device - Yes Feature - Lightweight Stove Fuel - Butane, Propane, Isobutane Gas Mixture, Gas Net Weight - 380 g Feature - Portable, Foldable, Lightweight Unfold Size - 9.5*16CM Package Size - 9*9*10CM Packing - 1PC/Plastic Box Application - Outdoor Equipment Hiking Camping",
+  },
+
+{
+    id: "co-006",
+    name: "Fire Maple Camping 230g Gas",
+    category: "Camping Cookware",
+    price: 875,
+    oldPrice: 950,
+    images: [
+      "images/products/co-006-1.jpg",
+      "images/products/co-006-2.jpg",
+      "images/products/co-006-3.jpg"
+    ],
+
+    badge: "Bestseller",
+    stock: 5,
+    description: 
+      "It weigh 230 Grams. Filled with propane and Isobutane mixed gas. It is suitable for high Altitude and low temperature environment ; Ingredients : isobutane 73%±5% and propane 22%±5% ; Operating temperature : From 40 to -23 degrees ; Threaded gas cylinder ; Net Weight : 230g ; Total Weight : 365g ; Package Dimensions : 92 x 110 x 110 mm ;
+Suitable for use in any season",
   },
 
   {
