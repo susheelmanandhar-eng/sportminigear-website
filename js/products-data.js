@@ -310,7 +310,7 @@ const PRODUCTS = [
     badge: "Bestseller",
     stock: 5,
     description: 
-      "It weigh 230 Grams. Filled with propane and Isobutane mixed gas. It is suitable for high Altitude and low temperature environment ; Ingredients : isobutane and propane ; Operating temperature - From 40 to -23 degrees ; Threaded gas cylinder ; Net Weight : 230g ; Total Weight : 365g ; Package Dimensions : 92 x 110 x 110 mm ;
+      "It weighs 230 Grams. Filled with propane and Isobutane mixed gas. It is suitable for high Altitude and low temperature environment ; Ingredients : isobutane and propane ; Threaded gas cylinder ; Net Weight : 230g ; Total Weight : 365g ; Package Dimensions : 92 x 110 x 110 mm ;
 Suitable for use in any season",
   },
 
