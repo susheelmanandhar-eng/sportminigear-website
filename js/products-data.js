@@ -212,7 +212,7 @@ const PRODUCTS = [
     name: "Butterfly-Shape Flint Steel Fire Starter Magnesium Stick with Scraper Big Size for Outdoor Survival Camping Picnic BBQ",
     category: "Travel Gear",
     price: 1150,
-    oldPrice: 1500
+    oldPrice: 1500,
     images: [
       "images/products/fb-010-1.jpg",
       "images/products/fb-010-2.jpg",
