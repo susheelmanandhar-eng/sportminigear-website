@@ -222,7 +222,7 @@ const PRODUCTS = [
     stock: 4,
     description:
       'This tool is necessary for outdoor experts, anglers and campers Usage - Camping, Hiking, Survival, Indoor and Outdoor Use Packing Detail - OPP BagWeight - 0.1 kg
-Material - Aluminium Alloy, Magnesium. This outdoor survival camping and hiking tool is necessary to make your travel adventurous and fun loving. Product Name - Butterfly shape flint with Scraper Big Size Usage - Any climate and environmental condition Material - Waterproof Lenght of Magnesium Rod - 6.8cm Lenght - 11cm Diameter of Magnesium Rod - 8mm',
+Material - Aluminium Alloy, Magnesium. This outdoor survival camping and hiking tool is necessary to make your travel adventurous and fun loving. Product Name - Butterfly shape flint with Scraper Big Size Usage - Any climate and environmental condition Material - Waterproof Lenght of Magnesium Rod - 6.8cm Lenght - 11cm Diameter of Magnesium Rod - 8mm`,
   },
 
     {
