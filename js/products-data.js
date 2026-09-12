@@ -209,7 +209,7 @@ const PRODUCTS = [
 
 {
     id: "fb-010",
-    name: "Butterfly-Shape Flint Steel Fire Starter Magnesium Stick with Scraper Big Size for Outdoor Survival Camping Picnic BBQ",
+    name: "Butterfly Shape Flint Steel Fire Starter Magnesium Stick with Scraper Big Size for Outdoor Survival Camping Picnic BBQ",
     category: "Travel Gear",
     price: 1150,
     oldPrice: 1500,
@@ -221,8 +221,7 @@ const PRODUCTS = [
     badge: "Bestseller",
     stock: 4,
     description:
-      'This tool is necessary for outdoor experts, anglers and campers Usage - Camping, Hiking, Survival, Indoor and Outdoor Use Packing Detail - OPP BagWeight - 0.1 kg
-Material - Aluminium Alloy, Magnesium. This outdoor survival camping and hiking tool is necessary to make your travel adventurous and fun loving. Product Name - Butterfly shape flint with Scraper Big Size Usage - Any climate and environmental condition Material - Waterproof Lenght of Magnesium Rod - 6.8cm Lenght - 11cm Diameter of Magnesium Rod - 8mm`,
+      "This tool is necessary for outdoor experts, anglers and campers. Usage - Camping, Hiking, Survival, Indoor and Outdoor Use ; Packing Detail - OPP ; BagWeight - 0.1 kg ; Material - Aluminium Alloy, Magnesium ; Product Name - Butterfly shape flint with Scraper Big Size ; Usage - Any climate and environmental condition ; Material - Waterproof ; Lenght of Magnesium Rod - 6.8cm ; Diameter of Magnesium Rod - 8mm",
   },
 
     {
