@@ -98,6 +98,15 @@
               <div id="khalti-status" style="margin-top:10px;font-size:0.85rem;"></div>
             </div>
 
+            <div class="payment-card" style="margin-top:16px;">
+              <h3 class="mt-0">Pay with eSewa</h3>
+              <p>Pay securely using your eSewa wallet or linked bank account.</p>
+              <button type="button" id="esewa-pay-btn" class="btn btn-primary btn-block" style="background:#60BB46;color:#fff;">
+                Pay with eSewa
+              </button>
+              <div id="esewa-status" style="margin-top:10px;font-size:0.85rem;"></div>
+            </div>
+
             <div style="text-align:center;margin:22px 0;color:var(--text-muted);font-size:0.85rem;">— or —</div>
 
             <button type="button" id="toggle-manual-payment" class="btn btn-outline btn-block">
@@ -255,6 +264,139 @@
       }
     });
   }
+
+  // ===== eSewa payment integration =====
+  const esewaBtn = document.getElementById("esewa-pay-btn");
+  const esewaStatus = document.getElementById("esewa-status");
+
+  if (esewaBtn) {
+    esewaBtn.addEventListener("click", async () => {
+      const customer = getCustomerFromForm();
+      if (!customer.name || !customer.phone || !customer.address) {
+        esewaStatus.textContent = "Please fill in your name, phone, and address first.";
+        esewaStatus.style.color = "var(--danger)";
+        return;
+      }
+      if (items.length === 0) {
+        esewaStatus.textContent = "Your cart is empty.";
+        esewaStatus.style.color = "var(--danger)";
+        return;
+      }
+
+      esewaBtn.disabled = true;
+      esewaBtn.textContent = "Redirecting to eSewa…";
+      esewaStatus.textContent = "";
+
+      const orderId = "SMG-" + Date.now();
+      sessionStorage.setItem(
+        "smg_pending_order_esewa",
+        JSON.stringify({ orderId, amount: cartTotal(), customer, items })
+      );
+
+      // eSewa sends the customer back to this same page with ?data=... on success
+      const returnUrl = window.location.origin + window.location.pathname;
+
+      try {
+        const res = await fetch(`${KHALTI_BACKEND_URL}/.netlify/functions/initiate-esewa`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            amount: cartTotal(),
+            orderId,
+            successUrl: returnUrl,
+            failureUrl: returnUrl,
+          }),
+        });
+        const data = await res.json();
+
+        if (!res.ok || !data.formFields || !data.submitUrl) {
+          esewaStatus.textContent = "Could not start eSewa payment. Please try again or use the QR option below.";
+          esewaStatus.style.color = "var(--danger)";
+          esewaBtn.disabled = false;
+          esewaBtn.textContent = "Pay with eSewa";
+          return;
+        }
+
+        // Build a hidden form and submit it — this is how eSewa's ePay v2 flow works.
+        const form = document.createElement("form");
+        form.method = "POST";
+        form.action = data.submitUrl;
+        Object.entries(data.formFields).forEach(([key, value]) => {
+          const input = document.createElement("input");
+          input.type = "hidden";
+          input.name = key;
+          input.value = value;
+          form.appendChild(input);
+        });
+        document.body.appendChild(form);
+        form.submit();
+      } catch (err) {
+        esewaStatus.textContent = "Connection error. Please try again or use the QR option below.";
+        esewaStatus.style.color = "var(--danger)";
+        esewaBtn.disabled = false;
+        esewaBtn.textContent = "Pay with eSewa";
+      }
+    });
+  }
+
+  // If we've just been sent back here by eSewa, verify the payment server-side.
+  (async function checkForEsewaReturn() {
+    const params = new URLSearchParams(window.location.search);
+    const dataParam = params.get("data");
+    if (!dataParam) return;
+
+    document.getElementById("step-delivery").style.display = "none";
+    document.getElementById("step-payment").style.display = "block";
+
+    esewaStatus.textContent = "Verifying your payment…";
+    esewaStatus.style.color = "var(--text-muted)";
+
+    try {
+      const decoded = JSON.parse(atob(dataParam));
+      const res = await fetch(`${KHALTI_BACKEND_URL}/.netlify/functions/verify-esewa`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          productCode: decoded.product_code,
+          totalAmount: decoded.total_amount,
+          transactionUuid: decoded.transaction_uuid,
+        }),
+      });
+      const result = await res.json();
+      const pending = JSON.parse(sessionStorage.getItem("smg_pending_order_esewa") || "null");
+
+      if (result.status === "COMPLETE") {
+        esewaStatus.style.color = "var(--success)";
+        esewaStatus.textContent = `Payment verified — Rs. ${result.total_amount} received. Ref ID: ${result.ref_id}`;
+
+        document.getElementById("order-success").classList.add("visible");
+        document.getElementById("order-success").innerHTML = `
+          <h3>Payment received!</h3>
+          <p class="mt-0">Your eSewa payment of Rs. ${result.total_amount} is confirmed (Ref ID: ${result.ref_id}).
+          Please also send your order on WhatsApp so we can arrange delivery.</p>
+        `;
+
+        if (pending) {
+          const waLink = whatsappOrderLink({
+            ...pending.customer,
+            note: (pending.customer.note ? pending.customer.note + " " : "") +
+                  `[Paid via eSewa — Ref ID: ${result.ref_id}]`,
+          });
+          window.open(waLink, "_blank");
+          saveCart([]);
+        }
+        sessionStorage.removeItem("smg_pending_order_esewa");
+      } else {
+        esewaStatus.style.color = "var(--danger)";
+        esewaStatus.textContent = `Payment not completed (status: ${result.status}). Please try again.`;
+      }
+    } catch (err) {
+      esewaStatus.style.color = "var(--danger)";
+      esewaStatus.textContent = "Could not verify payment. Please contact us on WhatsApp with your transaction details.";
+    }
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  })();
 
   // If we've just been sent back here by Khalti, verify the payment server-side.
   (async function checkForKhaltiReturn() {
