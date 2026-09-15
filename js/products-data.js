@@ -439,23 +439,6 @@ colors: [
     description: 
 "Product Name - This mini pocket cycling bike repair multi-tool is made of durable ABS and metal materials, featuring a compact size of 9*2.5*4.5CM. Made with high-quality stainless steel tools and a sturdy ABS body, it combines strength, portability, and convenience. The tool includes multiple hex keys, screwdrivers, spoke wrenches, and other essential functions needed for roadside fixes. Its foldable design makes it easy to carry in your pocket, saddlebag, or toolkit, ensuring you’re always prepared for unexpected repairs during rides. Perfect for cyclists, mountain bikers, and daily commuters who value reliability and efficiency.  Product Name - Bike Repair Tool Material - ABS + Metal Size - 9*2.5*4.5CM.  Weight - 300 gm Feature - High quality, heavy stainless steel,  Usage - Promotion/Business gift, dailiy usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench.",
   },
-{
-    id: "cy-004",
-    name: "Sports Armband Multifunctional Pockets Exercise Workout Running Waterproof Arm Bag with Earphone Hole",
-    category: "Cycling",
-    price: 375,
-    oldPrice: 450,
-    images: [
-      "images/products/cy-004-1.jpg",
-      "images/products/cy-004-2.jpg",
-      "images/products/cy-004-3.jpg"
-  ],
-
-    badge: "New",
-    stock: 5,
-    description:  
-"Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 1000 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Available color - Football"
-},
 
 
    {
