@@ -455,7 +455,7 @@ colors: [
     stock: 5,
     description: 
 "This armband is generally useful for outdoor related sports activities to keep your important accessories safe and easy access. Product Name - Sports Armband for Multifunctional Usage
-Feature - Waterproof Durable Material - Neoprene Capacity - 10L Use - Camping and Hiking Package - One Poly Bag Colors - Blue/Green/Orange/Pink.",
+Feature - Waterproof Durable Material - Neoprene Capacity - 10L Use - Camping and Hiking Package - One Poly Bag.",
   },
 
 
