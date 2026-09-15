@@ -129,6 +129,13 @@ const PRODUCTS = [
       "images/products/fb-004-1.jpg",
       "images/products/fb-004-2.jpg",
       "images/products/fb-004-3.jpg"
+  "images/products/fb-004-4.jpg"
+  "images/products/fb-004-5.jpg"
+  "images/products/fb-004-6.jpg"
+  "images/products/fb-004-7.jpg"
+  "images/products/fb-004-8.jpg"
+  "images/products/fb-004-9.jpg"
+  "images/products/fb-004-10.jpg"
     ],
     badge: "",
     stock: 10,
