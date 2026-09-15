@@ -454,9 +454,9 @@ colors: [
     badge: "New",
     stock: 5,
     description: 
-"This armband is generally useful for outdoor related sports activities to keep your important accessories safe and easy access. Product Name - Sports Armband for Multifunctional Usage
-Feature - Waterproof Durable Material - Neoprene Capacity - 10L Use - Camping and Hiking Package - One Poly Bag.",
-  },
+description: 
+"This armband is useful for outdoor sports activities, helping keep your important accessories safe and easily accessible. Product Name - Sports Armband for Multifunctional Usage. Feature - Waterproof. Material - Neoprene. Use - Running, Cycling, Camping and Hiking. Package - 1 piece."
+},
 
 
    {
