@@ -75,6 +75,7 @@
   const contentEl = document.getElementById("product-content");
 
   let qty = 1;
+  let selectedColor = null;
 
   function render() {
     if (!product) {
@@ -107,6 +108,28 @@
         </div>`
       : "";
 
+    const colors = getProductColors(product);
+    if (colors.length > 0 && !selectedColor) {
+      selectedColor = colors[0].name;
+    }
+
+    const colorsHTML = colors.length > 0
+      ? `<div class="color-picker" style="margin:18px 0;">
+          <label style="display:block; margin-bottom:8px; font-size:0.85rem; color:var(--text-muted);">
+            Color: <span id="selected-color-label" style="color:var(--text); font-weight:600;">${selectedColor}</span>
+          </label>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            ${colors.map((c) => `
+              <button type="button" class="color-swatch-btn" data-color="${c.name}" data-image="${c.image || ""}"
+                style="width:38px;height:38px;border-radius:50%;
+                       border:2px solid ${c.name === selectedColor ? "var(--accent)" : "var(--border)"};
+                       background:${colorSwatchHex(c.name)};cursor:pointer;padding:0;"
+                title="${c.name}"></button>
+            `).join("")}
+          </div>
+        </div>`
+      : "";
+
     contentEl.innerHTML = `
       <div class="product-detail">
         <div>
@@ -125,6 +148,7 @@
           </div>
           <p>${product.description}</p>
           ${stockLabel}
+          ${colorsHTML}
           <div class="qty-row">
             <div class="qty-control">
               <button id="qty-minus">−</button>
@@ -146,6 +170,11 @@
       qty = Math.max(1, qty - 1);
       document.getElementById("qty-value").textContent = qty;
     });
+    document.getElementById("qty-plus").addEventListener("click", () => {
+      qty = Math.min(maxQty, qty + 1);
+      document.getElementById("qty-value").textContent = qty;
+    });
+
     document.querySelectorAll(".gallery-thumb").forEach((thumb) => {
       thumb.addEventListener("click", () => {
         const src = thumb.dataset.src;
@@ -156,14 +185,27 @@
         thumb.classList.add("active");
       });
     });
-    document.getElementById("qty-plus").addEventListener("click", () => {
-      qty = Math.min(maxQty, qty + 1);
-      document.getElementById("qty-value").textContent = qty;
+
+    document.querySelectorAll(".color-swatch-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        selectedColor = btn.dataset.color;
+        document.getElementById("selected-color-label").textContent = selectedColor;
+        document.querySelectorAll(".color-swatch-btn").forEach((b) => {
+          b.style.borderColor = b.dataset.color === selectedColor ? "var(--accent)" : "var(--border)";
+        });
+        const colorImage = btn.dataset.image;
+        if (colorImage) {
+          const mainPhoto = document.getElementById("main-photo");
+          mainPhoto.classList.remove("img-fallback");
+          mainPhoto.querySelector("img").src = colorImage;
+        }
+      });
     });
+
     const addBtn = document.getElementById("add-btn");
     if (addBtn) {
       addBtn.addEventListener("click", () => {
-        const added = addToCart(product.id, qty);
+        const added = addToCart(product.id, qty, selectedColor);
         addBtn.textContent = added > 0 ? "Added ✓" : "Limit reached";
         setTimeout(() => (addBtn.textContent = "Add to cart"), 1200);
       });

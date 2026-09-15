@@ -83,27 +83,31 @@
     }
 
     const rows = items
-      .map(
-        (item) => `
+      .map((item) => {
+        const thumbSrc = getProductImages(item)[0] || "";
+        const colorLine = item.color
+          ? `<br/><span style="font-size:0.8rem;color:var(--text-muted);">Color: ${item.color}</span>`
+          : "";
+        return `
       <div class="cart-row">
         <div class="cart-thumb product-thumb">
-          <img src="${item.image}" alt="${item.name}" onerror="this.closest('.product-thumb').classList.add('img-fallback')" />
+          <img src="${thumbSrc}" alt="${item.name}" onerror="this.closest('.product-thumb').classList.add('img-fallback')" />
           <span class="thumb-fallback" style="font-size:1.2rem;">${getInitials(item.name)}</span>
         </div>
         <div>
           <div class="product-name">${item.name}</div>
-          <span class="product-cat">${item.category}</span><br/>
-          <a href="#" class="remove-link" data-remove="${item.id}">Remove</a>
+          <span class="product-cat">${item.category}</span>${colorLine}<br/>
+          <a href="#" class="remove-link" data-remove="${item.id}" data-color="${item.color || ""}">Remove</a>
         </div>
         <div class="qty-control">
-          <button data-decrease="${item.id}">−</button>
+          <button data-decrease="${item.id}" data-color="${item.color || ""}">−</button>
           <span>${item.qty}</span>
-          <button data-increase="${item.id}">+</button>
+          <button data-increase="${item.id}" data-color="${item.color || ""}">+</button>
         </div>
         <div class="price">${formatRs(item.price * item.qty)}</div>
       </div>
-    `
-      )
+    `;
+      })
       .join("");
 
     contentEl.innerHTML = `
@@ -122,21 +126,27 @@
     contentEl.querySelectorAll("[data-remove]").forEach((el) => {
       el.addEventListener("click", (e) => {
         e.preventDefault();
-        removeFromCart(el.dataset.remove);
+        removeFromCart(el.dataset.remove, el.dataset.color || null);
         renderCart();
       });
     });
     contentEl.querySelectorAll("[data-increase]").forEach((el) => {
       el.addEventListener("click", () => {
-        const item = getCart().find((i) => i.id === el.dataset.increase);
-        updateCartQty(el.dataset.increase, (item ? item.qty : 0) + 1);
+        const color = el.dataset.color || null;
+        const item = getCart().find(
+          (i) => i.id === el.dataset.increase && (i.color || null) === color
+        );
+        updateCartQty(el.dataset.increase, (item ? item.qty : 0) + 1, color);
         renderCart();
       });
     });
     contentEl.querySelectorAll("[data-decrease]").forEach((el) => {
       el.addEventListener("click", () => {
-        const item = getCart().find((i) => i.id === el.dataset.decrease);
-        updateCartQty(el.dataset.decrease, (item ? item.qty : 0) - 1);
+        const color = el.dataset.color || null;
+        const item = getCart().find(
+          (i) => i.id === el.dataset.decrease && (i.color || null) === color
+        );
+        updateCartQty(el.dataset.decrease, (item ? item.qty : 0) - 1, color);
         renderCart();
       });
     });
