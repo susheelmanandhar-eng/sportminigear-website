@@ -106,6 +106,12 @@ const PRODUCTS = [
       "images/products/fb-003-1.jpg",
       "images/products/fb-003-2.jpg",
       "images/products/fb-003-3.jpg"
+"images/products/fb-003-4.jpg"
+"images/products/fb-003-5.jpg"
+"images/products/fb-003-6.jpg"
+"images/products/fb-003-7.jpg"
+"images/products/fb-003-8.jpg"
+
     ],
     badge: "",
     stock: 3,
