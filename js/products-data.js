@@ -454,7 +454,7 @@ colors: [
     badge: "New",
     stock: 5,
     description:  
-"This armband is useful for outdoor sports activities, helping keep your important accessories safe and easily accessible. Product Name - Sports Armband for Multifunctional Usage. Feature - Waterproof. Material - Neoprene. Use - Running, Cycling, Camping and Hiking. Package - 1 piece."
+"Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 1000 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Available color - Football"
 },
 
 
