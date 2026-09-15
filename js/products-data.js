@@ -106,16 +106,16 @@ const PRODUCTS = [
       "images/products/fb-003-1.jpg",
       "images/products/fb-003-2.jpg",
       "images/products/fb-003-3.jpg",
-"images/products/fb-003-4.jpg",
-"images/products/fb-003-5.jpg",
-"images/products/fb-003-6.jpg",
-"images/products/fb-003-7.jpg",
-"images/products/fb-003-8.jpg"
+      "images/products/fb-003-4.jpg",
+      "images/products/fb-003-5.jpg",
+      "images/products/fb-003-6.jpg",
+      "images/products/fb-003-7.jpg",
+      "images/products/fb-003-8.jpg"
     ],
     badge: "",
     stock: 3,
     description:
-      "It is a new outdoor portable water filter for travel, hiking, and camping. Product Name - Camping Water Purifier Compatibility - Easy to carry Type - Survival Multifunctional Tool Style - Modern Capacity - 1500 L Purpose - Outdoor Emergency Use Feature - Light Weight Function - Portable Survival Tool Usage - Outdoor Camping Hiking Travelling Beach",
+      "It is a new outdoor portable water filter for travel, hiking, and camping. Product Name - Camping Water Purifier Compatibility - Easy to carry Type - Survival Multifunctional Tool Style - Modern Capacity - 1500 L Purpose - Outdoor Emergency Use Feature - Light Weight Function - Portable Survival Tool Usage - Outdoor Camping Hiking Travelling Beach.",
   },
 
  {
