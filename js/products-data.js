@@ -105,7 +105,7 @@ const PRODUCTS = [
     images: [
       "images/products/fb-003-1.jpg",
       "images/products/fb-003-2.jpg",
-      "images/products/fb-003-3.jpg"
+      "images/products/fb-003-3.jpg",
 "images/products/fb-003-4.jpg",
 "images/products/fb-003-5.jpg",
 "images/products/fb-003-6.jpg",
