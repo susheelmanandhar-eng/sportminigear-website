@@ -402,19 +402,48 @@ const PRODUCTS = [
     id: "ru-001",
     name: "60L Outdoor Travel Camping Climbing Trekking Hiking Internal Frame Waterproof Nylon Backpack Bags",
     category: "Running and Hike",
-    price: 950,
+    price: 2150,
+    oldPrice: 2450,
     images: [
-      "images/products/cy-003-blue.jpg",
-      "images/products/cy-003-black.jpg"
+      "images/products/ru-003-blue.jpg",
+      "images/products/ru-003-black.jpg"
    ],
 colors: [
-{ name: "Blue", image: "images/products/cy-003-blue.jpg" }, 
-{ name: "Black", image: "images/products/cy-003-black.jpg" } ], 
+{ name: "Blue", image: "images/products/ru-003-blue.jpg" }, 
+{ name: "Black", image: "images/products/ru-003-black.jpg" } ], 
     badge: "Bestseller",
     stock: 5,
     description: 
 "Gender - Unisex Feature - Waterproof Material - Water Repellent Nylon Type - Large Capacity Outdoor Mountaineering Bag Main Material - Nylon Type - Softback Pattern Type - Geometric Closure Type - Zipper Interior - Interior Compartment Carrying System - Physiological Curve Back Handle / Strap Type - Soft Handle Style - Fashion Capacity - 60 L Usage - Daily Use Color - Multiple Color.",
   },
+
+{
+    id: "ru-002",
+    name: "60L Outdoor Multifunctional Backpack Hiking Backpack Nylon Mountaineering Backpack",
+    category: "Running and Hike",
+    price: 1950,
+    oldPrice: 2250,
+    images: [
+      "images/products/ru-003-green.jpg",
+      "images/products/ru-003-teal.jpg",
+      "images/products/ru-003-red.jpg",
+      "images/products/ru-003-sky blue.jpg",
+      "images/products/ru-003-orange.jpg",
+      "images/products/ru-003-dark blue.jpg",
+   ],
+colors: [
+{ name: "Green", image: "images/products/ru-003-green.jpg" }, 
+{ name: "Teal", image: "images/products/ru-003-teal.jpg" }, 
+{ name: "Red", image: "images/products/ru-003-red.jpg" }, 
+{ name: "Sky Blue", image: "images/products/ru-003-sky blue.jpg" }, 
+{ name: "Orange", image: "images/products/ru-003-orange.jpg" }, 
+{ name: "Dark Blue", image: "images/products/ru-003-dark blue.jpg" } ], 
+    badge: "Bestseller",
+    stock: 5,
+    description: 
+"This backpack is Outdoor Travel Bag with generally for hikes and trekks with which excess space for making the travel more reliable. Capacity - 60 L Fabric - Water Repellent Nylon Backed - Breathable Divison Bag Occasion - Suitalbe for Outdoor Hiking, Leisure Travel ; Mount Climbing Poles, Sleeping Bags, Tents, Ice Picks  ; Zippered Waist Pockets Product Name - Outdoor Travel Bag Main Material - Nylon Type - Softback Pattern Type - Geometric Closure Type - Zipper Interior - Interior Compartment",
+  },
+
 
      {
     id: "cy-001",
