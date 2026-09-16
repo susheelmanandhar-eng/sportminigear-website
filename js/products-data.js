@@ -397,6 +397,25 @@ const PRODUCTS = [
     description:
       "Handle Material - Aluminum Bronze Application - Claw Hammer Size - 14*75*2.5cm Packing - Pouch and Box Application - Claw Hammer Color - Black Weight - 260 grams Usage - Promotion/Business gift, daily usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench.",
   },
+
+{
+    id: "ru-001",
+    name: "60L Outdoor Travel Camping Climbing Trekking Hiking Internal Frame Waterproof Nylon Backpack Bags",
+    category: "Running and Hike",
+    price: 950,
+    images: [
+      "images/products/cy-003-blue.jpg",
+      "images/products/cy-003-black.jpg"
+   ],
+colors: [
+{ name: "Blue", image: "images/products/cy-003-blue.jpg" }, 
+{ name: "Black", image: "images/products/cy-003-black.jpg" } ], 
+    badge: "Bestseller",
+    stock: 5,
+    description: 
+"Gender - Unisex Feature - Waterproof Material - Water Repellent Nylon Type - Large Capacity Outdoor Mountaineering Bag Main Material - Nylon Type - Softback Pattern Type - Geometric Closure Type - Zipper Interior - Interior Compartment Carrying System - Physiological Curve Back Handle / Strap Type - Soft Handle Style - Fashion Capacity - 60 L Usage - Daily Use Color - Multiple Color.",
+  },
+
      {
     id: "cy-001",
     name: "Ultra Bright 350lm USB Rechargeable Waterproof Motion Sensor Bicycle Lights",
