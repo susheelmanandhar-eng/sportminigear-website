@@ -443,9 +443,9 @@ const PRODUCTS = [
       "images/products/cy-003-3.jpg"
   ],
 colors: [
- { name: "Red", image: "images/products/cy-003-1-black.jpg" }, 
-{ name: "Blue", image: "images/products/cy-003-1-blue.jpg" }, 
-{ name: "Black", image: "images/products/cy-003-1-red.jpg" } ], 
+ { name: "Black", image: "images/products/cy-003-black.jpg" }, 
+{ name: "Blue", image: "images/products/cy-003-blue.jpg" }, 
+{ name: "Red", image: "images/products/cy-003-red.jpg" } ], 
     badge: "Bestseller",
     stock: 5,
     description: 
