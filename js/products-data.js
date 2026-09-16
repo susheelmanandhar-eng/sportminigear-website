@@ -438,14 +438,14 @@ const PRODUCTS = [
     category: "Cycling",
     price: 950,
     images: [
-      "images/products/cy-003-black.jpg",
+      "images/products/cy-003-red.jpg",
       "images/products/cy-003-blue.jpg",
-      "images/products/cy-003-red.jpg"
+      "images/products/cy-003-black.jpg"
   ],
 colors: [
- { name: "Black", image: "images/products/cy-003-black.jpg" }, 
+ { name: "Red", image: "images/products/cy-003-red.jpg" }, 
 { name: "Blue", image: "images/products/cy-003-blue.jpg" }, 
-{ name: "Red", image: "images/products/cy-003-red.jpg" } ], 
+{ name: "Black", image: "images/products/cy-003-black.jpg" } ], 
     badge: "Bestseller",
     stock: 5,
     description: 
