@@ -441,13 +441,7 @@ const PRODUCTS = [
       "images/products/cy-003-red.jpg",
       "images/products/cy-003-blue.jpg",
       "images/products/cy-003-black.jpg"
- "images/products/cy-003-1.jpg",
- "images/products/cy-003-2.jpg",
- "images/products/cy-003-3.jpg",
- "images/products/cy-003-4.jpg",
- "images/products/cy-003-5.jpg",
- "images/products/cy-003-6.jpg"
-  ],
+   ],
 colors: [
  { name: "Red", image: "images/products/cy-003-red.jpg" }, 
 { name: "Blue", image: "images/products/cy-003-blue.jpg" }, 
