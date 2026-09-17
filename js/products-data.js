@@ -488,7 +488,7 @@ colors: [
     images: [
       "images/products/cy-003-red.jpg",
       "images/products/cy-003-blue.jpg",
-      "images/products/cy-003-black.jpg"
+      "images/products/cy-003-black.jpg",
 "images/products/cy-003-4.jpg",
 "images/products/cy-003-5.jpg",
 "images/products/cy-003-6.jpg",
