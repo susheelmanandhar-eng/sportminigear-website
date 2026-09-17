@@ -40,12 +40,16 @@ function colorSwatchHex(name) {
 
 /* ---------------------------- Stock helpers ---------------------------- */
 
-function getStock(product) {
+function getStock(product, colorName = null) {
   if (!product) return 0;
+  const colors = getProductColors(product);
+  if (colorName && colors.length > 0) {
+    const match = colors.find((c) => c.name === colorName);
+    if (match && typeof match.stock === "number") return match.stock;
+  }
   if (typeof product.stock === "number") return product.stock;
   return product.inStock ? Infinity : 0;
 }
-
 /* ---------------------------- Cart helpers ---------------------------- */
 // Cart lines are matched by BOTH id and color, so different colors of the
 // same product sit as separate lines in the cart (e.g. Red horn x2, Blue horn x1).
@@ -71,7 +75,7 @@ function sameLine(item, id, color) {
 // lets the total for that line exceed available stock.
 function addToCart(id, qty = 1, color = null) {
   const product = PRODUCTS.find((p) => p.id === id);
-  const max = getStock(product);
+   const max = getStock(product, color);
   const cart = getCart();
   const existing = cart.find((item) => sameLine(item, id, color));
   const currentQty = existing ? existing.qty : 0;
@@ -93,7 +97,7 @@ function addToCart(id, qty = 1, color = null) {
 // Sets a cart line to an exact quantity, clamped between 0 and available stock.
 function updateCartQty(id, qty, color = null) {
   const product = PRODUCTS.find((p) => p.id === id);
-  const max = getStock(product);
+   const max = getStock(product, color);
   const clamped = Math.min(qty, max);
 
   let cart = getCart();

@@ -77,6 +77,12 @@
   let qty = 1;
   let selectedColor = null;
 
+  function getSelectedColorImage() {
+    const colors = getProductColors(product);
+    const match = colors.find((c) => c.name === selectedColor);
+    return match && match.image ? match.image : null;
+  }
+
   function render() {
     if (!product) {
       contentEl.innerHTML = `<div class="empty-state">We couldn't find that product. <a href="products.html">Browse the catalog</a> instead.</div>`;
@@ -84,9 +90,18 @@
     }
     document.getElementById("page-title").textContent = product.name + " — Sport Mini Gear";
 
-    const maxQty = getStock(product);
+    const colors = getProductColors(product);
+    if (colors.length > 0 && !selectedColor) {
+      selectedColor = colors[0].name;
+    }
+
+    const maxQty = getStock(product, selectedColor);
+    if (qty > maxQty) qty = maxQty > 0 ? Math.min(qty, maxQty) : 1;
+
     const images = getProductImages(product);
-    const mainImage = images[0] || "";
+    const colorImage = getSelectedColorImage();
+    const mainImage = colorImage || images[0] || "";
+
     const oldPrice = product.oldPrice ? `<span class="price-old">${formatRs(product.oldPrice)}</span>` : "";
     let stockLabel;
     if (maxQty <= 0) {
@@ -100,18 +115,13 @@
     const thumbsHTML = images.length > 1
       ? `<div class="detail-gallery-thumbs">
           ${images.map((src, i) => `
-            <div class="gallery-thumb ${i === 0 ? "active" : ""}" data-src="${src}">
+            <div class="gallery-thumb ${src === mainImage ? "active" : ""}" data-src="${src}">
               <img src="${src}" alt="${product.name} photo ${i + 1}"
                    onerror="this.closest('.gallery-thumb').style.display='none'" />
             </div>
           `).join("")}
         </div>`
       : "";
-
-    const colors = getProductColors(product);
-    if (colors.length > 0 && !selectedColor) {
-      selectedColor = colors[0].name;
-    }
 
     const colorsHTML = colors.length > 0
       ? `<div class="color-picker" style="margin:18px 0;">
@@ -120,11 +130,12 @@
           </label>
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
             ${colors.map((c) => `
-              <button type="button" class="color-swatch-btn" data-color="${c.name}" data-image="${c.image || ""}"
+              <button type="button" class="color-swatch-btn" data-color="${c.name}"
                 style="width:38px;height:38px;border-radius:50%;
                        border:2px solid ${c.name === selectedColor ? "var(--accent)" : "var(--border)"};
-                       background:${colorSwatchHex(c.name)};cursor:pointer;padding:0;"
-                title="${c.name}"></button>
+                       background:${colorSwatchHex(c.name)};cursor:pointer;padding:0;
+                       opacity:${getStock(product, c.name) > 0 ? "1" : "0.35"};"
+                title="${c.name}${getStock(product, c.name) <= 0 ? " (out of stock)" : ""}"></button>
             `).join("")}
           </div>
         </div>`
@@ -152,7 +163,7 @@
           <div class="qty-row">
             <div class="qty-control">
               <button id="qty-minus">−</button>
-              <span id="qty-value">1</span>
+              <span id="qty-value">${qty}</span>
               <button id="qty-plus">+</button>
             </div>
           </div>
@@ -189,16 +200,8 @@
     document.querySelectorAll(".color-swatch-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         selectedColor = btn.dataset.color;
-        document.getElementById("selected-color-label").textContent = selectedColor;
-        document.querySelectorAll(".color-swatch-btn").forEach((b) => {
-          b.style.borderColor = b.dataset.color === selectedColor ? "var(--accent)" : "var(--border)";
-        });
-        const colorImage = btn.dataset.image;
-        if (colorImage) {
-          const mainPhoto = document.getElementById("main-photo");
-          mainPhoto.classList.remove("img-fallback");
-          mainPhoto.querySelector("img").src = colorImage;
-        }
+        qty = 1;
+        render();
       });
     });
 
