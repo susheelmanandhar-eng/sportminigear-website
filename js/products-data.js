@@ -502,7 +502,7 @@ colors: [
     badge: "Bestseller",
     stock: 5,
     description: 
-"Product Name - This mini pocket cycling bike repair multi-tool is made of durable ABS and metal materials, featuring a compact size of 9*2.5*4.5CM. Made with high-quality stainless steel tools and a sturdy ABS body, it combines strength, portability, and convenience. The tool includes multiple hex keys, screwdrivers, spoke wrenches, and other essential functions needed for roadside fixes. Its foldable design makes it easy to carry in your pocket, saddlebag, or toolkit, ensuring you’re always prepared for unexpected repairs during rides. Perfect for cyclists, mountain bikers, and daily commuters who value reliability and efficiency.  Product Name - Bike Repair Tool Material - ABS + Metal Size - 9*2.5*4.5CM.  Weight - 300 gm Feature - High quality, heavy stainless steel,  Usage - Promotion/Business gift, dailiy usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench.",
+"Product Name - Bicycle Electric Horn Usage - Bike Handlebar Quality - Waterproof (IPX4) Decibel - 120dB Feature - Durable Function - Bike Safety Equipment Battery - CR2032 Material - ABS+PC Gross Weight - 0.050 kg Size - 4.8*4.6*8 cm",
   },
 
 
@@ -615,5 +615,27 @@ colors: [
 "Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 550 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Single Gross Weight - 0.400 kg Color - Black",
   },
 
+{
+    id: "ac-007",
+    name: "Thermal Mylar Space Emergency Blanket Poncho Keeps Your Gear Dry and Warm Raincoat Survival Equipment for Camping",
+    category: "Accessories",
+    price: 950,
+    images: [
+      "images/products/ac-007-green.jpg",
+      "images/products/ac-007-orange.jpg",
+"images/products/ac-007-3.jpg",
+"images/products/ac-007-4.jpg",
+"images/products/ac-007-5.jpg",
+"images/products/ac-007-6.jpg"
+   ],
+colors: [
+ { name: "Green", image: "images/products/ac-007-green.jpg", stock: 5 },
+{ name: "Orange", image: "images/products/ac-007-orange.jpg", stock: 6 }, 
+], 
+    badge: "Bestseller",
+    stock: 5,
+    description: 
+"Product Name - Waterproof Raincoat Type - Survival Kit Application - Camping Usage - Outdoor Activity (Sports, Running, Hiking, Climbing, Trekking) Season - All Package - 1 piece/Bag Raincoat Design Style - Modern Size - 100*130cm Material - PE (Polythene) - Lightweight and widely used synthetic resin) Available colors Orange/Green. P.S. - A Mylar blanket (also known as a space or emergency blanket) is a common type of emergency blanket made from a thin synthetic material that is generally waterproof and reflective on at least one side.",
+  },
 
 ];
