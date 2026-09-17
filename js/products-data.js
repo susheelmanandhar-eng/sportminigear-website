@@ -495,9 +495,9 @@ colors: [
 "images/products/cy-003-7.jpg"
    ],
 colors: [
- { name: "Red", image: "images/products/cy-003-red.jpg" }, stock: 5 },
-{ name: "Blue", image: "images/products/cy-003-blue.jpg" }, stock: 6 }, 
-{ name: "Black", image: "images/products/cy-003-black.jpg" } stock: 2 },
+ { name: "Red", image: "images/products/cy-003-red.jpg", stock: 5 },
+{ name: "Blue", image: "images/products/cy-003-blue.jpg", stock: 6 }, 
+{ name: "Black", image: "images/products/cy-003-black.jpg", stock: 2 },
 ], 
     badge: "Bestseller",
     stock: 5,
