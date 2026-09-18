@@ -140,7 +140,13 @@ function updateCartBadge() {
 }
 
 /* ---------------------------- Formatting ---------------------------- */
+/* ---------------------------- Delivery charge ---------------------------- */
 
+const VALLEY_DISTRICTS = ["Kathmandu", "Lalitpur", "Bhaktapur"];
+
+function getDeliveryCharge(district) {
+  return VALLEY_DISTRICTS.includes(district) ? 50 : 150;
+}
 function formatRs(amount) {
   return "Rs. " + Number(amount).toLocaleString("en-IN");
 }
@@ -225,10 +231,12 @@ function renderProductGrid(containerId, products) {
 
 function buildOrderMessage(customer) {
   const items = cartItemsWithProducts();
+  const delivery = getDeliveryCharge(customer.district);
   const lines = [
     `New order from ${customer.name}`,
     `Phone: ${customer.phone}`,
     `Address: ${customer.address}`,
+    `District: ${customer.district || "N/A"}`,
     "",
     "Order:",
   ];
@@ -237,14 +245,15 @@ function buildOrderMessage(customer) {
     lines.push(`- ${item.name}${colorText} x${item.qty} = ${formatRs(item.price * item.qty)}`);
   });
   lines.push("");
-  lines.push(`Total: ${formatRs(cartTotal())}`);
+  lines.push(`Subtotal: ${formatRs(cartTotal())}`);
+  lines.push(`Delivery (${customer.district || "N/A"}): ${formatRs(delivery)}`);
+  lines.push(`Total: ${formatRs(cartTotal() + delivery)}`);
   if (customer.note) {
     lines.push("");
     lines.push(`Note: ${customer.note}`);
   }
   return lines.join("\n");
 }
-
 function whatsappOrderLink(customer) {
   const text = encodeURIComponent(buildOrderMessage(customer));
   return `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${text}`;
