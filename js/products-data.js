@@ -405,12 +405,17 @@ const PRODUCTS = [
     price: 2150,
     oldPrice: 2450,
     images: [
-      "images/products/ru-003-blue.jpg",
-      "images/products/ru-003-black.jpg"
+      "images/products/ru-001-blue.jpg",
+      "images/products/ru-001-black.jpg",
+ "images/products/ru-001-teal.jpg",
+ "images/products/ru-001-red.jpg"
+
    ],
 colors: [
-{ name: "Blue", image: "images/products/ru-003-blue.jpg" }, 
-{ name: "Black", image: "images/products/ru-003-black.jpg" } ], 
+{ name: "Red", image: "images/products/ru-001-teal.jpg", stock: 1 }, 
+{ name: "Red", image: "images/products/ru-001-red.jpg", stock: 1 }, 
+{ name: "Blue", image: "images/products/ru-001-blue.jpg", stock: 6 }, 
+{ name: "Black", image: "images/products/ru-001-black.jpg", stock: 2 } ], 
     badge: "Bestseller",
     stock: 5,
     description: 
@@ -424,20 +429,20 @@ colors: [
     price: 1950,
     oldPrice: 2250,
     images: [
-      "images/products/ru-003-green.jpg",
-      "images/products/ru-003-teal.jpg",
-      "images/products/ru-003-red.jpg",
-      "images/products/ru-003-sky blue.jpg",
-      "images/products/ru-003-orange.jpg",
-      "images/products/ru-003-dark blue.jpg",
+      "images/products/ru-002-green.jpg",
+      "images/products/ru-002-teal.jpg",
+      "images/products/ru-002-red.jpg",
+      "images/products/ru-002-sky blue.jpg",
+      "images/products/ru-002-orange.jpg",
+      "images/products/ru-002-dark blue.jpg"
    ],
 colors: [
-{ name: "Green", image: "images/products/ru-003-green.jpg" }, 
-{ name: "Teal", image: "images/products/ru-003-teal.jpg" }, 
-{ name: "Red", image: "images/products/ru-003-red.jpg" }, 
-{ name: "Sky Blue", image: "images/products/ru-003-sky blue.jpg" }, 
-{ name: "Orange", image: "images/products/ru-003-orange.jpg" }, 
-{ name: "Dark Blue", image: "images/products/ru-003-dark blue.jpg" } ], 
+{ name: "Green", image: "images/products/ru-002-green.jpg", stock: 1 }, 
+{ name: "Teal", image: "images/products/ru-002-teal.jpg", stock: 3 }, 
+{ name: "Red", image: "images/products/ru-002-red.jpg", stock: 3 }, 
+{ name: "Sky Blue", image: "images/products/ru-002-sky blue.jpg", stock: 3  }, 
+{ name: "Orange", image: "images/products/ru-002-orange.jpg", stock: 1 }, 
+{ name: "Dark Blue", image: "images/products/ru-002-dark blue.jpg" stock: 9 } ], 
     badge: "Bestseller",
     stock: 5,
     description: 
