@@ -623,6 +623,7 @@ colors: [
     images: [
       "images/products/ac-007-green.jpg",
       "images/products/ac-007-orange.jpg",
+      "images/products/ac-007-camofaluge.jpg",
 "images/products/ac-007-3.jpg",
 "images/products/ac-007-4.jpg",
 "images/products/ac-007-5.jpg",
@@ -631,6 +632,7 @@ colors: [
 colors: [
  { name: "Green", image: "images/products/ac-007-green.jpg", stock: 5 },
 { name: "Orange", image: "images/products/ac-007-orange.jpg", stock: 6 }, 
+{ name: "Camoflauge", image: "images/products/ac-007-camoflauge.jpg", stock: 4 }, 
 ], 
     badge: "Bestseller",
     stock: 5,
