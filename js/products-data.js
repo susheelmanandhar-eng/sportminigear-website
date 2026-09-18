@@ -627,7 +627,9 @@ colors: [
 "images/products/ac-007-3.jpg",
 "images/products/ac-007-4.jpg",
 "images/products/ac-007-5.jpg",
-"images/products/ac-007-6.jpg"
+"images/products/ac-007-6.jpg",
+"images/products/ac-007-7.jpg",
+"images/products/ac-007-8.jpg"
    ],
 colors: [
  { name: "Green", image: "images/products/ac-007-green.jpg", stock: 5 },
