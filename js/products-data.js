@@ -412,10 +412,10 @@ const PRODUCTS = [
 
    ],
 colors: [
-{ name: "Red", image: "images/products/ru-001-teal.jpg", stock: 1 }, 
-{ name: "Red", image: "images/products/ru-001-red.jpg", stock: 1 }, 
 { name: "Blue", image: "images/products/ru-001-blue.jpg", stock: 6 }, 
-{ name: "Black", image: "images/products/ru-001-black.jpg", stock: 2 } ], 
+{ name: "Black", image: "images/products/ru-001-black.jpg", stock: 2 }
+{ name: "Teal", image: "images/products/ru-001-teal.jpg", stock: 1 }, 
+{ name: "Red", image: "images/products/ru-001-red.jpg", stock: 1 },  ], 
     badge: "Bestseller",
     stock: 5,
     description: 
