@@ -413,7 +413,7 @@ const PRODUCTS = [
    ],
 colors: [
 { name: "Blue", image: "images/products/ru-001-blue.jpg", stock: 6 }, 
-{ name: "Black", image: "images/products/ru-001-black.jpg", stock: 2 }
+{ name: "Black", image: "images/products/ru-001-black.jpg", stock: 2 },
 { name: "Teal", image: "images/products/ru-001-teal.jpg", stock: 1 }, 
 { name: "Red", image: "images/products/ru-001-red.jpg", stock: 1 },  ], 
     badge: "Bestseller",
@@ -442,7 +442,7 @@ colors: [
 { name: "Red", image: "images/products/ru-002-red.jpg", stock: 3 }, 
 { name: "Sky Blue", image: "images/products/ru-002-sky blue.jpg", stock: 3  }, 
 { name: "Orange", image: "images/products/ru-002-orange.jpg", stock: 1 }, 
-{ name: "Dark Blue", image: "images/products/ru-002-dark blue.jpg" stock: 9 } ], 
+{ name: "Dark Blue", image: "images/products/ru-002-dark blue.jpg", stock: 9 } ], 
     badge: "Bestseller",
     stock: 5,
     description: 
@@ -628,7 +628,7 @@ colors: [
     images: [
       "images/products/ac-007-green.jpg",
       "images/products/ac-007-orange.jpg",
-      "images/products/ac-007-camofaluge.jpg",
+      "images/products/ac-007-camoflauge.jpg",
 "images/products/ac-007-3.jpg",
 "images/products/ac-007-4.jpg",
 "images/products/ac-007-5.jpg",
@@ -639,8 +639,7 @@ colors: [
 colors: [
  { name: "Green", image: "images/products/ac-007-green.jpg", stock: 5 },
 { name: "Orange", image: "images/products/ac-007-orange.jpg", stock: 6 }, 
-{ name: "Camoflauge", image: "images/products/ac-007-camoflauge.jpg", stock: 4 }, 
-], 
+{ name: "Camoflauge", image: "images/products/ac-007-camoflauge.jpg", stock: 4 }, ], 
     badge: "Bestseller",
     stock: 5,
     description: 
