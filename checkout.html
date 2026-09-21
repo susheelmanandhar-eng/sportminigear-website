@@ -502,6 +502,15 @@
     document.getElementById("step-delivery").style.display = "none";
     document.getElementById("step-payment").style.display = "block";
 
+    const pendingForTotalsEsewa = JSON.parse(sessionStorage.getItem("smg_pending_order_esewa") || "null");
+    if (pendingForTotalsEsewa) {
+      const delivery = getDeliveryCharge(pendingForTotalsEsewa.customer.district);
+      document.getElementById("checkout-subtotal").textContent = formatRs(cartTotal());
+      document.getElementById("checkout-delivery").textContent = formatRs(delivery);
+      document.getElementById("checkout-district-label").textContent = pendingForTotalsEsewa.customer.district || "—";
+      document.getElementById("checkout-total").textContent = formatRs(cartTotal() + delivery);
+    }
+
     esewaStatus.textContent = "Verifying your payment…";
     esewaStatus.style.color = "var(--text-muted)";
 
@@ -561,6 +570,18 @@
     // Jump straight to the payment step so the status message is visible in context.
     document.getElementById("step-delivery").style.display = "none";
     document.getElementById("step-payment").style.display = "block";
+
+    // Re-fill the Subtotal/Delivery/Total rows using the order we saved
+    // before redirecting, since the delivery form is empty on this fresh
+    // page load (the district isn't selected here anymore).
+    const pendingForTotals = JSON.parse(sessionStorage.getItem("smg_pending_order") || "null");
+    if (pendingForTotals) {
+      const delivery = getDeliveryCharge(pendingForTotals.customer.district);
+      document.getElementById("checkout-subtotal").textContent = formatRs(cartTotal());
+      document.getElementById("checkout-delivery").textContent = formatRs(delivery);
+      document.getElementById("checkout-district-label").textContent = pendingForTotals.customer.district || "—";
+      document.getElementById("checkout-total").textContent = formatRs(cartTotal() + delivery);
+    }
 
     khaltiStatus.textContent = "Verifying your payment…";
     khaltiStatus.style.color = "var(--text-muted)";
