@@ -277,6 +277,48 @@
 
   document.getElementById("bank-details").textContent = SITE_CONFIG.bankDetails;
 
+  // ===== Order logging to Google Sheet =====
+  // Sends full order + customer details to your Google Sheet the moment a
+  // customer clicks a payment button — BEFORE any redirect happens. This way,
+  // even if a payment gateway redirect fails afterward, you still have the
+  // customer's details logged and can follow up manually.
+  const ORDER_LOG_URL = "https://script.google.com/macros/s/AKfycbzZpWwpUUlxb2hKzpfpMX7xT7D53tdLHC1_zZwTT2MDr4Jp_JrbaIihi3grcZPf0tHXmA/exec";
+
+  function logOrderAttempt(customer, paymentMethod) {
+    const delivery = getDeliveryCharge(customer.district);
+    const itemsText = items
+      .map((item) => `${item.name}${item.color ? " (" + item.color + ")" : ""} x${item.qty}`)
+      .join("; ");
+
+    const payload = {
+      orderId: "SMG-" + Date.now(),
+      name: customer.name,
+      phone: customer.phone,
+      district: customer.district,
+      address: customer.address,
+      note: customer.note || "",
+      items: itemsText,
+      subtotal: cartTotal(),
+      delivery,
+      total: cartTotal() + delivery,
+      paymentMethod,
+    };
+
+    // "no-cors" + text/plain avoids a CORS/preflight issue that Google Apps
+    // Script web apps commonly run into from browser fetch requests. We can't
+    // read the response this way, but we don't need to — this is fire-and-forget
+    // logging that must never block or break the actual payment flow.
+    fetch(ORDER_LOG_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify(payload),
+    }).catch(() => {
+      // Silently ignore logging failures — the customer's payment must never
+      // be blocked or interrupted because logging didn't work.
+    });
+  }
+
   const districtSelect = document.getElementById("cust-district");
   const districtError = document.getElementById("district-error");
 
@@ -325,6 +367,8 @@
       khaltiBtn.disabled = true;
       khaltiBtn.textContent = "Redirecting to Khalti…";
       khaltiStatus.textContent = "";
+
+      logOrderAttempt(customer, "Khalti");
 
       const orderId = "SMG-" + Date.now();
       const amount = cartTotal() + getDeliveryCharge(customer.district);
@@ -393,6 +437,8 @@
       esewaBtn.disabled = true;
       esewaBtn.textContent = "Redirecting to eSewa…";
       esewaStatus.textContent = "";
+
+      logOrderAttempt(customer, "eSewa");
 
       const orderId = "SMG-" + Date.now();
       const amount = cartTotal() + getDeliveryCharge(customer.district);
@@ -668,6 +714,7 @@
         document.getElementById("cust-note").value.trim() +
         ` [Payment ref: ${paymentRefInput.value.trim()}]`,
     };
+    logOrderAttempt(customer, "Manual QR/Bank Transfer");
     window.open(whatsappOrderLink(customer), "_blank");
     document.getElementById("order-success").classList.add("visible");
     window.scrollTo({ top: 0, behavior: "smooth" });
