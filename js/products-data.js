@@ -163,7 +163,7 @@ const PRODUCTS = [
     id: "fb-006",
     name: "Lightweight Mylar Emergency Thermal Bivy Camping Outdoor Sleeping Bag with Drawstring",
     category: "Travel Gear",
-    price: 675,
+    price: 10,
     images: [
       "images/products/fb-006-1.jpg",
       "images/products/fb-006-2.jpg",
