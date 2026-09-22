@@ -533,11 +533,6 @@
         esewaStatus.textContent = `Payment verified — Rs. ${result.total_amount} received. Ref ID: ${result.ref_id}`;
 
         document.getElementById("order-success").classList.add("visible");
-        document.getElementById("order-success").innerHTML = `
-          <h3>Payment received!</h3>
-          <p class="mt-0">Your eSewa payment of Rs. ${result.total_amount} is confirmed (Ref ID: ${result.ref_id}).
-          Please also send your order on WhatsApp so we can arrange delivery.</p>
-        `;
 
         if (pending) {
           const waLink = whatsappOrderLink({
@@ -545,8 +540,20 @@
             note: (pending.customer.note ? pending.customer.note + " " : "") +
                   `[Paid via eSewa — Ref ID: ${result.ref_id}]`,
           });
+          document.getElementById("order-success").innerHTML = `
+            <h3>Payment received!</h3>
+            <p class="mt-0">Your eSewa payment of Rs. ${result.total_amount} is confirmed (Ref ID: ${result.ref_id}).</p>
+            <a href="${waLink}" target="_blank" class="btn btn-primary" style="margin-top:12px;display:inline-block;">Send order on WhatsApp →</a>
+            <p style="margin-top:10px;font-size:0.85rem;color:var(--text-muted);">Tap the button above to send your order details — some browsers block this from opening automatically.</p>
+          `;
+          // Some browsers still allow this; if blocked, the button above is the reliable fallback.
           window.open(waLink, "_blank");
           saveCart([]);
+        } else {
+          document.getElementById("order-success").innerHTML = `
+            <h3>Payment received!</h3>
+            <p class="mt-0">Your eSewa payment of Rs. ${result.total_amount} is confirmed (Ref ID: ${result.ref_id}). Please contact us on WhatsApp with these details so we can arrange delivery.</p>
+          `;
         }
         sessionStorage.removeItem("smg_pending_order_esewa");
       } else {
@@ -601,11 +608,6 @@
         khaltiStatus.textContent = `Payment verified — Rs. ${paidRs} received. Transaction ID: ${data.transaction_id}`;
 
         document.getElementById("order-success").classList.add("visible");
-        document.getElementById("order-success").innerHTML = `
-          <h3>Payment received!</h3>
-          <p class="mt-0">Your Khalti payment of Rs. ${paidRs} is confirmed (Transaction ID: ${data.transaction_id}).
-          Please also send your order on WhatsApp so we can arrange delivery.</p>
-        `;
 
         if (pending) {
           const waLink = whatsappOrderLink({
@@ -613,8 +615,20 @@
             note: (pending.customer.note ? pending.customer.note + " " : "") +
                   `[Paid via Khalti — Transaction ID: ${data.transaction_id}]`,
           });
+          document.getElementById("order-success").innerHTML = `
+            <h3>Payment received!</h3>
+            <p class="mt-0">Your Khalti payment of Rs. ${paidRs} is confirmed (Transaction ID: ${data.transaction_id}).</p>
+            <a href="${waLink}" target="_blank" class="btn btn-primary" style="margin-top:12px;display:inline-block;">Send order on WhatsApp →</a>
+            <p style="margin-top:10px;font-size:0.85rem;color:var(--text-muted);">Tap the button above to send your order details — some browsers block this from opening automatically.</p>
+          `;
+          // Some browsers still allow this; if blocked, the button above is the reliable fallback.
           window.open(waLink, "_blank");
           saveCart([]); // clear the cart now that payment is confirmed
+        } else {
+          document.getElementById("order-success").innerHTML = `
+            <h3>Payment received!</h3>
+            <p class="mt-0">Your Khalti payment of Rs. ${paidRs} is confirmed (Transaction ID: ${data.transaction_id}). Please contact us on WhatsApp with these details so we can arrange delivery.</p>
+          `;
         }
         sessionStorage.removeItem("smg_pending_order");
       } else {
