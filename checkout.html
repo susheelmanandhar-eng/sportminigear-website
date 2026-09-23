@@ -31,8 +31,8 @@
     <h1 style="font-size:2.2rem;">Checkout</h1>
 
     <div class="order-success" id="order-success">
-      <h3>Order sent!</h3>
-      <p class="mt-0">Your order details have opened in WhatsApp — send the message to confirm. Please also complete payment using the QR code or bank details on this page, then send us a screenshot of the payment.</p>
+      <h3>Order confirmed!</h3>
+      <p class="mt-0">Your payment has been verified and your order is saved. We'll be in touch to arrange delivery.</p>
     </div>
 
     <div id="checkout-empty" class="empty-state" style="display:none;">
@@ -199,45 +199,9 @@
               <div id="esewa-status" style="margin-top:10px;font-size:0.85rem;"></div>
             </div>
 
-            <div style="text-align:center;margin:22px 0;color:var(--text-muted);font-size:0.85rem;">— or —</div>
-
-            <button type="button" id="toggle-manual-payment" class="btn btn-outline btn-block">
-              Pay manually via QR / Bank Transfer
-            </button>
-
-            <div id="manual-payment-section" style="display:none;margin-top:20px;">
-              <div class="payment-card">
-                <h3 class="mt-0">Pay by QR</h3>
-                <p>Scan this code with your banking or mobile wallet app to pay, then confirm below.</p>
-                <div class="qr-box">
-                  <img src="images/payment-qr.png" alt="Payment QR code"
-                       onerror="this.parentElement.innerHTML='<span style=\'color:#555;font-size:0.85rem;text-align:center;\'>Add your QR code image at<br/><code>images/payment-qr.png</code></span>'" />
-                </div>
-                <div class="bank-details" id="bank-details"></div>
-                <p class="payment-note">Orders are confirmed once payment is verified. If you have questions before paying, message us on WhatsApp first.</p>
-              </div>
-
-              <div style="margin-top:18px; padding:18px; border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-elevated);">
-                <label style="display:flex; align-items:flex-start; gap:10px; cursor:pointer; margin-bottom:0;">
-                  <input type="checkbox" id="paid-confirm" style="width:18px; height:18px; margin-top:2px; accent-color:var(--accent); flex-shrink:0;" />
-                  <span style="color:var(--text); font-size:0.92rem;">I have paid the total amount shown above via the QR code / bank details above.</span>
-                </label>
-                <div id="payment-ref-row" style="margin-top:14px; display:none;">
-                  <label for="payment-ref">Payment reference / transaction ID (or last 4 digits)</label>
-                  <input type="text" id="payment-ref" placeholder="e.g. TXN12345 or last 4 digits" />
-                </div>
-                <p id="paid-confirm-error" style="color:var(--danger); font-size:0.85rem; margin-top:10px; display:none;">
-                  Please confirm payment and enter a reference number before sending your order.
-                </p>
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-block" style="margin-top:18px;">
-                Send order on WhatsApp
-              </button>
-              <a href="#" class="btn btn-outline btn-block" id="email-order-link" style="margin-top:12px;">
-                Or send order by email
-              </a>
-            </div>
+            <p style="text-align:center;margin-top:18px;color:var(--text-muted);font-size:0.85rem;">
+              Your order is confirmed automatically once payment is verified — no extra steps needed.
+            </p>
           </div>
 
         </form>
@@ -275,35 +239,20 @@
       .join("");
   }
 
-  document.getElementById("bank-details").textContent = SITE_CONFIG.bankDetails;
-
   // ===== Order logging to Google Sheet =====
-  // Sends full order + customer details to your Google Sheet the moment a
-  // customer clicks a payment button — BEFORE any redirect happens. This way,
-  // even if a payment gateway redirect fails afterward, you still have the
-  // customer's details logged and can follow up manually.
+  // This Sheet is now the ONLY record of orders — there is no WhatsApp step,
+  // so nothing here can be edited by the customer after the fact. Two kinds
+  // of rows get logged:
+  //  1. "Payment Attempted" — written the moment a customer clicks a payment
+  //     button, BEFORE any redirect. Safety net in case the redirect back
+  //     fails and we never hear from Khalti/eSewa again.
+  //  2. "Paid & Verified" — written only after Khalti/eSewa itself confirms
+  //     the payment succeeded, using the REAL verified amount and a real
+  //     transaction ID from the payment gateway, never anything the
+  //     customer typed. This is the row that means a real, paid order exists.
   const ORDER_LOG_URL = "https://script.google.com/macros/s/AKfycbzZpWwpUUlxb2hKzpfpMX7xT7D53tdLHC1_zZwTT2MDr4Jp_JrbaIihi3grcZPf0tHXmA/exec";
 
-  function logOrderAttempt(customer, paymentMethod) {
-    const delivery = getDeliveryCharge(customer.district);
-    const itemsText = items
-      .map((item) => `${item.name}${item.color ? " (" + item.color + ")" : ""} x${item.qty}`)
-      .join("; ");
-
-    const payload = {
-      orderId: "SMG-" + Date.now(),
-      name: customer.name,
-      phone: customer.phone,
-      district: customer.district,
-      address: customer.address,
-      note: customer.note || "",
-      items: itemsText,
-      subtotal: cartTotal(),
-      delivery,
-      total: cartTotal() + delivery,
-      paymentMethod,
-    };
-
+  function sendOrderLog(payload) {
     // "no-cors" + text/plain avoids a CORS/preflight issue that Google Apps
     // Script web apps commonly run into from browser fetch requests. We can't
     // read the response this way, but we don't need to — this is fire-and-forget
@@ -316,6 +265,52 @@
     }).catch(() => {
       // Silently ignore logging failures — the customer's payment must never
       // be blocked or interrupted because logging didn't work.
+    });
+  }
+
+  function logOrderAttempt(customer, paymentMethod) {
+    const delivery = getDeliveryCharge(customer.district);
+    const itemsText = items
+      .map((item) => `${item.name}${item.color ? " (" + item.color + ")" : ""} x${item.qty}`)
+      .join("; ");
+
+    sendOrderLog({
+      orderId: "SMG-" + Date.now(),
+      name: customer.name,
+      phone: customer.phone,
+      district: customer.district,
+      address: customer.address,
+      note: customer.note || "",
+      items: itemsText,
+      subtotal: cartTotal(),
+      delivery,
+      total: cartTotal() + delivery,
+      paymentMethod,
+      status: "Payment Attempted",
+      transactionId: "",
+    });
+  }
+
+  function logOrderConfirmed(customer, paymentMethod, transactionId, verifiedAmount) {
+    const delivery = getDeliveryCharge(customer.district);
+    const itemsText = items
+      .map((item) => `${item.name}${item.color ? " (" + item.color + ")" : ""} x${item.qty}`)
+      .join("; ");
+
+    sendOrderLog({
+      orderId: "SMG-" + Date.now(),
+      name: customer.name,
+      phone: customer.phone,
+      district: customer.district,
+      address: customer.address,
+      note: customer.note || "",
+      items: itemsText,
+      subtotal: cartTotal(),
+      delivery,
+      total: verifiedAmount != null ? verifiedAmount : cartTotal() + delivery,
+      paymentMethod,
+      status: "Paid & Verified",
+      transactionId: transactionId || "",
     });
   }
 
@@ -535,24 +530,16 @@
         document.getElementById("order-success").classList.add("visible");
 
         if (pending) {
-          const waLink = whatsappOrderLink({
-            ...pending.customer,
-            note: (pending.customer.note ? pending.customer.note + " " : "") +
-                  `[Paid via eSewa — Ref ID: ${result.ref_id}]`,
-          });
+          logOrderConfirmed(pending.customer, "eSewa", result.ref_id, result.total_amount);
           document.getElementById("order-success").innerHTML = `
-            <h3>Payment received!</h3>
-            <p class="mt-0">Your eSewa payment of Rs. ${result.total_amount} is confirmed (Ref ID: ${result.ref_id}).</p>
-            <a href="${waLink}" target="_blank" class="btn btn-primary" style="margin-top:12px;display:inline-block;">Send order on WhatsApp →</a>
-            <p style="margin-top:10px;font-size:0.85rem;color:var(--text-muted);">Tap the button above to send your order details — some browsers block this from opening automatically.</p>
+            <h3>Order confirmed!</h3>
+            <p class="mt-0">Your eSewa payment of Rs. ${result.total_amount} is confirmed (Ref ID: ${result.ref_id}). Your order has been saved — we'll be in touch to arrange delivery.</p>
           `;
-          // Some browsers still allow this; if blocked, the button above is the reliable fallback.
-          window.open(waLink, "_blank");
           saveCart([]);
         } else {
           document.getElementById("order-success").innerHTML = `
             <h3>Payment received!</h3>
-            <p class="mt-0">Your eSewa payment of Rs. ${result.total_amount} is confirmed (Ref ID: ${result.ref_id}). Please contact us on WhatsApp with these details so we can arrange delivery.</p>
+            <p class="mt-0">Your eSewa payment of Rs. ${result.total_amount} is confirmed (Ref ID: ${result.ref_id}), but we could not automatically save your order details. Please contact us on WhatsApp (${SITE_CONFIG.whatsappNumber}) with this reference so we can arrange delivery.</p>
           `;
         }
         sessionStorage.removeItem("smg_pending_order_esewa");
@@ -610,24 +597,16 @@
         document.getElementById("order-success").classList.add("visible");
 
         if (pending) {
-          const waLink = whatsappOrderLink({
-            ...pending.customer,
-            note: (pending.customer.note ? pending.customer.note + " " : "") +
-                  `[Paid via Khalti — Transaction ID: ${data.transaction_id}]`,
-          });
+          logOrderConfirmed(pending.customer, "Khalti", data.transaction_id, paidRs);
           document.getElementById("order-success").innerHTML = `
-            <h3>Payment received!</h3>
-            <p class="mt-0">Your Khalti payment of Rs. ${paidRs} is confirmed (Transaction ID: ${data.transaction_id}).</p>
-            <a href="${waLink}" target="_blank" class="btn btn-primary" style="margin-top:12px;display:inline-block;">Send order on WhatsApp →</a>
-            <p style="margin-top:10px;font-size:0.85rem;color:var(--text-muted);">Tap the button above to send your order details — some browsers block this from opening automatically.</p>
+            <h3>Order confirmed!</h3>
+            <p class="mt-0">Your Khalti payment of Rs. ${paidRs} is confirmed (Transaction ID: ${data.transaction_id}). Your order has been saved — we'll be in touch to arrange delivery.</p>
           `;
-          // Some browsers still allow this; if blocked, the button above is the reliable fallback.
-          window.open(waLink, "_blank");
           saveCart([]); // clear the cart now that payment is confirmed
         } else {
           document.getElementById("order-success").innerHTML = `
             <h3>Payment received!</h3>
-            <p class="mt-0">Your Khalti payment of Rs. ${paidRs} is confirmed (Transaction ID: ${data.transaction_id}). Please contact us on WhatsApp with these details so we can arrange delivery.</p>
+            <p class="mt-0">Your Khalti payment of Rs. ${paidRs} is confirmed (Transaction ID: ${data.transaction_id}), but we could not automatically save your order details. Please contact us on WhatsApp (${SITE_CONFIG.whatsappNumber}) with this transaction ID so we can arrange delivery.</p>
           `;
         }
         sessionStorage.removeItem("smg_pending_order");
@@ -643,11 +622,6 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   })();
 
-  const paidCheckbox = document.getElementById("paid-confirm");
-  const paymentRefRow = document.getElementById("payment-ref-row");
-  const paymentRefInput = document.getElementById("payment-ref");
-  const paidConfirmError = document.getElementById("paid-confirm-error");
-
   // Phone number: digits only, max 10 characters, live validation feedback
   const phoneInput = document.getElementById("cust-phone");
   const phoneError = document.getElementById("phone-error");
@@ -660,18 +634,11 @@
     districtError.style.display = "none";
   });
 
-  paidCheckbox.addEventListener("change", () => {
-    paymentRefRow.style.display = paidCheckbox.checked ? "block" : "none";
-    paidConfirmError.style.display = "none";
-  });
-
   // ===== Two-step checkout: delivery details -> payment =====
   const stepDelivery = document.getElementById("step-delivery");
   const stepPayment = document.getElementById("step-payment");
   const continueBtn = document.getElementById("continue-to-payment-btn");
   const backLink = document.getElementById("back-to-delivery");
-  const toggleManualBtn = document.getElementById("toggle-manual-payment");
-  const manualSection = document.getElementById("manual-payment-section");
 
   function goToPaymentStep() {
     refreshPaymentTotals();
@@ -714,58 +681,6 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
-  toggleManualBtn.addEventListener("click", () => {
-    const isOpen = manualSection.style.display === "block";
-    manualSection.style.display = isOpen ? "none" : "block";
-    toggleManualBtn.textContent = isOpen
-      ? "Pay manually via QR / Bank Transfer"
-      : "Hide manual payment options";
-    if (!isOpen) manualSection.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-
-  const form = document.getElementById("checkout-form");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    if (!/^9[0-9]{9}$/.test(phoneInput.value.trim())) {
-      phoneError.style.display = "block";
-      phoneInput.scrollIntoView({ behavior: "smooth", block: "center" });
-      phoneInput.focus();
-      return;
-    }
-
-    if (!paidCheckbox.checked || !paymentRefInput.value.trim()) {
-      paidConfirmError.style.display = "block";
-      paidConfirmError.scrollIntoView({ behavior: "smooth", block: "center" });
-      return;
-    }
-
-    const customer = {
-      name: document.getElementById("cust-name").value.trim(),
-      phone: document.getElementById("cust-phone").value.trim(),
-      address: document.getElementById("cust-address").value.trim(),
-      district: document.getElementById("cust-district").value,
-      note:
-        document.getElementById("cust-note").value.trim() +
-        ` [Payment ref: ${paymentRefInput.value.trim()}]`,
-    };
-    logOrderAttempt(customer, "Manual QR/Bank Transfer");
-    window.open(whatsappOrderLink(customer), "_blank");
-    document.getElementById("order-success").classList.add("visible");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-
-  document.getElementById("email-order-link").addEventListener("click", (e) => {
-    e.preventDefault();
-    const customer = {
-      name: document.getElementById("cust-name").value.trim() || "Customer",
-      phone: document.getElementById("cust-phone").value.trim() || "N/A",
-      address: document.getElementById("cust-address").value.trim() || "N/A",
-      district: document.getElementById("cust-district").value || "N/A",
-      note: document.getElementById("cust-note").value.trim(),
-    };
-    window.location.href = mailtoOrderLink(customer);
-  });
 
   document.getElementById("footer-year").textContent = new Date().getFullYear();
 </script>
