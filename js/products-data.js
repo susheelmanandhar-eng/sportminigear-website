@@ -506,7 +506,13 @@ colors: [
     images: [
       "images/products/cy-001-1.jpg",
       "images/products/cy-001-2.jpg",
-      "images/products/cy-001-3.jpg"
+      "images/products/cy-001-3.jpg",
+ "images/products/cy-001-4.jpg",
+ "images/products/cy-001-5.jpg",
+ "images/products/cy-001-6.jpg",
+ "images/products/cy-001-7.jpg"
+
+
   ],
 
     badge: "Bestseller",
