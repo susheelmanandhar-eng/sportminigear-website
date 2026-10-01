@@ -390,7 +390,11 @@ const PRODUCTS = [
    images: [
       "images/products/ut-001-1.jpg",
       "images/products/ut-001-2.jpg",
-      "images/products/ut-001-3.jpg"
+      "images/products/ut-001-3.jpg",
+ "images/products/ut-001-4.jpg",
+ "images/products/ut-001-5.jpg",
+ "images/products/ut-001-6.jpg"
+
   ],
     badge: "New",
     stock: 5,
@@ -412,7 +416,7 @@ const PRODUCTS = [
     badge: "Bestseller",
     stock: 5,
     description:
-      "Product Name - Multifunctional Hammer Color - Blue/Black/Red/Grey Packing - Pouch and Box Material - Stainless Steel Usage - Promotion/Business gift, daily usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench. Handle Material - Aluminum Bronze Application - Claw Hammer",
+      "Product Name - Multifunctional Hammer Packing - Pouch and Box Material - Stainless Steel Usage - Promotion/Business gift, daily usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench. Handle Material - Aluminum Bronze Application - Claw Hammer",
   },
 
   {
