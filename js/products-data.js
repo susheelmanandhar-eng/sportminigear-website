@@ -204,7 +204,7 @@ const PRODUCTS = [
     images: [
       "images/products/fb-008-1.jpg",
       "images/products/fb-008-2.jpg",
-      "images/products/fb-008-3.jpg"
+      "images/products/fb-008-3.jpg",
  "images/products/fb-008-4.jpg",
  "images/products/fb-008-5.jpg",
  "images/products/fb-008-6.jpg",
