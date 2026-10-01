@@ -406,14 +406,16 @@ const PRODUCTS = [
     id: "ut-002",
     name: "EDC Stainless Steel Multifunction Hammer Pliers DIY Hand Tools for Camping Pocket Knife for Outdoor Use",
     category: "Utility Tools",
-    price: 1650,
+    price: 1450,
     oldPrice: 1850,
    images: [
       "images/products/ut-002-1.jpg",
       "images/products/ut-002-2.jpg",
-      "images/products/ut-002-3.jpg"
+      "images/products/ut-002-3.jpg",
+  "images/products/ut-002-4.jpg",
+  "images/products/ut-002-5.jpg"
   ],
-    badge: "Bestseller",
+    badge: "Dashain Offer",
     stock: 5,
     description:
       "Product Name - Multifunctional Hammer Packing - Pouch and Box Material - Stainless Steel Usage - Promotion/Business gift, daily usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench. Handle Material - Aluminum Bronze Application - Claw Hammer",
@@ -428,7 +430,14 @@ const PRODUCTS = [
    images: [
       "images/products/ut-003-1.jpg",
       "images/products/ut-003-2.jpg",
-      "images/products/ut-003-3.jpg"
+      "images/products/ut-003-3.jpg",
+"images/products/ut-003-4.jpg",
+"images/products/ut-003-5.jpg",
+"images/products/ut-003-6.jpg",
+"images/products/ut-003-7.jpg",
+"images/products/ut-003-8.jpg",
+"images/products/ut-003-9.jpg"
+
   ],
     badge: "Free Delivery",
     stock: 5,
