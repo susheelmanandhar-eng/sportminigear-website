@@ -49,7 +49,7 @@ const CATEGORIES = [
      price       number, in Rs. (no commas)
      oldPrice    optional — set to a number to show a strikethrough price
      image       path under images/products/ (fine to leave as-is for now)
-     badge       optional small tag e.g. "New", "Bestseller", "Free Delivery" (or "" for none)
+     badge       optional small tag e.g. "New", "Bestseller", "Dashain Offer" (or "" for none)
      stock       NUMBER of units available (e.g. 12). Set to 0 for out of stock.
                  The site automatically shows "In stock", "Only X left"
                  (when 5 or fewer remain), or "Out of stock" based on this number.
@@ -324,15 +324,18 @@ const PRODUCTS = [
     id: "co-004",
     name: "Portable 5800W Camping Stove Windproof Backpacking Stove with Piezo Ignition Folding Lightweight Stove for Outdoor",
     category: "Camping Cookware",
-    price: 3200,
-    oldPrice: 4200,
+    price: 2750,
+    oldPrice: 3900,
     images: [
       "images/products/co-004-1.jpg",
       "images/products/co-004-2.jpg",
-      "images/products/co-004-3.jpg"
+      "images/products/co-004-3.jpg",
+ "images/products/co-004-4.jpg",
+ "images/products/co-004-5.jpg",
+ "images/products/co-004-6.jpg"
     ],
 
-    badge: "Free Delivery",
+    badge: "Dashain Offer",
     stock: 3,
     description: 
       "Product - Camping Gas Stove Material - Stainless Steel Type - Stove Burner Structure - Foldable With Ignition Device - Yes Feature - Lightweight Stove Fuel - Butane, Propane, Isobutane Gas Mixture, Gas Net Weight - 380 g Feature - Portable, Foldable, Lightweight Unfold Size - 9.5*16CM Package Size - 9*9*10CM Packing - 1PC/Plastic Box Application - Outdoor Equipment Hiking Camping",
