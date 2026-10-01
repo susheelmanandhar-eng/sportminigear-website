@@ -122,7 +122,7 @@ const PRODUCTS = [
     id: "fb-004",
     name: "New Product Emergency Camping Tools Camping Kits Survival Kits",
     category: "Travel Gear",
-    price: 1350,
+    price: 999,
     oldPrice: 2000,
     images: [
       "images/products/fb-004-1.jpg",
@@ -136,7 +136,7 @@ const PRODUCTS = [
      "images/products/fb-004-9.jpg",
      "images/products/fb-004-10.jpg"
     ],
-    badge: "",
+    badge: "Dashain Offer",
     stock: 10,
     description:
       "Usage - Outdoor Camping Hiking Travelling Color - Red Material - Stainless steel Packing - Opp Bag Single Gross Weight - 0.300 Kg. This compact and portable survival kit is made of durable stainless steel, designed for outdoor camping, hiking, and traveling. This is easy to carry and highly functional for outdoor activities like climbing and water sports.",
