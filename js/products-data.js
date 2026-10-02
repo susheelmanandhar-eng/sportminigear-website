@@ -254,6 +254,25 @@ const PRODUCTS = [
     description:
       "This tool is necessary for outdoor experts, anglers and campers. Usage - Camping, Hiking, Survival, Indoor and Outdoor Use ; Packing Detail - OPP ; BagWeight - 0.1 kg ; Material - Aluminium Alloy, Magnesium ; Product Name - Butterfly shape flint with Scraper Big Size ; Usage - Any climate and environmental condition ; Material - Waterproof ; Lenght of Magnesium Rod - 6.8cm ; Diameter of Magnesium Rod - 8mm",
   },
+{
+    id: "fb-011",
+    name: "Camping Gear and Accessories Survival Paracord Bracelet Camping Gear Outdoor Camping & Hiking Gear",
+    category: "Travel Gear",
+    price: 850,
+    oldprice: 975,
+    images: [
+      "images/products/fb-011-23cm.jpg",
+      "images/products/fb-011-25cm.jpg"  
+ ],
+colors: [
+ { name: "23cm", image: "images/products/fb-011-23cm.jpg", stock: 2 },
+{ name: "25cm", image: "images/products/cy-011-25cm.jpg", stock: 2 }, 
+], 
+    badge: "Dashain Offer",
+    stock: 5,
+    description: 
+"5 in 1. strong and durable paracord rope. Lightweight and fashionable design, suitable for outdoor survival accessory to any of your camping, hiking, hunting trips.Components (1) Fire Starter: start a fire with ease using the striker and flint rod (2)Loud Whistle: create a load and piercing sound (3) Reliable Compass: works as a back-up to determine your direction (4) Rope Cutter: as hiking companion (5) Reliable Paracord: camping safety",
+  },
 
     {
     id: "co-001",
