@@ -75,7 +75,7 @@ const PRODUCTS = [
     badge: "Bestseller",
     stock: 5,
     description:
-      "Accessory Part - Butterfly handle large flint Multifunctional Scraper - Including Scraper, Bottle Opener, Hexagon Wrench, Scale High Frequency Double Hole Whistle Strong Flashlight Multifunctional Knife Multifunctional Saber Card - Including Bottle Opener, Can Opener, Box Opener, Box Opener, Flat Screwdriver, Adjustable Wrench, Positioning Wrench, Scale, Protractor, Sawtooth Keyhole Compass Portable Key Lamp Tungsten Steel Broken Window Defense Pen Waterproof and Shockproof Storage Box Kettle Buckle Survival Bracelet Screwdriver (one type) Screwdrive (other type) Wire Saw Emergency Blanket Kettle Buckle Absorbent, Alcohol Pad, Styptic Bandage",
+      "Accessory Part - Butterfly handle large flint; Multifunctional Scraper - Including Scraper, Bottle Opener, Hexagon Wrench, Scale High Frequency Double Hole Whistle, Strong Flashlight; Multifunctional Knife; Multifunctional Saber Card - Including Bottle Opener, Can Opener, Box Opener, Box Opener, Flat Screwdriver, Adjustable Wrench, Positioning Wrench, Scale, Protractor; Sawtooth; Keyhole; Compass; Portable Key Lamp; Tungsten Steel Broken Window Defense Pen; Waterproof and Shockproof Storage Box; Kettle Buckle; Survival Bracelet; Screwdriver (one type); Screwdrive (other type); Wire Saw; Emergency Blanket; Kettle Buckle Absorbent; Alcohol Pad; Styptic Bandage",
   },
 
  {
@@ -92,7 +92,7 @@ const PRODUCTS = [
     badge: "Bestseller",
     stock: 1,
     description:
-      "Accessory Parts - Butterfly handle large flint; Multifunctional Scraper - Including Scraper, Bottle Opener, Hexagon Wrench, Scale; High-Frequency Double Hole Whistle; Strong Flashlight; Multifunctional Knife; Multifunctional Saber Card - Including Bottle Opener, Can Opener, Box Opener, Box Opener, Flat Screwdriver, Adjustable Wrench, Positioning Wrench, Scale, Protractor, Sawtooth, Keyhole; Compass; Portable Key Lamp; Tungsten Steel Broken Window Defense Pen; Waterproof and Shockproof Storage Box",
+      "Accessory Parts - Butterfly handle large flint; Multifunctional Scraper - Including Scraper, Bottle Opener, Hexagon Wrench, Scale; High-Frequency Double Hole Whistle; Strong Flashlight; Multifunctional Knife; Multifunctional Saber Card - Including Bottle Opener, Can Opener, Box Opener, Box Opener, Flat Screwdriver, Adjustable Wrench, Positioning Wrench, Scale, Protractor, Sawtooth; Keyhole; Compass; Portable Key Lamp; Tungsten Steel Broken Window Defense Pen; Waterproof and Shockproof Storage Box",
   },
 
 
@@ -115,7 +115,7 @@ const PRODUCTS = [
     badge: "",
     stock: 3,
     description:
-      "It is a new outdoor portable water filter for travel, hiking, and camping. Product Name - Camping Water Purifier Compatibility - Easy to carry Type - Survival Multifunctional Tool Style - Modern Capacity - 1500 L Purpose - Outdoor Emergency Use Feature - Light Weight Function - Portable Survival Tool Usage - Outdoor Camping Hiking Travelling Beach.",
+      "It is a new outdoor portable water filter for travel, hiking, and camping. Product Name - Camping Water Purifier; Compatibility - Easy to carry; Type - Survival Multifunctional Tool; Style - Modern; Capacity - 1500 L; Purpose - Outdoor Emergency Use; Feature - Light Weight; Function - Portable Survival Tool; Usage - Outdoor Camping Hiking Travelling Beach.",
   },
 
  {
@@ -139,7 +139,7 @@ const PRODUCTS = [
     badge: "Dashain Offer",
     stock: 10,
     description:
-      "Usage - Outdoor Camping Hiking Travelling Color - Red Material - Stainless steel Packing - Opp Bag Single Gross Weight - 0.300 Kg. This compact and portable survival kit is made of durable stainless steel, designed for outdoor camping, hiking, and traveling. This is easy to carry and highly functional for outdoor activities like climbing and water sports.",
+      "Usage - Outdoor Camping Hiking Travelling; Color - Red; Material - Stainless steel; Packing - Opp Bag; Single Gross Weight - 0.300 Kg. This compact and portable survival kit is made of durable stainless steel, designed for outdoor camping, hiking, and traveling. This is easy to carry and highly functional for outdoor activities like climbing and water sports.",
   },
 
 {
@@ -156,7 +156,7 @@ const PRODUCTS = [
     badge: "Bestseller",
     stock: 10,
     description:
-      "Function - DIY - Daily Use Blade Material - Stainless Steel Handle Material - Aluminium Application - Multifunctional Knife Usage - Blade, Bottle Opener - Multifunction Use",
+      "Function - DIY - Daily Use; Blade Material - Stainless Steel; Handle Material - Aluminium; Application - Multifunctional Knife; Usage - Blade, Bottle Opener - Multifunction Use",
   },
 
 {
@@ -172,7 +172,7 @@ const PRODUCTS = [
     badge: "New",
     stock: 10,
     description:
-      "Product Name - Outdoor Emergency Sleeping Bag Fabric - Polyethylene Fabric Usage - Camping, Hiking, Travel Feature - Lightweight and Portable Season - All Season Weight - 137 g Feature - Portable/Waterproof/Washable Applicable - Unisex Length - Standard (Suitable for 1.8 m Height and below) Single package size - 12X7X7 cm",
+      "Product Name - Outdoor Emergency Sleeping Bag; Fabric - Polyethylene Fabric; Usage - Camping, Hiking, Travel; Feature - Lightweight and Portable; Season - All Season; Weight - 137 g; Feature - Portable/Waterproof/Washable; Applicable - Unisex; Length - Standard (Suitable for 1.8 m Height and below); Single package size - 12X7X7 cm",
   },
 {
     id: "fb-007",
@@ -235,7 +235,7 @@ const PRODUCTS = [
     badge: "New",
     stock: 10,
     description:
-      "Feature - Lightweight, Portable Type - Survival Kit Printing Method - Silk Screen Print, Roller Print, Heat Transfer Print Single Gross Weight - 0.060 KG Dimensions - 210x160cm Usage - Outdoor Activity (Hike, Travel, Climb, Trek)",
+      "Feature - Lightweight, Portable; Type - Survival Kit; Printing Method - Silk Screen Print, Roller Print, Heat Transfer Print; Single Gross Weight - 0.060 KG; Dimensions - 210x160cm; Usage - Outdoor Activity (Hike, Travel, Climb, Trek)",
   },
 
 {
@@ -276,7 +276,7 @@ const PRODUCTS = [
     badge: "",
     stock: 2,
     description:
-      "Product Name: Camping cookware set with kettle, Material: Aluminum alloy, Hard anodized Using: 2~3person outdoor camping and picnic Inner: 1. Cauldron: 170 * 95MM 2. Tea pot: 1.1L 150 * 80MM 3. frying pan: 180 * 44MM 4. bowl: 3pcs 5. bamboo spoon: 1pc 6. rice shovel: 1 pc 7. Round Sponge: 1 pc 8. Lid:1PC 9. Carry bag:1pc 10. Capacity - 3-4 L Package: 1.1 Set in a Carry bag, then in a color box. 2. Color Box: 18.5x13x18.5CM",
+      "Product Name: Camping cookware set with kettle; Material: Aluminum alloy, Hard anodized; Usage: 2~3person; Components - Inner: (1) Cauldron: 170 * 95MM (2) Tea pot: 1.1L 150 * 80MM (3) frying pan: 180 * 44MM (4) bowl: 3pcs (5) bamboo spoon: 1pc (6) rice shovel: 1 pc (7) Round Sponge: 1 pc (8)Lid:1PC (9) Carry bag:1pc; Capacity - 3-4 L; Package: 1.1 Set in a Carry bag, then in a color box; Color Box: 18.5x13x18.5CM",
   },
   {
     id: "co-002",
@@ -297,7 +297,7 @@ const PRODUCTS = [
     badge: "Bestseller",
     stock: 5,
     description: 
-      "Pans Type - Frying Pans & Skillets Material - Aluminium Alloy, Hard Anodized Size - 1. big pot:12*10.50(h)cm 2. small pot:11*6.0(h)cm Usage - 1~2person Outdoor Camping Function - Portable Survival Tool Single Gross Weight - 1kg Applicable Stove - General Use for Gas and Induction Cooker Capacity - 1-2L Parts 1. Big pot:12*10.50(h)cm 2. Small pot:11*6.0(h)cm 3. Climbing hook:1PC 4. Folding Stove:1PC 5. Bowl: 3pcs 6. Bamboo spoon: 1pc 7. Folk spoon knife: 1 set 8. Wool ball:1 pc 9. Spoon:1pc 10. Carry bag:1PC Package - 1 set in a mesh bag and in a color box",
+      "Pan Type - Frying Pans & Skillets; Material - Aluminium Alloy, Hard Anodized; Size - (1) big pot:12*10.50(h)cm (2) small pot:11*6.0(h)cm (3) Climbing hook:1PC (4) Folding Stove:1PC (5) Bowl: 3pcs (6) Bamboo spoon: 1pc (7) Folk spoon knife: 1 set (8) Wool ball:1 pc (9) Spoon:1pc (1) Carry bag:1PC; Usage - 1~2person; Single Gross Weight - 1kg; Applicable Stove - General Use for Gas and Induction Cooker; Capacity - 1-2L;  Package - 1 set in a mesh bag and in a color box",
   },
  {
    id: "co-003",
