@@ -49,7 +49,7 @@ const CATEGORIES = [
      price       number, in Rs. (no commas)
      oldPrice    optional — set to a number to show a strikethrough price
      image       path under images/products/ (fine to leave as-is for now)
-     badge       optional small tag e.g. "New", "Bestseller", "Dashain Offer" (or "" for none)
+     badge       optional small tag e.g. "New", "Bestseller", "Dashain Offer", "Trending" (or "" for none)
      stock       NUMBER of units available (e.g. 12). Set to 0 for out of stock.
                  The site automatically shows "In stock", "Only X left"
                  (when 5 or fewer remain), or "Out of stock" based on this number.
@@ -112,7 +112,7 @@ const PRODUCTS = [
       "images/products/fb-003-7.jpg",
       "images/products/fb-003-8.jpg"
     ],
-    badge: "",
+    badge: "Trending",
     stock: 3,
     description:
       "It is a new outdoor portable water filter for travel, hiking, and camping. Product Name - Camping Water Purifier; Compatibility - Easy to carry; Type - Survival Multifunctional Tool; Style - Modern; Capacity - 1500 L; Purpose - Outdoor Emergency Use; Feature - Light Weight; Function - Portable Survival Tool; Usage - Outdoor Camping Hiking Travelling Beach.",
@@ -178,7 +178,7 @@ const PRODUCTS = [
     id: "fb-007",
     name: "USB Rechargeable LED Mini COB Headlamp White & Red Outdoor Night Running Light Portable with Built-in Battery",
     category: "Travel Gear",
-    price: 875,
+    price: 699,
     oldPrice: 1050,
     images: [
       "images/products/fb-007-1.jpg",
@@ -314,10 +314,10 @@ const PRODUCTS = [
 
     ],
 
-    badge: "Free Delivery",
+    badge: "Trending",
     stock: 5,
     description: 
-      "Product Name - Camping Picnic Cookware Set Material - Metal Metal Type - Aluminum Applicable Stove - General Use for Gas and Induction Cooker Pot Cover Type -Stainless Steel Cover Pot Cover - With Pot Cover Capacity - 1-2L Size - 1. big pot:12*10.50(h)cm 2. small pot:11*6.0(h)cm Use - 1~2person Outdoor Camping Function - Portable Survival Tools",
+      "Product Name - Camping Picnic Cookware Set; Material - Metal; Metal Type - Aluminum; Applicable Stove - General Use for Gas and Induction Cooker Pot; Cover Type -Stainless Steel Cover; Pot Cover - With Pot Cover; Capacity - 1-2L; Size (1) big pot:12*10.50(h)cm (2) small pot:11*6.0(h)cm; Use - 1~2person; Outdoor Camping Function - Portable Survival Tools",
   },
   
  {
@@ -338,7 +338,7 @@ const PRODUCTS = [
     badge: "Dashain Offer",
     stock: 3,
     description: 
-      "Product - Camping Gas Stove Material - Stainless Steel Type - Stove Burner Structure - Foldable With Ignition Device - Yes Feature - Lightweight Stove Fuel - Butane, Propane, Isobutane Gas Mixture, Gas Net Weight - 380 g Feature - Portable, Foldable, Lightweight Unfold Size - 9.5*16CM Package Size - 9*9*10CM Packing - 1PC/Plastic Box Application - Outdoor Equipment Hiking Camping",
+      "Product - Camping Gas Stove; Material - Stainless Steel; Type - Stove Burner; Structure - Foldable; With Ignition Device - Yes; Feature - Lightweight; Stove Fuel - Butane, Propane, Isobutane Gas Mixture, Gas; Net Weight - 380 g; Feature - Portable, Foldable, Lightweight Unfold; Size - 9.5*16CM; Package Size - 9*9*10CM; Packing - 1PC/Plastic Box; Application - Outdoor Equipment Hiking Camping",
   },
 
  {
@@ -360,7 +360,7 @@ const PRODUCTS = [
     badge: "Bestseller",
     stock: 7,
     description: 
-      "Product - Camping Gas Stove Material - Stainless Steel Type - Stove Burner Structure - Foldable With Ignition Device - Yes Feature - Lightweight Stove Fuel - Butane, Propane, Isobutane Gas Mixture, Gas Net Weight - 380 g Feature - Portable, Foldable, Lightweight Unfold Size - 9.5*16CM Package Size - 9*9*10CM Packing - 1PC/Plastic Box Application - Outdoor Equipment Hiking Camping",
+      "Product - Camping Gas Stove; Material - Stainless Steel; Type - Stove Burner; Structure - Foldable; With Ignition Device - Yes; Feature - Lightweight; Stove Fuel - Butane, Propane, Isobutane Gas Mixture, Gas; Net Weight - 380 g; Feature - Portable, Foldable, Lightweight Unfold; Size - 9.5*16CM; Package Size - 9*9*10CM; Packing - 1PC/Plastic Box; Application - Outdoor Equipment Hiking Camping",
   },
 
 {
@@ -399,7 +399,7 @@ const PRODUCTS = [
     badge: "New",
     stock: 5,
     description:
-      "Product Name - 20 in 1 Multifunction Hammer Pliers Multi Tool Material - Stainless Steel Color - Black/Blue Advantage - Quality + Competitive Type - Survival Multifunctional Tool Material -Stainless Steel + ABS Application -- Travel and Trek Feature 1. Premium steel 2. long lifetime Size 17.5*8CM Weight 425g Packing Color box",
+      "Product Name - 20 in 1 Multifunction Hammer Pliers Multi Tool; Material - Stainless Steel; Color - Black/Blue; Advantage - Quality + Competitive; Type - Survival Multifunctional Tool; Material -Stainless Steel + ABS; Application -- Travel and Trek; Feature 1. Premium steel 2. long lifetime; Size 17.5*8CM; Weight 425g; Packing Color box",
   },
 
   {
@@ -418,14 +418,14 @@ const PRODUCTS = [
     badge: "Dashain Offer",
     stock: 5,
     description:
-      "Product Name - Multifunctional Hammer Packing - Pouch and Box Material - Stainless Steel Usage - Promotion/Business gift, daily usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench. Handle Material - Aluminum Bronze Application - Claw Hammer",
+      "Product Name - Multifunctional Hammer; Packing - Pouch and Box; Material - Stainless Steel; Usage - Promotion/Business gift, daily usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench; Handle Material - Aluminum Bronze; Application - Claw Hammer",
   },
 
   {
     id: "ut-003",
     name: "13-in-1 Portable Stainless Steel Hammer Multi-Function Survival Gear Pliers Multi-Tool Hammer",
     category: "Utility Tools",
-    price: 1450,
+    price: 1300,
     oldPrice: 1600,
    images: [
       "images/products/ut-003-1.jpg",
@@ -439,10 +439,10 @@ const PRODUCTS = [
 "images/products/ut-003-9.jpg"
 
   ],
-    badge: "Free Delivery",
+    badge: "Best Seller",
     stock: 5,
     description:
-      "Handle Material - Aluminum Bronze Application - Claw Hammer Size - 14*75*2.5cm Packing - Pouch and Box Application - Claw Hammer Color - Black Weight - 260 grams Usage - Promotion/Business gift, daily usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench.",
+      "Handle Material - Aluminum Bronze; Application - Claw Hammer; Size - 14*75*2.5cm; Packing - Pouch and Box; Application - Claw Hammer; Color - Black; Weight - 260 grams; Usage - Promotion/Business gift, daily usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench.",
   },
 
 {
@@ -466,7 +466,7 @@ colors: [
     badge: "Bestseller",
     stock: 5,
     description: 
-"Gender - Unisex Feature - Waterproof Material - Water Repellent Nylon Type - Large Capacity Outdoor Mountaineering Bag Main Material - Nylon Type - Softback Pattern Type - Geometric Closure Type - Zipper Interior - Interior Compartment Carrying System - Physiological Curve Back Handle / Strap Type - Soft Handle Style - Fashion Capacity - 60 L Usage - Daily Use Color - Multiple Color.",
+"Gender - Unisex; Feature - Waterproof; Material - Water Repellent Nylon; Type - Large Capacity Outdoor Mountaineering Bag; Main Material - Nylon; Type - Softback Pattern; Type - Geometric Closure; Type - Zipper; Interior - Interior Compartment; Carrying System - Physiological Curve Back Handle / Strap; Type - Soft Handle; Style - Fashion; Capacity - 60 L; Usage - Daily Use; Color - Multiple Color.",
   },
 
 {
@@ -493,7 +493,7 @@ colors: [
     badge: "Bestseller",
     stock: 5,
     description: 
-"This backpack is Outdoor Travel Bag with generally for hikes and trekks with which excess space for making the travel more reliable. Capacity - 60 L Fabric - Water Repellent Nylon Backed - Breathable Divison Bag Occasion - Suitalbe for Outdoor Hiking, Leisure Travel ; Mount Climbing Poles, Sleeping Bags, Tents, Ice Picks  ; Zippered Waist Pockets Product Name - Outdoor Travel Bag Main Material - Nylon Type - Softback Pattern Type - Geometric Closure Type - Zipper Interior - Interior Compartment",
+"This backpack is Outdoor Travel Bag with generally for hikes and trekks with which excess space for making the travel more reliable. Capacity - 60 L; Fabric - Water Repellent; Nylon Backed - Breathable Divison; Bag Occasion - Suitalbe for Outdoor Hiking, Leisure Travel, Mount Climbing Poles, Sleeping Bags, Tents, Ice Picks  ; Zippered Waist Pockets; Product Name - Outdoor Travel Bag; Main Material - Nylon; Type - Softback; Pattern Type - Geometric; Closure Type - Zipper; Interior - Interior Compartment",
   },
 
 
@@ -515,10 +515,10 @@ colors: [
 
   ],
 
-    badge: "Bestseller",
+    badge: "Trending",
     stock: 7,
     description: 
-"Product Name - Bicycle Front Light Power Supply - Battery Battery - 2000mAh Color - Black Feature - Waterproof Brand Name - Quanxin Type - LEDs Single Gross Weight - 0.150 KG Single Package Size - 15X12X10 cm",
+"Product Name - Bicycle Front Light; Power Supply - Battery; Battery - 2000mAh; Color - Black; Feature - Waterproof; Brand Name - Quanxin; Type - LEDs; Single Gross Weight - 0.150 KG; Single Package Size - 15X12X10 cm",
   },
 
 {
@@ -560,7 +560,7 @@ colors: [
     badge: "Bestseller",
     stock: 5,
     description: 
-"Product Name - Bicycle Electric Horn Usage - Bike Handlebar Quality - Waterproof (IPX4) Decibel - 120dB Feature - Durable Function - Bike Safety Equipment Battery - CR2032 Material - ABS+PC Gross Weight - 0.050 kg Size - 4.8*4.6*8 cm",
+"Product Name - Bicycle Electric Horn; Usage - Bike Handlebar; Quality - Waterproof (IPX4); Decibel - 120dB; Feature - Durable; Function - Bike Safety Equipment; Battery - CR2032; Material - ABS+PC; Gross Weight - 0.050 kg; Size - 4.8*4.6*8 cm",
   },
 
 
@@ -579,7 +579,7 @@ colors: [
     badge: "New",
     stock: 5,
     description: 
-"Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 1000 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Available color - Football",
+"Material - Silicone; Type - Sports Water Bottle; Accessories - With LID, With Straw; Style - Classic; Water Flowing Method - Straw Type; Usage - Outdoor Activities; Advantage - Lightweight; Capacity - 1000 ml; Function - Leakproof; Shape - Ball shape; Feature - BPA-Free; Keywords - Unbreakable; Available color - Football",
   },
 
 
@@ -598,7 +598,7 @@ colors: [
     badge: "New",
     stock: 5,
     description: 
-"Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 1000 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Available color - Black",
+"Material - Silicone; Type - Sports Water Bottle; Accessories - With LID, With Straw; Style - Classic; Water Flowing Method - Straw Type; Usage - Outdoor Activities; Advantage - Lightweight; Capacity - 1000 ml; Function - Leakproof; Shape - Ball shape; Feature - BPA-Free; Keywords - Unbreakable; Available color - Black",
   },
 
   {
@@ -616,7 +616,7 @@ colors: [
     badge: "New",
     stock: 5,
     description: 
-"Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 1000 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Available color - Basketball",
+"Material - Silicone; Type - Sports Water Bottle; Accessories - With LID, With Straw; Style - Classic; Water Flowing Method - Straw Type; Usage - Outdoor Activities; Advantage - Lightweight; Capacity - 1000 ml; Function - Leakproof; Shape - Ball shape; Feature - BPA-Free; Keywords - Unbreakable; Available color - Basketball",
   },
 
 {
@@ -634,7 +634,7 @@ colors: [
     badge: "New",
     stock: 5,
     description: 
-"Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 550 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Single Gross Weight - 0.400 kg Color - Football",
+"Material - Silicone; Type - Sports Water Bottle; Accessories - With LID, With Straw; Style - Classic; Water Flowing Method - Straw Type; Usage - Outdoor Activities; Advantage - Lightweight; Capacity - 550 ml; Function - Leakproof; Shape - Ball shape; Feature - BPA-Free; Keywords - Unbreakable; Single Gross Weight - 0.400 kg Color - Football",
   },
 
 {
@@ -652,7 +652,7 @@ colors: [
     badge: "New",
     stock: 5,
     description: 
-"Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 550 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Single Gross Weight - 0.400 kg Color - Basketball",
+"Material - Silicone; Type - Sports Water Bottle; Accessories - With LID, With Straw; Style - Classic; Water Flowing Method - Straw Type; Usage - Outdoor Activities; Advantage - Lightweight; Capacity - 550 ml; Function - Leakproof; Shape - Ball shape; Feature - BPA-Free; Keywords - Unbreakable; Single Gross Weight - 0.400 kg Color - Basketball",
   },
 
 {
@@ -670,7 +670,7 @@ colors: [
     badge: "New",
     stock: 5,
     description: 
-"Material - Silicone Type - Sports Water Bottle Accessories - With LID, With Straw Style - Classic Water Flowing Method - Straw Type Usage - Outdoor Activities Advantage - Lightweight Capacity - 550 ml Function - Leakproof Shape - Ball shape Feature - BPA-Free Keywords - Unbreakable Single Gross Weight - 0.400 kg Color - Black",
+"Material - Silicone; Type - Sports Water Bottle; Accessories - With LID, With Straw; Style - Classic; Water Flowing Method - Straw Type; Usage - Outdoor Activities; Advantage - Lightweight; Capacity - 550 ml; Function - Leakproof; Shape - Ball shape; Feature - BPA-Free; Keywords - Unbreakable; Single Gross Weight - 0.400 kg Color -Black",
   },
 
 {
@@ -696,7 +696,7 @@ colors: [
     badge: "Bestseller",
     stock: 5,
     description: 
-"Product Name - Waterproof Raincoat Type - Survival Kit Application - Camping Usage - Outdoor Activity (Sports, Running, Hiking, Climbing, Trekking) Season - All Package - 1 piece/Bag Raincoat Design Style - Modern Size - 100*130cm Material - PE (Polythene) - Lightweight and widely used synthetic resin) Available colors Orange/Green. P.S. - A Mylar blanket (also known as a space or emergency blanket) is a common type of emergency blanket made from a thin synthetic material that is generally waterproof and reflective on at least one side.",
+"Product Name - Waterproof Raincoat; Type - Survival Kit; Application - Camping; Usage - Outdoor Activity (Sports, Running, Hiking, Climbing, Trekking); Season - All; Package - 1 piece/Bag Raincoat; Design Style - Modern; Size - 100*130cm; Material - PE (Polythene) - Lightweight and widely used synthetic resin); Available colors Orange/Green. P.S. - A Mylar blanket (also known as a space or emergency blanket) is a common type of emergency blanket made from a thin synthetic material that is generally waterproof and reflective on at least one side.",
   },
 
 ];
