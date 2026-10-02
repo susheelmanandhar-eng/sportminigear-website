@@ -262,7 +262,15 @@ const PRODUCTS = [
     oldprice: 975,
     images: [
       "images/products/fb-011-23cm.jpg",
-      "images/products/fb-011-25cm.jpg"  
+      "images/products/fb-011-25cm.jpg", 
+  "images/products/fb-011-1.jpg",
+  "images/products/fb-011-2.jpg",
+  "images/products/fb-011-3.jpg",
+  "images/products/fb-011-4.jpg",
+  "images/products/fb-011-5.jpg",
+  "images/products/fb-011-6.jpg" , 
+"images/products/fb-011-7.jpg"
+
  ],
 colors: [
  { name: "23cm", image: "images/products/fb-011-23cm.jpg", stock: 2 },
