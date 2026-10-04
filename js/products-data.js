@@ -433,7 +433,7 @@ colors: [
     id: "ut-002",
     name: "EDC Stainless Steel Multifunction Hammer Pliers DIY Hand Tools for Camping Pocket Knife for Outdoor Use",
     category: "Utility Tools",
-    price: 1450,
+    price: 1650,
     oldPrice: 1850,
    images: [
       "images/products/ut-002-1.jpg",
