@@ -754,7 +754,7 @@ colors: [
     id: "ac-008",
     name: "Sports Armband Multifunctional Pockets Exercise Workout Running Waterproof Arm Bag with Earphone Hole",
     category: "Accessories",
-    price: 950,
+    price: 350,
     images: [
       "images/products/ac-008-green.jpg",
       "images/products/ac-008-orange.jpg",
