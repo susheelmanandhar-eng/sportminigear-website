@@ -476,7 +476,7 @@ colors: [
     id: "ru-001",
     name: "60L Outdoor Travel Camping Climbing Trekking Hiking Internal Frame Waterproof Nylon Backpack Bags",
     category: "Running and Hike",
-    price: 2150,
+    price: 2250,
     oldPrice: 2450,
     images: [
       "images/products/ru-001-blue.jpg",
@@ -500,7 +500,7 @@ colors: [
     id: "ru-002",
     name: "60L Outdoor Multifunctional Backpack Hiking Backpack Nylon Mountaineering Backpack",
     category: "Running and Hike",
-    price: 1950,
+    price: 2100,
     oldPrice: 2250,
     images: [
       "images/products/ru-002-green.jpg",
