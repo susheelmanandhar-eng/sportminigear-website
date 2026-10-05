@@ -752,7 +752,7 @@ colors: [
 
 {
     id: "ac-008",
-    name: "Thermal Mylar Space Emergency Blanket Poncho Keeps Your Gear Dry and Warm Raincoat Survival Equipment for Camping",
+    name: "Sports Armband Multifunctional Pockets Exercise Workout Running Waterproof Arm Bag with Earphone Hole",
     category: "Accessories",
     price: 950,
     images: [
@@ -772,7 +772,7 @@ colors: [
     badge: "Bestseller",
     stock: 5,
     description: 
-"Product Name - Waterproof Raincoat; Type - Survival Kit; Application - Camping; Usage - Outdoor Activity (Sports, Running, Hiking, Climbing, Trekking); Season - All; Package - 1 piece/Bag Raincoat; Design Style - Modern; Size - 100*130cm; Material - PE (Polythene) - Lightweight and widely used synthetic resin); Available colors Orange/Green. P.S. - A Mylar blanket (also known as a space or emergency blanket) is a common type of emergency blanket made from a thin synthetic material that is generally waterproof and reflective on at least one side.",
+"This armband is generally useful for outdoor related sports activities to keep your important accessories safe and easy access. Product Name - Sports Armband for Multifunctional Usage; Feature - Waterproof Durable; Material - Neoprene; Capacity - 10L; Use - Camping and Hiking; Package - One Poly Bag; Colors - Blue/Green/Orange/Pink",
   },
 
 
