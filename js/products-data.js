@@ -291,9 +291,9 @@ id: "fb-012",
     images: [
       "images/products/fb-012-Rainbow.jpg",
       "images/products/fb-012-Neobright.jpg", 
-  "images/products/fb-012-1.jpg",
-  "images/products/fb-012-2.jpg",
-  "images/products/fb-012-3.jpg"
+  "images/products/fb-012-001.jpg",
+  "images/products/fb-012-002.jpg",
+  "images/products/fb-012-003.jpg"
  ],
 colors: [
  { name: "Rainbow", image: "images/products/fb-012-Rainbow.jpg", stock: 2 },
