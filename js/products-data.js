@@ -289,7 +289,7 @@ id: "fb-012",
     oldprice: 750,
     images: [
       "images/products/fb-012-Rainbow.jpg",
-      "images/products/fb-011-Neobright.jpg", 
+      "images/products/fb-012-Neobright.jpg", 
   "images/products/fb-012-1.jpg",
   "images/products/fb-012-2.jpg",
   "images/products/fb-012-3.jpg"
