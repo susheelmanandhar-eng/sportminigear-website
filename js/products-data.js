@@ -282,6 +282,29 @@ colors: [
 "5 in 1. strong and durable paracord rope. Lightweight and fashionable design, suitable for outdoor survival accessory to any of your camping, hiking, hunting trips.Components (1) Fire Starter: start a fire with ease using the striker and flint rod (2)Loud Whistle: create a load and piercing sound (3) Reliable Compass: works as a back-up to determine your direction (4) Rope Cutter: as hiking companion (5) Reliable Paracord: camping safety",
   },
 
+id: "fb-012",
+    name: "Paracord Solid Carabiner mini hiking climbing multi tools keys safety defense survival keychain",
+    category: "Travel Gear",
+    price: 350,
+    oldprice: 750,
+    images: [
+      "images/products/fb-012-Rainbow.jpg",
+      "images/products/fb-011-Neobright.jpg", 
+  "images/products/fb-012-1.jpg",
+  "images/products/fb-012-2.jpg",
+  "images/products/fb-012-3.jpg"
+ ],
+colors: [
+ { name: "Rainbow", image: "images/products/fb-012-Rainbow.jpg", stock: 2 },
+{ name: "Neobright", image: "images/products/cy-012-Neobright.jpg", stock: 2 }, 
+], 
+    badge: "Dashain Offer",
+    stock: 5,
+    description: 
+"Application - Outdoor Equipment Hiking Climbing; Product Name - Keychain; Keychain Type - Handmade Exquisite; Quality - High; Usage - Outdoor Occassion. This keychian is a sport type which is useful for self defense and survival pupose. The features of this key chain is mentioned below ● Firestarter flint ● Military grade clips ● Compass ● Knife ● Keychain",
+  },
+
+
     {
     id: "co-001",
     name: "Lightweight Camping Accessories Equipment Backpacking Supplies Survival Gear Cooking Set Outdoor Cook Gear for Family Hiking",
