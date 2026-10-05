@@ -274,7 +274,7 @@ const PRODUCTS = [
  ],
 colors: [
  { name: "23cm", image: "images/products/fb-011-23cm.jpg", stock: 2 },
-{ name: "25cm", image: "images/products/cy-011-25cm.jpg", stock: 2 }, 
+{ name: "25cm", image: "images/products/fb-011-25cm.jpg", stock: 2 }, 
 ], 
     badge: "Dashain Offer",
     stock: 5,
