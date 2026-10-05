@@ -259,7 +259,7 @@ const PRODUCTS = [
     name: "Camping Gear and Accessories Survival Paracord Bracelet Camping Gear Outdoor Camping & Hiking Gear",
     category: "Travel Gear",
     price: 850,
-    oldprice: 975,
+    oldPrice: 975,
     images: [
       "images/products/fb-011-23cm.jpg",
       "images/products/fb-011-25cm.jpg", 
@@ -286,7 +286,7 @@ id: "fb-012",
     name: "Paracord Solid Carabiner mini hiking climbing multi tools keys safety defense survival keychain",
     category: "Travel Gear",
     price: 350,
-    oldprice: 750,
+    oldPrice: 750,
     images: [
       "images/products/fb-012-Rainbow.jpg",
       "images/products/fb-012-Neobright.jpg", 
