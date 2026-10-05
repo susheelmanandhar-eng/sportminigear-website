@@ -296,7 +296,7 @@ id: "fb-012",
  ],
 colors: [
  { name: "Rainbow", image: "images/products/fb-012-Rainbow.jpg", stock: 2 },
-{ name: "Neobright", image: "images/products/cy-012-Neobright.jpg", stock: 2 }, 
+{ name: "Neobright", image: "images/products/fb-012-Neobright.jpg", stock: 2 }, 
 ], 
     badge: "Dashain Offer",
     stock: 5,
