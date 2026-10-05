@@ -750,4 +750,30 @@ colors: [
 "Product Name - Waterproof Raincoat; Type - Survival Kit; Application - Camping; Usage - Outdoor Activity (Sports, Running, Hiking, Climbing, Trekking); Season - All; Package - 1 piece/Bag Raincoat; Design Style - Modern; Size - 100*130cm; Material - PE (Polythene) - Lightweight and widely used synthetic resin); Available colors Orange/Green. P.S. - A Mylar blanket (also known as a space or emergency blanket) is a common type of emergency blanket made from a thin synthetic material that is generally waterproof and reflective on at least one side.",
   },
 
+{
+    id: "ac-008",
+    name: "Thermal Mylar Space Emergency Blanket Poncho Keeps Your Gear Dry and Warm Raincoat Survival Equipment for Camping",
+    category: "Accessories",
+    price: 950,
+    images: [
+      "images/products/ac-008-green.jpg",
+      "images/products/ac-008-orange.jpg",
+      "images/products/ac-008-pink.jpg",
+"images/products/ac-008-blue.jpg",
+"images/products/ac-008-3.jpg",
+"images/products/ac-008-4.jpg",
+"images/products/ac-008-5.jpg"
+   ],
+colors: [
+ { name: "Green", image: "images/products/ac-008-green.jpg", stock: 5 },
+{ name: "Orange", image: "images/products/ac-008-orange.jpg", stock: 6 }, 
+{ name: "Pink", image: "images/products/ac-008-pink.jpg", stock: 4 },
+{ name: "Blue", image: "images/products/ac-008-blue.jpg", stock: 4 }, ], 
+    badge: "Bestseller",
+    stock: 5,
+    description: 
+"Product Name - Waterproof Raincoat; Type - Survival Kit; Application - Camping; Usage - Outdoor Activity (Sports, Running, Hiking, Climbing, Trekking); Season - All; Package - 1 piece/Bag Raincoat; Design Style - Modern; Size - 100*130cm; Material - PE (Polythene) - Lightweight and widely used synthetic resin); Available colors Orange/Green. P.S. - A Mylar blanket (also known as a space or emergency blanket) is a common type of emergency blanket made from a thin synthetic material that is generally waterproof and reflective on at least one side.",
+  },
+
+
 ];
