@@ -302,7 +302,7 @@ colors: [
     badge: "Dashain Offer",
     stock: 5,
     description: 
-"Application - Outdoor Equipment Hiking Climbing; Product Name - Keychain; Keychain Type - Handmade Exquisite; Quality - High; Usage - Outdoor Occassion. This keychian is a sport type which is useful for self defense and survival pupose. The features of this key chain includes (1) Firestarter flint (2) Military grade clips (3) Compass (4) Knife (5) Keychain",
+"Application - Outdoor Equipment Hiking Climbing; Product Name - Keychain; Keychain Type - Handmade Exquisite; Quality - High; Usage - Outdoor Occassion; Colors available - Rainbow and Neobright. This keychian is a sport type which is useful for self defense and survival pupose. The features of this key chain includes (1) Firestarter flint (2) Military grade clips (3) Compass (4) Knife (5) Keychain",
   },
 
 
