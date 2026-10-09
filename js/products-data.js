@@ -506,7 +506,10 @@ colors: [
       "images/products/ru-001-blue.jpg",
       "images/products/ru-001-black.jpg",
  "images/products/ru-001-teal.jpg",
- "images/products/ru-001-red.jpg"
+ "images/products/ru-001-red.jpg",
+"images/products/ru-001-1.jpg",
+"images/products/ru-001-2.jpg",
+"images/products/ru-001-3.jpg"
 
    ],
 colors: [
