@@ -535,7 +535,11 @@ colors: [
       "images/products/ru-002-red.jpg",
       "images/products/ru-002-sky blue.jpg",
       "images/products/ru-002-orange.jpg",
-      "images/products/ru-002-dark blue.jpg"
+      "images/products/ru-002-dark blue.jpg",
+"images/products/ru-002-1.jpg",
+"images/products/ru-002-2.jpg",
+"images/products/ru-002-3.jpg",
+"images/products/ru-002-4.jpg"
    ],
 colors: [
 { name: "Green", image: "images/products/ru-002-green.jpg", stock: 1 }, 
