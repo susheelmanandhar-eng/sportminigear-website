@@ -276,6 +276,25 @@ document.addEventListener("DOMContentLoaded", () => {
     toggle.addEventListener("click", () => nav.classList.toggle("open"));
   }
 
+  // Footer contact links + PAN — shared across every page so none of them
+  // get left behind with a dead "#" link or a blank PAN line.
+  if (typeof SITE_CONFIG !== "undefined") {
+    const pan = document.getElementById("footer-pan");
+    if (pan && SITE_CONFIG.pan) {
+      pan.textContent = "PAN No: " + SITE_CONFIG.pan;
+    }
+    const wa = document.getElementById("footer-whatsapp");
+    if (wa && SITE_CONFIG.whatsappNumber) {
+      wa.href = "https://wa.me/" + SITE_CONFIG.whatsappNumber;
+      wa.textContent = "WhatsApp: +" + SITE_CONFIG.whatsappNumber;
+    }
+    const email = document.getElementById("footer-email");
+    if (email && SITE_CONFIG.email) {
+      email.href = "mailto:" + SITE_CONFIG.email;
+      email.textContent = SITE_CONFIG.email;
+    }
+  }
+
   const socialCol = document.getElementById("footer-social-col");
   if (socialCol && typeof SITE_CONFIG !== "undefined") {
     const links = [
