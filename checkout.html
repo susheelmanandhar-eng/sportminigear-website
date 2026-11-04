@@ -277,14 +277,32 @@
     });
   }
 
-  function logOrderAttempt(customer, paymentMethod) {
+  // Pending-order storage. localStorage (not sessionStorage) so the order
+  // survives when eSewa/Khalti return the customer in a new tab, the eSewa app,
+  // or an in-app browser — sessionStorage is wiped in all of those cases.
+  function savePending(key, value) {
+    try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) {}
+    try { sessionStorage.setItem(key, JSON.stringify(value)); } catch (e) {}
+  }
+  function loadPending(key) {
+    try {
+      const v = localStorage.getItem(key) || sessionStorage.getItem(key);
+      return v ? JSON.parse(v) : null;
+    } catch (e) { return null; }
+  }
+  function clearPending(key) {
+    try { localStorage.removeItem(key); } catch (e) {}
+    try { sessionStorage.removeItem(key); } catch (e) {}
+  }
+
+  function logOrderAttempt(customer, paymentMethod, orderId) {
     const delivery = getDeliveryCharge(customer.district);
     const itemsText = items
       .map((item) => `${item.name}${item.color ? " (" + item.color + ")" : ""} x${item.qty}`)
       .join("; ");
 
     sendOrderLog({
-      orderId: "SMG-" + Date.now(),
+      orderId: orderId || "SMG-" + Date.now(),
       name: customer.name,
       phone: customer.phone,
       district: customer.district,
@@ -300,25 +318,31 @@
     });
   }
 
-  function logOrderConfirmed(customer, paymentMethod, transactionId, verifiedAmount) {
+  // pendingOrder = the order saved before the redirect (its own items/orderId),
+  // so the row is correct even if the cart on this page has changed or is empty.
+  // If pendingOrder is missing (storage lost), we STILL log the verified payment
+  // with the gateway's transaction ID + amount so the sale is never invisible.
+  function logOrderConfirmed(customer, paymentMethod, transactionId, verifiedAmount, pendingOrder, fallbackOrderId) {
+    customer = customer || { name: "UNKNOWN (details lost)", phone: "", district: "", address: "", note: "" };
+    const orderItems = (pendingOrder && pendingOrder.items) || items;
     const delivery = getDeliveryCharge(customer.district);
-    const itemsText = items
+    const itemsText = orderItems
       .map((item) => `${item.name}${item.color ? " (" + item.color + ")" : ""} x${item.qty}`)
       .join("; ");
 
     sendOrderLog({
-      orderId: "SMG-" + Date.now(),
+      orderId: (pendingOrder && pendingOrder.orderId) || fallbackOrderId || "SMG-" + Date.now(),
       name: customer.name,
       phone: customer.phone,
       district: customer.district,
       address: customer.address,
       note: customer.note || "",
-      items: itemsText,
-      subtotal: cartTotal(),
+      items: pendingOrder ? itemsText : "ORDER DETAILS LOST - check eSewa/Khalti dashboard",
+      subtotal: pendingOrder ? orderItems.reduce((s, i) => s + i.price * i.qty, 0) : "",
       delivery,
       total: verifiedAmount != null ? verifiedAmount : cartTotal() + delivery,
       paymentMethod,
-      status: "Paid & Verified",
+      status: pendingOrder ? "Paid & Verified" : "Paid - DETAILS MISSING",
       transactionId: transactionId || "",
     });
   }
@@ -372,16 +396,12 @@
       khaltiBtn.textContent = "Redirecting to Khalti…";
       khaltiStatus.textContent = "";
 
-      logOrderAttempt(customer, "Khalti");
-
       const orderId = "SMG-" + Date.now();
+      logOrderAttempt(customer, "Khalti", orderId);
       const amount = cartTotal() + getDeliveryCharge(customer.district);
       // Remember what this order should cost + who it's for, so we can show/send
       // the right details when the customer comes back from Khalti.
-      sessionStorage.setItem(
-        "smg_pending_order",
-        JSON.stringify({ orderId, amount, customer, items })
-      );
+      savePending("smg_pending_order", { orderId, amount, customer, items });
 
       const returnUrl = window.location.origin + window.location.pathname;
       const websiteUrl = window.location.origin;
@@ -442,14 +462,10 @@
       esewaBtn.textContent = "Redirecting to eSewa…";
       esewaStatus.textContent = "";
 
-      logOrderAttempt(customer, "eSewa");
-
       const orderId = "SMG-" + Date.now();
+      logOrderAttempt(customer, "eSewa", orderId);
       const amount = cartTotal() + getDeliveryCharge(customer.district);
-      sessionStorage.setItem(
-        "smg_pending_order_esewa",
-        JSON.stringify({ orderId, amount, customer, items })
-      );
+      savePending("smg_pending_order_esewa", { orderId, amount, customer, items });
 
       // eSewa sends the customer back to this same page with ?data=... on success
       const returnUrl = window.location.origin + window.location.pathname;
@@ -506,7 +522,7 @@
     document.getElementById("step-delivery").style.display = "none";
     document.getElementById("step-payment").style.display = "block";
 
-    const pendingForTotalsEsewa = JSON.parse(sessionStorage.getItem("smg_pending_order_esewa") || "null");
+    const pendingForTotalsEsewa = loadPending("smg_pending_order_esewa");
     if (pendingForTotalsEsewa) {
       const delivery = getDeliveryCharge(pendingForTotalsEsewa.customer.district);
       document.getElementById("checkout-subtotal").textContent = formatRs(cartTotal());
@@ -530,7 +546,7 @@
         }),
       });
       const result = await res.json();
-      const pending = JSON.parse(sessionStorage.getItem("smg_pending_order_esewa") || "null");
+      const pending = loadPending("smg_pending_order_esewa");
 
       if (result.status === "COMPLETE") {
         esewaStatus.style.color = "var(--success)";
@@ -538,8 +554,8 @@
 
         document.getElementById("order-success").classList.add("visible");
 
+        logOrderConfirmed(pending && pending.customer, "eSewa", result.ref_id, result.total_amount, pending, decoded.transaction_uuid);
         if (pending) {
-          logOrderConfirmed(pending.customer, "eSewa", result.ref_id, result.total_amount);
           document.getElementById("order-success").innerHTML = `
             <h3>Order confirmed!</h3>
             <p class="mt-0">Your eSewa payment of Rs. ${result.total_amount} is confirmed (Ref ID: ${result.ref_id}). Your order has been saved — we'll be in touch to arrange delivery.</p>
@@ -551,7 +567,7 @@
             <p class="mt-0">Your eSewa payment of Rs. ${result.total_amount} is confirmed (Ref ID: ${result.ref_id}), but we could not automatically save your order details. Please contact us on WhatsApp (${SITE_CONFIG.whatsappNumber}) with this reference so we can arrange delivery.</p>
           `;
         }
-        sessionStorage.removeItem("smg_pending_order_esewa");
+        clearPending("smg_pending_order_esewa");
       } else {
         esewaStatus.style.color = "var(--danger)";
         esewaStatus.textContent = `Payment not completed (status: ${result.status}). Please try again.`;
@@ -577,7 +593,7 @@
     // Re-fill the Subtotal/Delivery/Total rows using the order we saved
     // before redirecting, since the delivery form is empty on this fresh
     // page load (the district isn't selected here anymore).
-    const pendingForTotals = JSON.parse(sessionStorage.getItem("smg_pending_order") || "null");
+    const pendingForTotals = loadPending("smg_pending_order");
     if (pendingForTotals) {
       const delivery = getDeliveryCharge(pendingForTotals.customer.district);
       document.getElementById("checkout-subtotal").textContent = formatRs(cartTotal());
@@ -596,7 +612,7 @@
         body: JSON.stringify({ pidx }),
       });
       const data = await res.json();
-      const pending = JSON.parse(sessionStorage.getItem("smg_pending_order") || "null");
+      const pending = loadPending("smg_pending_order");
 
       if (data.status === "Completed") {
         const paidRs = data.total_amount / 100;
@@ -605,8 +621,8 @@
 
         document.getElementById("order-success").classList.add("visible");
 
+        logOrderConfirmed(pending && pending.customer, "Khalti", data.transaction_id, paidRs, pending, pidx);
         if (pending) {
-          logOrderConfirmed(pending.customer, "Khalti", data.transaction_id, paidRs);
           document.getElementById("order-success").innerHTML = `
             <h3>Order confirmed!</h3>
             <p class="mt-0">Your Khalti payment of Rs. ${paidRs} is confirmed (Transaction ID: ${data.transaction_id}). Your order has been saved — we'll be in touch to arrange delivery.</p>
@@ -618,7 +634,7 @@
             <p class="mt-0">Your Khalti payment of Rs. ${paidRs} is confirmed (Transaction ID: ${data.transaction_id}), but we could not automatically save your order details. Please contact us on WhatsApp (${SITE_CONFIG.whatsappNumber}) with this transaction ID so we can arrange delivery.</p>
           `;
         }
-        sessionStorage.removeItem("smg_pending_order");
+        clearPending("smg_pending_order");
       } else {
         khaltiStatus.style.color = "var(--danger)";
         khaltiStatus.textContent = `Payment not completed (status: ${data.status}). Please try again.`;
