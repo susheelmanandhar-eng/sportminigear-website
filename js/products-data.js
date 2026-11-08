@@ -60,8 +60,8 @@ const PRODUCTS = [
     id: "fb-001",
     name: "Deluxe 18-in-1 Outdoor Multifunctional Survival Gear Kit for Adventure Disaster Preparedness and Emergency Aid ",
     category: "Travel Gear",
-    price: 3000,
-    oldPrice: 3500,
+    price: 3500,
+    oldPrice: 3850,
      images: [
       "images/products/fb-001-1.jpg",
       "images/products/fb-001-2.jpg",
