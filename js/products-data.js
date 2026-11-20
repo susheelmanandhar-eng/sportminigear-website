@@ -49,7 +49,7 @@ const CATEGORIES = [
      price       number, in Rs. (no commas)
      oldPrice    optional — set to a number to show a strikethrough price
      image       path under images/products/ (fine to leave as-is for now)
-     badge       optional small tag e.g. "New", "Bestseller", "Dashain Offer", "Trending" (or "" for none)
+     badge       optional small tag e.g. "New", "Bestseller", "Dashain Offer", "Trending", "Offered Price" (or "" for none)
      stock       NUMBER of units available (e.g. 12). Set to 0 for out of stock.
                  The site automatically shows "In stock", "Only X left"
                  (when 5 or fewer remain), or "Out of stock" based on this number.
@@ -325,7 +325,7 @@ colors: [
     ],
 
     badge: "",
-    stock: 2,
+    stock: 0,
     description:
       "Product Name: Camping cookware set with kettle; Material: Aluminum alloy, Hard anodized; Usage: 2~3person; Components - Inner: (1) Cauldron: 170 * 95MM (2) Tea pot: 1.1L 150 * 80MM (3) frying pan: 180 * 44MM (4) bowl: 3pcs (5) bamboo spoon: 1pc (6) rice shovel: 1 pc (7) Round Sponge: 1 pc (8)Lid:1PC (9) Carry bag:1pc; Capacity - 3-4 L; Package: 1.1 Set in a Carry bag, then in a color box; Color Box: 18.5x13x18.5CM",
   },
@@ -346,7 +346,7 @@ colors: [
     ],
 
     badge: "Bestseller",
-    stock: 5,
+    stock: 3,
     description: 
       "Pan Type - Frying Pans & Skillets; Material - Aluminium Alloy, Hard Anodized; Size - (1) big pot:12*10.50(h)cm (2) small pot:11*6.0(h)cm (3) Climbing hook:1PC (4) Folding Stove:1PC (5) Bowl: 3pcs (6) Bamboo spoon: 1pc (7) Folk spoon knife: 1 set (8) Wool ball:1 pc (9) Spoon:1pc (1) Carry bag:1PC; Usage - 1~2person; Single Gross Weight - 1kg; Applicable Stove - General Use for Gas and Induction Cooker; Capacity - 1-2L;  Package - 1 set in a mesh bag and in a color box",
   },
@@ -386,8 +386,8 @@ colors: [
  "images/products/co-004-6.jpg"
     ],
 
-    badge: "Dashain Offer",
-    stock: 3,
+    badge: "Offered Price",
+    stock: 0,
     description: 
       "Product - Camping Gas Stove; Material - Stainless Steel; Type - Stove Burner; Structure - Foldable; With Ignition Device - Yes; Feature - Lightweight; Stove Fuel - Butane, Propane, Isobutane Gas Mixture, Gas; Net Weight - 380 g; Feature - Portable, Foldable, Lightweight Unfold; Size - 9.5*16CM; Package Size - 9*9*10CM; Packing - 1PC/Plastic Box; Application - Outdoor Equipment Hiking Camping",
   },
@@ -466,7 +466,7 @@ colors: [
   "images/products/ut-002-4.jpg",
   "images/products/ut-002-5.jpg"
   ],
-    badge: "Dashain Offer",
+    badge: "Offered Price",
     stock: 5,
     description:
       "Product Name - Multifunctional Hammer; Packing - Pouch and Box; Material - Stainless Steel; Usage - Promotion/Business gift, daily usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench; Handle Material - Aluminum Bronze; Application - Claw Hammer",
