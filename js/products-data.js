@@ -310,8 +310,8 @@ colors: [
     id: "co-001",
     name: "Lightweight Camping Accessories Equipment Backpacking Supplies Survival Gear Cooking Set Outdoor Cook Gear for Family Hiking",
     category: "Camping Cookware",
-    price: 3400,
-    oldPrice: 3500,
+    price: 3450,
+    oldPrice: 3850,
     images: [
       "images/products/co-001-1.jpg",
       "images/products/co-001-2.jpg",
