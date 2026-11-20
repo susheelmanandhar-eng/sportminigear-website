@@ -73,7 +73,7 @@ const PRODUCTS = [
       "images/products/fb-001-8.jpg"
     ],
     badge: "Bestseller",
-    stock: 5,
+    stock: 0,
     description:
       "Accessory Part - Butterfly handle large flint; Multifunctional Scraper - Including Scraper, Bottle Opener, Hexagon Wrench, Scale High Frequency Double Hole Whistle, Strong Flashlight; Multifunctional Knife; Multifunctional Saber Card - Including Bottle Opener, Can Opener, Box Opener, Box Opener, Flat Screwdriver, Adjustable Wrench, Positioning Wrench, Scale, Protractor; Sawtooth; Keyhole; Compass; Portable Key Lamp; Tungsten Steel Broken Window Defense Pen; Waterproof and Shockproof Storage Box; Kettle Buckle; Survival Bracelet; Screwdriver (one type); Screwdrive (other type); Wire Saw; Emergency Blanket; Kettle Buckle Absorbent; Alcohol Pad; Styptic Bandage",
   },
@@ -90,7 +90,7 @@ const PRODUCTS = [
       "images/products/fb-002-3.jpg"
     ],
     badge: "Bestseller",
-    stock: 1,
+    stock: 0,
     description:
       "Accessory Parts - Butterfly handle large flint; Multifunctional Scraper - Including Scraper, Bottle Opener, Hexagon Wrench, Scale; High-Frequency Double Hole Whistle; Strong Flashlight; Multifunctional Knife; Multifunctional Saber Card - Including Bottle Opener, Can Opener, Box Opener, Box Opener, Flat Screwdriver, Adjustable Wrench, Positioning Wrench, Scale, Protractor, Sawtooth; Keyhole; Compass; Portable Key Lamp; Tungsten Steel Broken Window Defense Pen; Waterproof and Shockproof Storage Box",
   },
