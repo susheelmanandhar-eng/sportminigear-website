@@ -136,7 +136,7 @@ const PRODUCTS = [
      "images/products/fb-004-9.jpg",
      "images/products/fb-004-10.jpg"
     ],
-    badge: "Dashain Offer",
+    badge: "Offered Price",
     stock: 10,
     description:
       "Usage - Outdoor Camping Hiking Travelling; Color - Red; Material - Stainless steel; Packing - Opp Bag; Single Gross Weight - 0.300 Kg. This compact and portable survival kit is made of durable stainless steel, designed for outdoor camping, hiking, and traveling. This is easy to carry and highly functional for outdoor activities like climbing and water sports.",
@@ -276,7 +276,7 @@ colors: [
  { name: "23cm", image: "images/products/fb-011-23cm.jpg", stock: 2 },
 { name: "25cm", image: "images/products/fb-011-25cm.jpg", stock: 2 }, 
 ], 
-    badge: "Dashain Offer",
+    badge: "Offered Price",
     stock: 5,
     description: 
 "5 in 1. strong and durable paracord rope. Lightweight and fashionable design, suitable for outdoor survival accessory to any of your camping, hiking, hunting trips.Components (1) Fire Starter: start a fire with ease using the striker and flint rod (2)Loud Whistle: create a load and piercing sound (3) Reliable Compass: works as a back-up to determine your direction (4) Rope Cutter: as hiking companion (5) Reliable Paracord: camping safety",
@@ -299,7 +299,7 @@ colors: [
  { name: "Rainbow", image: "images/products/fb-012-Rainbow.jpg", stock: 2 },
 { name: "Neobright", image: "images/products/fb-012-Neobright.jpg", stock: 2 }, 
 ], 
-    badge: "Dashain Offer",
+    badge: "Offered Price",
     stock: 5,
     description: 
 "Application - Outdoor Equipment Hiking Climbing; Product Name - Keychain; Keychain Type - Handmade Exquisite; Quality - High; Usage - Outdoor Occassion; Colors available - Rainbow and Neobright. This keychian is a sport type which is useful for self defense and survival pupose. The features of this key chain includes (1) Firestarter flint (2) Military grade clips (3) Compass (4) Knife (5) Keychain",
