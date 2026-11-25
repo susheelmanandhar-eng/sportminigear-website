@@ -448,7 +448,7 @@ colors: [
 
   ],
     badge: "New",
-    stock: 5,
+    stock: 0,
     description:
       "Product Name - 20 in 1 Multifunction Hammer Pliers Multi Tool; Material - Stainless Steel; Color - Black/Blue; Advantage - Quality + Competitive; Type - Survival Multifunctional Tool; Material -Stainless Steel + ABS; Application -- Travel and Trek; Feature 1. Premium steel 2. long lifetime; Size 17.5*8CM; Weight 425g; Packing Color box",
   },
@@ -495,6 +495,26 @@ colors: [
     description:
       "Handle Material - Aluminum Bronze; Application - Claw Hammer; Size - 14*75*2.5cm; Packing - Pouch and Box; Application - Claw Hammer; Color - Black; Weight - 260 grams; Usage - Promotion/Business gift, daily usage, outdoor/indoor tools, bottle opener, screwdriver, hex wrench.",
   },
+
+ {
+    id: "ut-004",
+    name: "Stainless Steel Folding Pocket Knife Mini Camping Blade Portable Outdoor Tool",
+    category: "Utility Tools",
+    price: 1250,
+    oldPrice: 1500,
+   images: [
+      "images/products/ut-004-1.jpg",
+      "images/products/ut-004-2.jpg",
+      "images/products/ut-004-3.jpg",
+"images/products/ut-004-4.jpg",
+"images/products/ut-004-5.jpg"
+  ],
+    badge: "Trending",
+    stock: 5,
+    description:
+      "Application - Outdoor Camping; Blade Material - Stainless Steel; Single Groos Weight - 0.273kg; ",
+  },
+
 
 {
     id: "ru-001",
